@@ -28,7 +28,7 @@ class CommunicationArea_Bottom(MetroidPrime2Region):
             rule=lambda state, player: True,
         ),
         MetroidPrime2Exit(
-            destination="Temple Grounds - Trooper Security Station (Communication Area)",
+            destination="Temple Grounds - Trooper Security Station (Communication Area Side)",
             door=DoorCover.Any,
             rule=lambda state, player: True,
         ),

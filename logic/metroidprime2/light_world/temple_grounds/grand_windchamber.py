@@ -84,7 +84,7 @@ class GrandWindchamber_WindchamberGatewaySide(MetroidPrime2Region):
     desc = "Windchamber Gateway Side"
     exits_ = [
         MetroidPrime2Exit(
-            destination="P|Sky Temple Grounds - Ing Windchamber (Windchamber Gateway Side)",
+            destination="P|Sky Temple Grounds - Ing Windchamber (Portal)",
             door=DoorCover.Opened,
             rule=lambda state, player: can_activate_dark_portal(state, player),
         ),
