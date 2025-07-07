@@ -1,0 +1,9 @@
+.git*
+__pycache__
+build
+LICENSE.md
+README.md
+requirements.txt
+Metroid Prime 2 Echoes.yaml
+*.iso
+test
