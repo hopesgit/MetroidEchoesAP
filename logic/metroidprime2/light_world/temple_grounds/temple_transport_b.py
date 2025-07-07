@@ -1,4 +1,4 @@
-from .... import has_trick_enabled, can_lay_bomb
+from ... import has_trick_enabled, can_lay_bomb
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_and
