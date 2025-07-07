@@ -1,0 +1,426 @@
+{
+  "Power Beam": {
+    "index": 0,
+    "model": "Energy Transfer Module",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Beam": {
+    "index": 1,
+    "model": "Dark Beam",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Light Beam": {
+    "index": 2,
+    "model": "Light Beam",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Annihilator Beam": {
+    "index": 3,
+    "model": "Annihilator Beam",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Super Missile": {
+    "index": 4,
+    "model": "Super Missile",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Darkburst": {
+    "index": 5,
+    "model": "Darkburst",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sunburst": {
+    "index": 6,
+    "model": "Sunburst",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sonic Boom": {
+    "index": 7,
+    "model": "Sonic Boom",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Combat Visor": {
+    "index": 8,
+    "model": "Combat Visor",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Scan Visor": {
+    "index": 9,
+    "model": "Scan Visor",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Visor": {
+    "index": 10,
+    "model": "Dark Visor",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Echo Visor": {
+    "index": 11,
+    "model": "Echo Visor",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Suit": {
+    "index": 13,
+    "model": "Dark Suit",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Light Suit": {
+    "index": 14,
+    "model": "Light Suit",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Morph Ball": {
+    "index": 15,
+    "model": "Energy Transfer Module",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Boost Ball": {
+    "index": 16,
+    "model": "Boost Ball",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Spider Ball": {
+    "index": 17,
+    "model": "Spider Ball",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Morph Ball Bomb": {
+    "index": 18,
+    "model": "Morph Ball Bomb",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Charge Beam": {
+    "index": 22,
+    "model": "Charge Beam",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Grapple Beam": {
+    "index": 23,
+    "model": "Grapple Beam",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Space Jump Boots": {
+    "index": 24,
+    "model": "Space Jump Boots",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Gravity Boost": {
+    "index": 25,
+    "model": "Gravity Boost",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Seeker Launcher": {
+    "index": 26,
+    "model": "Seeker Launcher",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Screw Attack": {
+    "index": 27,
+    "model": "Screw Attack",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 1": {
+    "index": 29,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 2": {
+    "index": 30,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 3": {
+    "index": 31,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Agon Key 1": {
+    "index": 32,
+    "model": "Dark Agon Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Agon Key 2": {
+    "index": 33,
+    "model": "Dark Agon Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Agon Key 3": {
+    "index": 34,
+    "model": "Dark Agon Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Torvus Key 1": {
+    "index": 35,
+    "model": "Dark Torvus Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Torvus Key 2": {
+    "index": 36,
+    "model": "Dark Torvus Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Torvus Key 3": {
+    "index": 37,
+    "model": "Dark Torvus Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Ing Hive Key 1": {
+    "index": 38,
+    "model": "Ing Hive Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Ing Hive Key 2": {
+    "index": 39,
+    "model": "Ing Hive Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Ing Hive Key 3": {
+    "index": 40,
+    "model": "Ing Hive Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Energy Tank": {
+    "index": 41,
+    "model": "Energy Tank",
+    "default_shuffled_count": 14,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Power Bomb Expansion": {
+    "index": 43,
+    "model": "Power Bomb Expansion",
+    "default_shuffled_count": 8,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Missile Expansion": {
+    "index": 44,
+    "model": "Missile Expansion",
+    "default_shuffled_count": 8,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Dark Ammo Expansion": {
+    "index": 45,
+    "model": "Dark Ammo Expansion",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Light Ammo Expansion": {
+    "index": 46,
+    "model": "Light Ammo Expansion",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Beam Ammo Expansion": {
+    "_comment": [
+		"Normally used for item percentage, ",
+		"but we won't ever send item percentage as pickup"
+	],
+    "index": 47,
+    "model": "Beam Ammo Expansion",
+    "default_shuffled_count": 4,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Double Damage": {
+    "index": 58,
+    "model": "Double Damage",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Missile Launcher": {
+    "index": 71,
+    "model": "Missile Launcher",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Power Bomb Launcher": {
+    "index": 73,
+    "model": "Power Bomb",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Unlimited Missiles": {
+    "index": 81,
+    "model": "Missile Launcher",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Unlimited Beam Ammo": {
+    "index": 82,
+    "model": "Beam Ammo Expansion",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Rez Bit Hack": {
+    "index": 95,
+    "model": "Energy Transfer Module",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "trap"
+  },
+  "Cannon Ball": {
+    "index": 96,
+    "model": "Boost Ball",
+    "default_shuffled_count": 0,
+    "vanilla_locations": [],
+    "progression": "useful"
+  },
+  "Violet Translator": {
+    "index": 97,
+    "model": "Violet Translator",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Amber Translator": {
+    "index": 98,
+    "model": "Amber Translator",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Emerald Translator": {
+    "index": 99,
+    "model": "Emerald Translator",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Cobalt Translator": {
+    "index": 100,
+    "model": "Cobalt Translator",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 4": {
+    "index": 101,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 5": {
+    "index": 102,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 6": {
+    "index": 103,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 7": {
+    "index": 104,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 8": {
+    "index": 105,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Sky Temple Key 9": {
+    "index": 106,
+    "model": "Sky Temple Key",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  },
+  "Energy Transfer Module": {
+    "index": 107,
+    "model": "Energy Transfer Module",
+    "default_shuffled_count": 1,
+    "vanilla_locations": [],
+    "progression": "progression"
+  }
+}
