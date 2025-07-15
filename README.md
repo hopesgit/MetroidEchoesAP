@@ -21,7 +21,7 @@ Any of the mentioned items above in the section "What is randomized in this game
 
 ### What does another world's item look line in Metroid Prime 2 - Echoes?
 
-Metroid serie items will be based on the corresponding model from Metroid Prime 2 - Echoes when available for now on.
+Metroid serie items will be based on the corresponding model from Metroid Prime 2 - Echoes when available for now.
 This might change in the future.
 
 Multiworld items are not defined yet though.
