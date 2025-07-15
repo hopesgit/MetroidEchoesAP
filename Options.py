@@ -95,9 +95,7 @@ class Tricks(OptionList):
         "Temple Grounds - Temple Assembly Site | DBJ to Item Ledge",
         "Temple Grounds - Temple Assembly Site | NSJ SA to Item Ledge",
         "Temple Grounds - Temple Assembly Site | Slope Jump to Item Ledge",
-        "Temple Grounds - Temple Transport B | OOB to Temple Assembly Site",
         "Temple Grounds - Trooper Security Station | SA to break the gate",
-        "Temple Grounds - Trooper Security Station | IS into GFMC Compound",
     ]
 
 

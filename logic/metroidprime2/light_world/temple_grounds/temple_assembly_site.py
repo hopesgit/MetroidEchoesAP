@@ -45,18 +45,7 @@ class TempleAssemblySite_BehindTranslatorGate(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Temple Grounds - Temple Assembly Site (Center)",
             door=DoorCover.VioletTranslator,
-            rule=lambda state, player: condition_or([
-                not state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
-        ),
-        MetroidPrime2Exit(
-            destination="Temple Grounds - Temple Assembly Site (Cutscene)",
-            door=DoorCover.VioletTranslator,
-            rule=lambda state, player: condition_and([
-                state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                not state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
+            rule=lambda state, player: True,
         ),
     ]
 
@@ -163,18 +152,7 @@ class TempleAssemblySite_CollapsedTunnelSide(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Temple Grounds - Temple Assembly Site (Center)",
             door=DoorCover.Opened,
-            rule=lambda state, player: condition_or([
-                not state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
-        ),
-        MetroidPrime2Exit(
-            destination="Temple Grounds - Temple Assembly Site (Cutscene)",
-            door=DoorCover.Opened,
-            rule=lambda state, player: condition_and([
-                state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                not state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
+            rule=lambda state, player: True,
         ),
     ]
 
@@ -191,35 +169,6 @@ class TempleAssemblySite_CollapsedTunnelSide(MetroidPrime2Region):
                     player=player,
                 ),
                 can_access=lambda state, player: can_use_light_beam(state, player),
-                parent=self,
-            ),
-        ]
-
-
-class TempleAssemblySite_Cutscene(MetroidPrime2Region):
-    name = "Temple Assembly Site"
-    desc = "Cutscene"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Temple Grounds - Temple Assembly Site (Center)",
-            door=DoorCover.Opened,
-            rule=lambda state, player: state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-        ),
-    ]
-
-    def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
-        super().__init__(region_name, player, multiworld)
-
-        self.locations = [
-            MetroidPrime2Location(
-                name="Cutscene Watched",
-                locked_item=MetroidPrime2Item(
-                    name="Temple Grounds - Temple Assembly Site | Cutscene Watched",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: True,
                 parent=self,
             ),
         ]
@@ -277,17 +226,6 @@ class TempleAssemblySite_StorageCavernBSide(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Temple Grounds - Temple Assembly Site (Center)",
             door=DoorCover.Opened,
-            rule=lambda state, player: condition_or([
-                not state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
-        ),
-        MetroidPrime2Exit(
-            destination="Temple Grounds - Temple Assembly Site (Cutscene)",
-            door=DoorCover.Opened,
-            rule=lambda state, player: condition_and([
-                state.has("Great Temple - Main Energy Controller | Cutscene Watched", player),
-                not state.has("Temple Grounds - Temple Assembly Site | Cutscene Watched", player),
-            ]),
+            rule=lambda state, player: True,
         ),
     ]

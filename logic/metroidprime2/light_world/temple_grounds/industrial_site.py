@@ -64,7 +64,6 @@ class IndustrialSite_Center(MetroidPrime2Region):
             destination="Temple Grounds - Industrial Site (Gate)",
             door=DoorCover.Opened,
             rule=lambda state, player: condition_and([
-                not state.has("Temple Grounds - Industrial Site | Gate Opened", player),
                 state.has("Scan Visor", player),
                 # conditions to destroy the locks of the gate
                 condition_or([
@@ -235,7 +234,6 @@ class IndustrialSite_HiveTransportAreaSide(MetroidPrime2Region):
             destination="Temple Grounds - Industrial Site (Gate)",
             door=DoorCover.Opened,
             rule=lambda state, player: condition_and([
-                not state.has("Temple Grounds - Industrial Site | Gate Opened", player),
                 state.has("Scan Visor", player),
                 # conditions to break the gate locks
                 condition_or([

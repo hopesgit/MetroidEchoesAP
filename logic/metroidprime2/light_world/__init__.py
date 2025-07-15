@@ -169,7 +169,6 @@ def temple_grounds_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPri
         TempleAssemblySite_BehindTranslatorGate(region_name, player, multiworld),
         TempleAssemblySite_Center(region_name, player, multiworld),
         TempleAssemblySite_CollapsedTunnelSide(region_name, player, multiworld),
-        TempleAssemblySite_Cutscene(region_name, player, multiworld),
         TempleAssemblySite_DynamoChamberLedge(region_name, player, multiworld),
         TempleAssemblySite_ItemLedge(region_name, player, multiworld),
         TempleAssemblySite_StorageCavernBSide(region_name, player, multiworld),

@@ -68,11 +68,6 @@ class GFMCCompound_Center(MetroidPrime2Region):
             rule=lambda state, player: True,
         ),
         MetroidPrime2Exit(
-            destination="Temple Grounds - GFMC Compound (Cutscene)",
-            door=DoorCover.Opened,
-            rule=lambda state, player: not state.has("Temple Grounds - GFMC Compound | Cutscene Watched", player),
-        ),
-        MetroidPrime2Exit(
             destination="Temple Grounds - GFMC Compound (Sacred Bridge Ledge)",
             door=DoorCover.Opened,
             rule=lambda state, player: condition_or([
@@ -229,7 +224,7 @@ class GFMCCompound_TrooperSecurityStationSide(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Temple Grounds - GFMC Compound (Cutscene)",
             door=DoorCover.Opened,
-            rule=lambda state, player: not state.has("Temple Grounds - GFMC Compound | Cutscene Watched", player),
+            rule=lambda state, player: True,
         ),
         MetroidPrime2Exit(
             destination="Temple Grounds - Trooper Security Station (GFMC Compound Side)",
