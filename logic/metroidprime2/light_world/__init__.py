@@ -7,6 +7,7 @@ from .temple_grounds.fortress_transport_access import *
 from .temple_grounds.gfmc_compound import *
 from .temple_grounds.grand_windchamber import *
 from .temple_grounds.hall_of_eyes import *
+from .temple_grounds.hall_of_honored_dead import *
 from .temple_grounds.hive_access_tunnel import *
 from .temple_grounds.hive_chamber_a import *
 from .temple_grounds.hive_chamber_b import *
@@ -19,6 +20,7 @@ from .temple_grounds.industrial_site import *
 from .temple_grounds.landing_site import *
 from .temple_grounds.meeting_grounds import *
 from .temple_grounds.path_of_eyes import *
+from .temple_grounds.path_of_honor import *
 from .temple_grounds.sacred_bridge import *
 from .temple_grounds.sacred_path import *
 from .temple_grounds.service_access import *
@@ -86,6 +88,10 @@ def temple_grounds_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPri
         HallOfEyes_Bottom(region_name, player, multiworld),
         HallOfEyes_Top(region_name, player, multiworld),
 
+        # Temple Grounds - Hall of Honored Dead
+        HallOfHonoredDead(region_name, player, multiworld),
+        HallOfHonoredDead_PathOfHonorSide(region_name, player, multiworld),
+
         # Temple Grounds - Hive Access Tunnel
         HiveAccessTunnel_HiveTransportAreaSide(region_name, player, multiworld),
         HiveAccessTunnel_LandingSiteSide(region_name, player, multiworld),
@@ -140,6 +146,10 @@ def temple_grounds_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPri
         PathOfEyes_UTurn(region_name, player, multiworld),
         PathOfEyes_Waterway(region_name, player, multiworld),
         PathOfEyes_WindchamberGatewaySide(region_name, player, multiworld),
+
+        # Temple Grounds - Path of Honor
+        PathOfHonor_Bottom(region_name, player, multiworld),
+        PathOfHonor_Top(region_name, player, multiworld),
 
         # Temple Grounds - Sacred Bridge
         SacredBridge_Center(region_name, player, multiworld),
