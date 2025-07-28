@@ -61,6 +61,7 @@ class Tricks(OptionList):
     """Which tricks are enabled?"""
     display_name = "Tricks"
     options = [
+        "Sky Temple Grounds - Abandoned Base | Slope Jump to Portal",
         "Sky Temple Grounds - Base Access | DBJ to Top",
         "Sky Temple Grounds - Phazon Grounds | Visorless Invisible Platforms",
         "Sky Temple Grounds - Phazon Pit | BSJ to Phazon Grounds Side",

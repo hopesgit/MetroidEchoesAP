@@ -67,7 +67,7 @@ class AccursedLake_IngCache(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Sky Temple Grounds - Accursed Lake",
-            door=DoorCover.Any,
+            door=DoorCover.Opened,
             rule=lambda state, player: condition_or([
                 # consider the amount of energy tank to return to safety
                 # assuming we get the item, starting from Plain of Dark Worship door
