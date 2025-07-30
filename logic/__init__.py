@@ -54,7 +54,7 @@ def locations() -> list[str]:
         "Great Temple - Main Energy Controller - Pickup (Light Suit)",
         "Great Temple - Main Energy Controller - Pickup (Violet Translator)",
         "Agon Wastes - Mining Plaza - Pickup (Energy Tank)",
-        "Agon Wastes - Mining Plaza Access - Pickup (Energy Tank)",
+        "Agon Wastes - Mining Station Access - Pickup (Energy Tank)",
         "Agon Wastes - Mining Station B - Pickup (Darkburst)",
         "Agon Wastes - Transport Center - Pickup (Missile Expansion)",
         "Agon Wastes - Mining Station A - Pickup (Missile Expansion)",
