@@ -100,6 +100,21 @@ class Tricks(OptionList):
         "Temple Grounds - Temple Assembly Site | NSJ SA to Item Ledge",
         "Temple Grounds - Temple Assembly Site | Slope Jump to Item Ledge",
         "Temple Grounds - Trooper Security Station | SA to break the gate",
+        "Torvus Bog - Abandoned Worksite | BSJ to Pickup Ledge",
+        "Torvus Bog - Abandoned Worksite | NSJ BSJ to Pickup Ledge",
+        "Torvus Bog - Abandoned Worksite | NSJ SA to Pickup Ledge",
+        "Torvus Bog - Abandoned Worksite | Boost Jump to Pickup Ledge",
+        "Torvus Bog - Abandoned Worksite | Roll Jump to Pickup Ledge",
+        "Torvus Bog - Great Bridge | Instant Unmorph to Cannon Ledge",
+        "Torvus Bog - Great Bridge | Instant Unmorph to Scan Ledge",
+        "Torvus Bog - Great Bridge | Scan Dash around Top",
+        "Torvus Bog - Great Bridge | Slope Jump SA to North Path",
+        "Torvus Bog - Great Bridge | Slope Jump over Translator Gate",
+        "Torvus Bog - Great Bridge | Wall Boost to North Path",
+        "Torvus Bog - Portal Chamber | Wall Boost",
+        "Torvus Bog - Torvus Lagoon | Air Underwater",
+        "Torvus Bog - Torvus Lagoon | STE to Bridge",
+        "Torvus Bog - Torvus Lagoon | STE to Save Room Ledge",
     ]
 
 
