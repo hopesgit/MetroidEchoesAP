@@ -113,8 +113,11 @@ class Tricks(OptionList):
         "Torvus Bog - Great Bridge | Wall Boost to North Path",
         "Torvus Bog - Portal Chamber | Wall Boost",
         "Torvus Bog - Torvus Lagoon | Air Underwater",
-        "Torvus Bog - Torvus Lagoon | STE to Bridge",
+        "Torvus Bog - Torvus Lagoon | STE to Bridge", #STE is "Standable Terrain Exploit(ation)"
         "Torvus Bog - Torvus Lagoon | STE to Save Room Ledge",
+        "Torvus Bog - Torvus Plaza | STE SA to Item",
+        "Torvus Bog - Torvus Plaza | Boost-only/Cannonball",
+        "Torvus Bog - Torvus Plaza | Instant Unmorph BSJ to Entrance",
     ]
 
 
