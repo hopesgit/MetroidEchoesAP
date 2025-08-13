@@ -111,6 +111,7 @@ class Tricks(OptionList):
         "Torvus Bog - Great Bridge | Slope Jump SA to North Path",
         "Torvus Bog - Great Bridge | Slope Jump over Translator Gate",
         "Torvus Bog - Great Bridge | Wall Boost to North Path",
+        "Torvus Bog - Plaza Access | Out of Bounds",
         "Torvus Bog - Portal Chamber | Wall Boost",
         "Torvus Bog - Torvus Lagoon | Air Underwater",
         "Torvus Bog - Torvus Lagoon | STE to Bridge", #STE is "Standable Terrain Exploit(ation)"

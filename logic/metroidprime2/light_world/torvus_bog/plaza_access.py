@@ -1,7 +1,8 @@
 from BaseClasses import MultiWorld, ItemClassification
 
 from Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_dark_beam, can_activate_dark_portal
+from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_dark_beam, can_activate_dark_portal, \
+    can_use_screw_attack
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -72,10 +73,19 @@ class PlazaAccess_MorphBallTunnelForgottenBridgeSide(_PlazaAccess):
         MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Forgotten Bridge Side)",
             rule=lambda state, player: can_lay_bomb(state, player)
-        ),MetroidPrime2Exit(
+        ),
+        MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Maze)",
             rule=lambda state, player: can_lay_bomb(state, player)
         ),
+        MetroidPrime2Exit(
+            destination= "Torvus Bog - Plaza Access (Half-Pipe)",
+            rule=lambda state, player: condition_and([
+                can_lay_bomb(state, player),
+                can_use_screw_attack(state, player),
+                has_trick_enabled(state, player, "Torvus Bog - Plaza Access | Out of Bounds")
+            ])
+        )
     ]
 
 class PlazaAccess_MorphBallTunnelTorvusPlazaSide(_PlazaAccess):
