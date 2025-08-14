@@ -105,6 +105,12 @@ class Tricks(OptionList):
         "Torvus Bog - Abandoned Worksite | NSJ SA to Pickup Ledge",
         "Torvus Bog - Abandoned Worksite | Boost Jump to Pickup Ledge",
         "Torvus Bog - Abandoned Worksite | Roll Jump to Pickup Ledge",
+        "Torvus Bog - Forgotten Bridge | Scan Dash from Bridge",
+        "Torvus Bog - Forgotten Bridge | Roll Jump from Bridge",
+        "Torvus Bog - Forgotten Bridge | BSJ into Cage",
+        "Torvus Bog - Forgotten Bridge | Bomb Jump Between Platforms",
+        "Torvus Bog - Forgotten Bridge | Air Underwater",
+        # "Torvus Bog - Forgotten Bridge | Climb by Standing on Enemies", # not sure about including this one since you can break it by killing the grenchlers
         "Torvus Bog - Great Bridge | Instant Unmorph to Cannon Ledge",
         "Torvus Bog - Great Bridge | Instant Unmorph to Scan Ledge",
         "Torvus Bog - Great Bridge | Scan Dash around Top",
