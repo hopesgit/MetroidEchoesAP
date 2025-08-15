@@ -2,7 +2,8 @@ from BaseClasses import MultiWorld, ItemClassification
 
 from Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_dark_beam, can_activate_dark_portal, \
-    can_lay_bomb_or_pb, can_use_screw_attack, can_use_boost_ball
+    can_lay_bomb_or_pb, can_use_screw_attack, can_use_boost_ball, has_oob_kit, can_use_seeker_launcher, \
+    has_missile_count
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -82,11 +83,25 @@ class TorvusTemple_Underground(_TorvusTemple):
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Tunnel (Tunnel)",
             door=DoorCover.SuperMissile,
-            rule=lambda state, player: True
+            rule=lambda state, player: condition_or([
+                can_use_seeker_launcher(state, player),
+                condition_and([
+                    has_trick_enabled(state, player, "Torvus Bog - Torvus Temple | Open Seeker Door without Seeker Missiles"),
+                    has_missile_count(state, player, 2),
+                    can_use_screw_attack(state, player)
+                ])
+            ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Temple (Underground Transport Entrance)",
             rule=lambda state, player: state.has("Morph Ball", player)
+        ),
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Torvus Temple (Out of Bounds)",
+            rule=lambda state, player: condition_and([
+                has_oob_kit(state, player),
+                has_trick_enabled(state, player, "Torvus Bog - Torvus Temple | Out of Bounds")
+            ])
         )
     ]
 
@@ -101,7 +116,8 @@ class TorvusTemple_UndergroundTransportEntrance(_TorvusTemple):
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Transport (Upper)",
             door=DoorCover.SuperMissile,
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Temple | Pirates Dead")
+            # the laser barrier preventing access to the Super Missiles also blocks the lower tunnel
         )
     ]
 
@@ -118,4 +134,23 @@ class TorvusTemple_Upper(_TorvusTemple):
             door=DoorCover.SuperMissile,
             rule=lambda state, player: True
         )
+    ]
+
+
+# pretty hesitant about including this one
+class TorvusTemple_OutOfBounds(_TorvusTemple):
+    desc = "Out of Bounds"
+    exits_ = [
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Torvus Temple (Arena)",
+            rule=lambda state, player: True
+        ),
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Transport to Agon Wastes",
+            rule=lambda state, player: True
+        ),
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Torvus Temple (Underground)",
+            rule=lambda state, player: True
+        ),
     ]

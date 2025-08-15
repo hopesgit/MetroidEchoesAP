@@ -120,12 +120,20 @@ class Tricks(OptionList):
         "Torvus Bog - Plaza Access | Out of Bounds",
         "Torvus Bog - Portal Chamber | Wall Boost",
         "Torvus Bog - Temple Access | Wall Boost",
+        "Torvus Bog - Torvus Grove | Climb Roots to reach Connected Ledge",
+        "Torvus Bog - Torvus Grove | STE to Reach Curved Ledge",
+        "Torvus Bog - Torvus Grove | Scan Dash to reach Curved Ledge",
+        "Torvus Bog - Torvus Grove | Instant Unmorph to reach Isolated Ledge" # this is harder going toward the door than coming from it
         "Torvus Bog - Torvus Lagoon | Air Underwater",
         "Torvus Bog - Torvus Lagoon | STE to Bridge", #STE is "Standable Terrain Exploit(ation)"
         "Torvus Bog - Torvus Lagoon | STE to Save Room Ledge",
         "Torvus Bog - Torvus Plaza | STE SA to Item",
         "Torvus Bog - Torvus Plaza | Boost-only/Cannonball",
         "Torvus Bog - Torvus Plaza | Instant Unmorph BSJ to Entrance",
+        "Torvus Bog - Torvus Temple | Open Seeker Door without Seeker Missiles",
+        "Torvus Bog - Torvus Temple | Out of Bounds",
+        "Torvus Bog - Underground Tunnel | Instant Morph to enter Tunnel",
+        "Torvus Bog - Underground Tunnel | Wall Boost to enter Tunnel",
     ]
 
 
