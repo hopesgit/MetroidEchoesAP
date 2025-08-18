@@ -117,13 +117,20 @@ class Tricks(OptionList):
         "Torvus Bog - Great Bridge | Slope Jump SA to North Path",
         "Torvus Bog - Great Bridge | Slope Jump over Translator Gate",
         "Torvus Bog - Great Bridge | Wall Boost to North Path",
+        "Torvus Bog - Hydrodynamo Shaft | Carry Air Underwater from Hydrodynamo Station",
+        "Torvus Bog - Hydrodynamo Station | Air Underwater",
+        "Torvus Bog - Hydrodynamo Station | Boost Jump",
+        "Torvus Bog - Hydrodynamo Station | Underwater Dash",
+        "Torvus Bog - Main Hydrochamber | BSJ to skip Spider Track",
+        "Torvus Bog - Main Hydrochamber | Climb Central Pillar (NSJ)",
+        "Torvus Bog - Main Hydrochamber | Climb to Top Post-Alpha Blogg (NSJ)",
         "Torvus Bog - Plaza Access | Out of Bounds",
         "Torvus Bog - Portal Chamber | Wall Boost",
         "Torvus Bog - Temple Access | Wall Boost",
         "Torvus Bog - Torvus Grove | Climb Roots to reach Connected Ledge",
         "Torvus Bog - Torvus Grove | STE to Reach Curved Ledge",
         "Torvus Bog - Torvus Grove | Scan Dash to reach Curved Ledge",
-        "Torvus Bog - Torvus Grove | Instant Unmorph to reach Isolated Ledge" # this is harder going toward the door than coming from it
+        "Torvus Bog - Torvus Grove | Instant Unmorph to reach Isolated Ledge"
         "Torvus Bog - Torvus Lagoon | Air Underwater",
         "Torvus Bog - Torvus Lagoon | STE to Bridge", #STE is "Standable Terrain Exploit(ation)"
         "Torvus Bog - Torvus Lagoon | STE to Save Room Ledge",
