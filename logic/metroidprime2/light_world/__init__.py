@@ -448,8 +448,13 @@ def torvus_bog_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPrime2R
         TrainingChamber_WestCagedArea(region_name, player, multiworld),
 
         # Torvus Bog - Transit Tunnel East
+        TransitTunnelEast_CatacombsSide(region_name, player, multiworld),
+        TransitTunnelEast_TrainingChamberSide(region_name, player, multiworld),
 
         # Torvus Bog - Transit Tunnel South
+        TransitTunnelSouth_CatacombsSide(region_name, player, multiworld),
+        TransitTunnelSouth_GatheringHallSide(region_name, player, multiworld),
+        TransitTunnelSouth_MorphBallPuzzle(region_name, player, multiworld),
 
         # Torvus Bog - Transit Tunnel West
         TransitTunnelWest_NorthSide(region_name, player, multiworld),
