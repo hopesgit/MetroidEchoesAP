@@ -270,6 +270,11 @@ def torvus_bog_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPrime2R
         AbandonedWorksite_PickupLedge(region_name, player, multiworld),
 
         # Torvus Bog - Catacombs
+        Catacombs_KeybearerLedge(region_name, player, multiworld),
+        Catacombs_PortalLedge(region_name, player, multiworld),
+        Catacombs_TransitTunnelEastEntrance(region_name, player, multiworld),
+        Catacombs_TransitTunnelSouthEntrance(region_name, player, multiworld),
+        Catacombs_UnderWater(region_name, player, multiworld),
 
         # Torvus Bog - Catacombs Access
         CatacombsAccess_Catacombs_Side(region_name, player, multiworld),

@@ -105,6 +105,9 @@ class Tricks(OptionList):
         "Torvus Bog - Abandoned Worksite | NSJ SA to Pickup Ledge",
         "Torvus Bog - Abandoned Worksite | Boost Jump to Pickup Ledge",
         "Torvus Bog - Abandoned Worksite | Roll Jump to Pickup Ledge",
+        "Torvus Bog - Catacombs | Activate Bomb Slot without Bombs",
+        "Torvus Bog - Catacombs | Clip Through Gate", # bounce off of wall through cage bars using Screw Attack
+        "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot",
         "Torvus Bog - Catacombs Access | Instant Unmorph DBJ",
         "Torvus Bog - Forgotten Bridge | Scan Dash from Bridge",
         "Torvus Bog - Forgotten Bridge | Roll Jump from Bridge",
