@@ -9,7 +9,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Items import MetroidPrime2Item
 
 
-class TransportToAgonWastes(MetroidPrime2Region):
+class TorvusBog_TransportToAgonWastes(MetroidPrime2Region):
     name="Transport to Agon Wastes"
     exits_ = [
         MetroidPrime2Exit(

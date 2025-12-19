@@ -112,6 +112,8 @@ class Tricks(OptionList):
         "Torvus Bog - Forgotten Bridge | Bomb Jump Between Platforms",
         "Torvus Bog - Forgotten Bridge | Air Underwater",
         # "Torvus Bog - Forgotten Bridge | Climb by Standing on Enemies", # not sure about including this one since you can break it by killing the grenchlers
+        "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs",
+        "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments",
         "Torvus Bog - Great Bridge | Instant Unmorph to Cannon Ledge",
         "Torvus Bog - Great Bridge | Instant Unmorph to Scan Ledge",
         "Torvus Bog - Great Bridge | Scan Dash around Top",
@@ -140,6 +142,11 @@ class Tricks(OptionList):
         "Torvus Bog - Torvus Plaza | Instant Unmorph BSJ to Entrance",
         "Torvus Bog - Torvus Temple | Open Seeker Door without Seeker Missiles",
         "Torvus Bog - Torvus Temple | Out of Bounds",
+        "Torvus Bog - Training Chamber | Activate Bomb Slot without Bombs",
+        "Torvus Bog - Training Chamber | Bypass Statue with SJ",
+        "Torvus Bog - Training Chamber | Bypass Statue with Boost",
+        "Torvus Bog - Training Chamber | Extended Dash to Bomb Slot",
+        "Torvus Bog - Training Chamber | Reverse Air Underwater to Bomb Slot",
         "Torvus Bog - Underground Tunnel | Instant Morph to enter Tunnel",
         "Torvus Bog - Underground Tunnel | Wall Boost to enter Tunnel",
     ]

@@ -12,6 +12,7 @@ from ...generic.Rules import set_rule
 def regions_(player: int, multiworld: MultiWorld) -> dict[str, dict[str, MetroidPrime2Region]]:
     from .metroidprime2.dark_world import sky_temple_grounds_rooms
     from .metroidprime2.light_world import temple_grounds_rooms
+    from .metroidprime2.light_world import torvus_bog_rooms
 
     return {
         'Temple Grounds': {room.name: room for room in temple_grounds_rooms(player, multiworld)},
@@ -20,7 +21,7 @@ def regions_(player: int, multiworld: MultiWorld) -> dict[str, dict[str, Metroid
         #'Sky Temple': {room.name: room for room in sky_temple_rooms(player, multiworld)},
         #'Agon Wastes': {room.name: room for room in agon_wastes_rooms(player, multiworld)},
         #'Dark Agon Wastes': {room.name: room for room in dark_agon_wastes_rooms(player, multiworld)},
-        #'Torvus Bog': {room.name: room for room in torvus_bog_rooms(player, multiworld)},
+        'Torvus Bog': {room.name: room for room in torvus_bog_rooms(player, multiworld)},
         #'Dark Torvus Bog': {room.name: room for room in dark_torvus_bog_rooms(player, multiworld)},
         #'Sanctuary Fortress': {room.name: room for room in sanctuary_fortress_rooms(player, multiworld)},
         #'Ing Hive': {room.name: room for room in ing_hive_rooms(player, multiworld)},

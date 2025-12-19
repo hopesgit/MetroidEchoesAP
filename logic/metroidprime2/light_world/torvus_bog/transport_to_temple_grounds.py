@@ -6,7 +6,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_and, condition_or
 
 
-class TransportToTempleGrounds(MetroidPrime2Region):
+class TorvusBog_TransportToTempleGrounds(MetroidPrime2Region):
     name = "Transport to Temple Grounds"
     exits_ = [
         MetroidPrime2Exit(

@@ -9,7 +9,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Items import MetroidPrime2Item
 
 
-class ControllerAccess(MetroidPrime2Region):
+class TorvusBog_ControllerAccess(MetroidPrime2Region):
     name="Controller Access"
     exits_ = [
         MetroidPrime2Exit(

@@ -37,6 +37,45 @@ from .temple_grounds.transport_to_sanctuary_fortress import TransportToSanctuary
 from .temple_grounds.trooper_security_station import *
 from .temple_grounds.windchamber_gateway import *
 from .temple_grounds.windchamber_tunnel import *
+from .torvus_bog.abandoned_worksite import *
+from .torvus_bog.catacombs import *
+from .torvus_bog.catacombs_access import *
+from .torvus_bog.controller_access import *
+from .torvus_bog.forgotten_bridge import *
+from .torvus_bog.fortress_transport_access import *
+from .torvus_bog.gathering_access import *
+from .torvus_bog.gathering_hall import *
+from .torvus_bog.great_bridge import *
+from .torvus_bog.grove_access import *
+from .torvus_bog.hydrochamber_storage import *
+from .torvus_bog.hydrodynamo_shaft import *
+from .torvus_bog.hydrodynamo_station import *
+from .torvus_bog.main_hydrochamber import *
+from .torvus_bog.meditation_vista import *
+from .torvus_bog.path_of_roots import *
+from .torvus_bog.plaza_access import *
+from .torvus_bog.portal_chamber import *
+from .torvus_bog.ruined_alcove import *
+from .torvus_bog.save_station_a import *
+from .torvus_bog.save_station_b import *
+from .torvus_bog.temple_access import *
+from .torvus_bog.temple_transport_access import *
+from .torvus_bog.torvus_energy_controller import *
+from .torvus_bog.torvus_grove import *
+from .torvus_bog.torvus_lagoon import *
+from .torvus_bog.torvus_map_station import *
+from .torvus_bog.torvus_plaza import *
+from .torvus_bog.torvus_temple import *
+from .torvus_bog.training_access import *
+from .torvus_bog.training_chamber import *
+from .torvus_bog.transit_tunnel_east import *
+from .torvus_bog.transit_tunnel_south import *
+from .torvus_bog.transit_tunnel_west import *
+from .torvus_bog.transport_to_agon_wastes import *
+from .torvus_bog.transport_to_temple_grounds import *
+from .torvus_bog.transport_to_sanctuary_fortress import *
+from .torvus_bog.underground_transport import *
+from .torvus_bog.underground_tunnel import *
 
 
 def temple_grounds_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPrime2Region]:
@@ -216,4 +255,216 @@ def temple_grounds_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPri
         # Temple Grounds - Windchamber Tunnel
         WindchamberTunnel_GFMCCompoundSide(region_name, player, multiworld),
         WindchamberTunnel_GrandWindchamberSide(region_name, player, multiworld),
+    ]
+
+
+def torvus_bog_rooms(player: int, multiworld: MultiWorld) -> list[MetroidPrime2Region]:
+    region_name = "Torvus Bog"
+    return [
+        # Torvus Bog - Abandoned Worksite
+        AbandonedWorksite_ForgottenBridgeEntrance(region_name, player, multiworld),
+        AbandonedWorksite_GreatBridgeEntrance(region_name, player, multiworld),
+        AbandonedWorksite_LedgeForgottenBridgeSide(region_name, player, multiworld),
+        AbandonedWorksite_LedgeGreatBridgeSide(region_name, player, multiworld),
+        AbandonedWorksite_MorphBallTunnel(region_name, player, multiworld),
+        AbandonedWorksite_PickupLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Catacombs
+
+        # Torvus Bog - Catacombs Access
+        CatacombsAccess_Catacombs_Side(region_name, player, multiworld),
+        CatacombsAccess_HydrodynamoStation(region_name, player, multiworld),
+
+        # Torvus Bog - Controller Access
+        TorvusBog_ControllerAccess(region_name, player, multiworld),
+
+        # Torvus Bog - Forgotten Bridge
+        ForgottenBridge_Bridge(region_name, player, multiworld),
+        ForgottenBridge_Cage(region_name, player, multiworld),
+        ForgottenBridge_Cliffs(region_name, player, multiworld),
+        ForgottenBridge_DarkPortalLedge(region_name, player, multiworld),
+        ForgottenBridge_PickupLedge(region_name, player, multiworld),
+        ForgottenBridge_Shallows(region_name, player, multiworld),
+
+        # Torvus Bog - Fortress Transport Access
+        TorvusBog_FortressTransportAccess_AboveWater(region_name, player, multiworld),
+        TorvusBog_FortressTransportAccess_NorthLedge(region_name, player, multiworld),
+        TorvusBog_FortressTransportAccess_SouthLedge(region_name, player, multiworld),
+        TorvusBog_FortressTransportAccess_UnderWater(region_name, player, multiworld),
+
+        # Torvus Bog - Gathering Access
+        GatheringAccess(region_name, player, multiworld),
+
+        # Torvus Bog - Gathering Hall
+        GatheringHall_Bottom(region_name, player, multiworld),
+        GatheringHall_CannonLedge(region_name, player, multiworld),
+        GatheringHall_ItemLedge(region_name, player, multiworld),
+        GatheringHall_LaserLedge(region_name, player, multiworld),
+        GatheringHall_NorthDoorLedge(region_name, player, multiworld),
+        GatheringHall_PortalAlcove(region_name, player, multiworld),
+        GatheringHall_SouthDoorLedge(region_name, player, multiworld),
+        GatheringHall_SpiderTracks(region_name, player, multiworld),
+        GatheringHall_UpperDoorLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Great Bridge
+        GreatBridge_Beach(region_name, player, multiworld),
+        GreatBridge_BehindTranslatorGate(region_name, player, multiworld),
+        GreatBridge_Bridge(region_name, player, multiworld),
+        GreatBridge_CannonLedge(region_name, player, multiworld),
+        GreatBridge_MorphBallTunnel(region_name, player, multiworld),
+        GreatBridge_NorthPath(region_name, player, multiworld),
+        GreatBridge_ScanPanelLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Grove Access
+        GroveAccess(region_name, player, multiworld),
+
+        # Torvus Bog - Hydrochamber Storage
+        HydrochamberStorage(region_name, player, multiworld),
+
+        # Torvus Bog - Hydrodynamo Shaft
+        HydrodynamoShaft_Bottom(region_name, player, multiworld),
+        HydrodynamoShaft_Main(region_name, player, multiworld),
+        HydrodynamoShaft_PortalAlcove(region_name, player, multiworld),
+        HydrodynamoShaft_Stairs(region_name, player, multiworld),
+        HydrodynamoShaft_Top(region_name, player, multiworld),
+
+        # Torvus Bog - Hydrodynamo Station
+        HydrodynamoStation_AboveMovableBase(region_name, player, multiworld),
+        HydrodynamoStation_AboveWater(region_name, player, multiworld),
+        HydrodynamoStation_Cannon(region_name, player, multiworld),
+        HydrodynamoStation_EastDoorLedge(region_name, player, multiworld),
+        HydrodynamoStation_NorthDoorLedge(region_name, player, multiworld),
+        HydrodynamoStation_NorthScanLedge(region_name, player, multiworld),
+        HydrodynamoStation_ThreeDoors(region_name, player, multiworld),
+        HydrodynamoStation_Top(region_name, player, multiworld),
+        HydrodynamoStation_TopDoorLedge(region_name, player, multiworld),
+        HydrodynamoStation_UnderMovableBase(region_name, player, multiworld),
+        HydrodynamoStation_WestDoorLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Main Hydrochamber
+        MainHydrochamber_LowerDoor(region_name, player, multiworld),
+        MainHydrochamber_Main(region_name, player, multiworld),
+        MainHydrochamber_PortalLedge(region_name, player, multiworld),
+        MainHydrochamber_SpiderTrack(region_name, player, multiworld),
+        MainHydrochamber_Top(region_name, player, multiworld),
+
+        # Torvus Bog - Meditation Vista
+        MeditationVista_Entrance(region_name, player, multiworld),
+        MeditationVista_FloatingPlatform(region_name, player, multiworld),
+
+        # Torvus Bog - Path of Roots
+        PathOfRoots_AboveCage(region_name, player, multiworld),
+        PathOfRoots_GreatBridgeLedge(region_name, player, multiworld),
+        PathOfRoots_LagoonSide(region_name, player, multiworld),
+        PathOfRoots_Middle(region_name, player, multiworld),
+
+        # Torvus Bog - Plaza Access
+        TorvusBog_PlazaAccess_ForgottenBridgeEntrance(region_name, player, multiworld),
+        TorvusBog_PlazaAccess_HalfPipe(region_name, player, multiworld),
+        TorvusBog_PlazaAccess_Maze(region_name, player, multiworld),
+        TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(region_name, player, multiworld),
+        TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(region_name, player, multiworld),
+        TorvusBog_PlazaAccess_TorvusPlazaEntrance(region_name, player, multiworld),
+
+        # Torvus Bog - Portal Chamber
+        TorvusBog_PortalChamber_Center(region_name, player, multiworld),
+        TorvusBog_PortalChamber_GreatBridgeSide(region_name, player, multiworld),
+        TorvusBog_PortalChamber_MorphBallTunnel(region_name, player, multiworld),
+        TorvusBog_PortalChamber_TorvusLagoonSide(region_name, player, multiworld),
+
+        # Torvus Bog - Ruined Alcove
+        RuinedAlcove(region_name, player, multiworld),
+
+        # Torvus Bog - Save Station A
+        TorvusBog_SaveStationA(region_name, player, multiworld),
+
+        # Torvus Bog - Save Station B
+        TorvusBog_SaveStationB(region_name, player, multiworld),
+
+        # Torvus Bog - Temple Access
+        TorvusBog_TempleAccess_LowerGreatBridgeEntrance(region_name, player, multiworld),
+        TorvusBog_TempleAccess_LowerTorvusTempleEntrance(region_name, player, multiworld),
+        TorvusBog_TempleAccess_MorphBallTunnel(region_name, player, multiworld),
+        TorvusBog_TempleAccess_PickupTube(region_name, player, multiworld),
+        TorvusBog_TempleAccess_Upper(region_name, player, multiworld),
+
+        # Torvus Bog - Temple Transport Access
+        TorvusBog_TempleTransportAccess(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Energy Controller
+        TorvusEnergyController(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Grove
+        TorvusGrove_BehindBreakableWall(region_name, player, multiworld),
+        TorvusGrove_Center(region_name, player, multiworld),
+        TorvusGrove_ConnectorLedge(region_name, player, multiworld),
+        TorvusGrove_CurvedLedge(region_name, player, multiworld),
+        TorvusGrove_IsolatedLedge(region_name, player, multiworld),
+        TorvusGrove_UpperDoorLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Lagoon
+        TorvusLagoon_Beach(region_name, player, multiworld),
+        TorvusLagoon_Bridge(region_name, player, multiworld),
+        TorvusLagoon_PortalChamberLedge(region_name, player, multiworld),
+        TorvusLagoon_RuinedAlcoveLedge(region_name, player, multiworld),
+        TorvusLagoon_SaveRoomLedge(region_name, player, multiworld),
+        TorvusLagoon_UnderwaterLedge(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Map Station
+        TorvusMapStation(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Plaza
+        TorvusPlaza_CannonLedge(region_name, player, multiworld),
+        TorvusPlaza_Entrance(region_name, player, multiworld),
+        TorvusPlaza_HalfPipe(region_name, player, multiworld),
+        TorvusPlaza_ItemLedge(region_name, player, multiworld),
+        TorvusPlaza_SpiderChallenge(region_name, player, multiworld),
+        TorvusPlaza_SpiderTrack(region_name, player, multiworld),
+
+        # Torvus Bog - Torvus Temple
+        TorvusTemple_Arena(region_name, player, multiworld),
+        TorvusTemple_OutOfBounds(region_name, player, multiworld),
+        TorvusTemple_Underground(region_name, player, multiworld),
+        TorvusTemple_UndergroundTransportEntrance(region_name, player, multiworld),
+        TorvusTemple_Upper(region_name, player, multiworld),
+
+        # Torvus Bog - Training Access
+        TrainingAccess(region_name, player, multiworld),
+
+        # Torvus Bog - Training Chamber
+        TrainingChamber_BehindStatue(region_name, player, multiworld),
+        TrainingChamber_Center(region_name, player, multiworld),
+        TrainingChamber_EastCagedArea(region_name, player, multiworld),
+        TrainingChamber_LedgeBelowSouthDoor(region_name, player, multiworld),
+        TrainingChamber_NorthDoorLedge(region_name, player, multiworld),
+        TrainingChamber_SouthDoorLedge(region_name, player, multiworld),
+        TrainingChamber_SpiderTracks(region_name, player, multiworld),
+        TrainingChamber_StatuePlatform(region_name, player, multiworld),
+        TrainingChamber_WestCagedArea(region_name, player, multiworld),
+
+        # Torvus Bog - Transit Tunnel East
+
+        # Torvus Bog - Transit Tunnel South
+
+        # Torvus Bog - Transit Tunnel West
+        TransitTunnelWest_NorthSide(region_name, player, multiworld),
+        TransitTunnelWest_SouthSide(region_name, player, multiworld),
+
+        # Torvus Bog - Transport to Agon Wastes
+        TorvusBog_TransportToAgonWastes(region_name, player, multiworld),
+
+        # Torvus Bog - Transport to Sanctuary Fortress
+        TorvusBog_TransportToSanctuaryFortress(region_name, player, multiworld),
+
+        # Torvus Bog - Transport to Temple Grounds
+        TorvusBog_TransportToTempleGrounds(region_name, player, multiworld),
+
+        # Torvus Bog - Underground Transport
+        UndergroundTransport_Lower(region_name, player, multiworld),
+        UndergroundTransport_Shaft(region_name, player, multiworld),
+        UndergroundTransport_Upper(region_name, player, multiworld),
+
+        # Torvus Bog - Underground Tunnel
+        UndergroundTunnel_AfterFalls(region_name, player, multiworld),
+        UndergroundTunnel_Tunnel(region_name, player, multiworld),
     ]

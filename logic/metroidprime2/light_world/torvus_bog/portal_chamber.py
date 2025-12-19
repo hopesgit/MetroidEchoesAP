@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class PortalChamber_Center(MetroidPrime2Region):
+class TorvusBog_PortalChamber_Center(MetroidPrime2Region):
     name="Portal Chamber"
     desc="Center"
     exits_ = [
@@ -30,7 +30,7 @@ class PortalChamber_Center(MetroidPrime2Region):
         ]
 
 
-class PortalChamber_GreatBridgeSide(MetroidPrime2Region):
+class TorvusBog_PortalChamber_GreatBridgeSide(MetroidPrime2Region):
     name = "Portal Chamber"
     desc = "Great Bridge Side"
     exits_ = [
@@ -52,7 +52,7 @@ class PortalChamber_GreatBridgeSide(MetroidPrime2Region):
     ]
 
 
-class PortalChamber_MorphBallTunnel(MetroidPrime2Region):
+class TorvusBog_PortalChamber_MorphBallTunnel(MetroidPrime2Region):
     name = "Portal Chamber"
     desc = "Morph Ball Tunnel"
     exits_ = [
@@ -79,7 +79,7 @@ class PortalChamber_MorphBallTunnel(MetroidPrime2Region):
     ]
 
 
-class PortalChamber_TorvusLagoonSide(MetroidPrime2Region):
+class TorvusBog_PortalChamber_TorvusLagoonSide(MetroidPrime2Region):
     name="Portal Chamber"
     desc="Torvus Lagoon Side"
     exits_ = [

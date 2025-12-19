@@ -8,7 +8,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Items import MetroidPrime2Item
 
 
-class SaveStationB(MetroidPrime2Region):
+class TorvusBog_SaveStationB(MetroidPrime2Region):
     name="Save Station B"
     exits_ = [
         MetroidPrime2Exit(

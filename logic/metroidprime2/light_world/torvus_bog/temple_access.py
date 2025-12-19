@@ -13,7 +13,7 @@ class _TempleAccess(MetroidPrime2Region):
     name="Temple Access"
 
 
-class TempleAccess_Upper(_TempleAccess):
+class TorvusBog_TempleAccess_Upper(_TempleAccess):
     desc="Upper"
     exits_ = [
         MetroidPrime2Exit(
@@ -36,7 +36,7 @@ class TempleAccess_Upper(_TempleAccess):
     ]
 
 
-class TempleAccess_PickupTube(_TempleAccess):
+class TorvusBog_TempleAccess_PickupTube(_TempleAccess):
     desc="Pickup Tube"
     exits_ = [
         MetroidPrime2Exit(
@@ -57,7 +57,7 @@ class TempleAccess_PickupTube(_TempleAccess):
         ]
 
 
-class TempleAccess_LowerGreatBridgeEntrance(_TempleAccess):
+class TorvusBog_TempleAccess_LowerGreatBridgeEntrance(_TempleAccess):
     desc="Lower Great Bridge Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -72,7 +72,7 @@ class TempleAccess_LowerGreatBridgeEntrance(_TempleAccess):
     ]
 
 
-class TempleAccess_LowerTorvusTempleEntrance(_TempleAccess):
+class TorvusBog_TempleAccess_LowerTorvusTempleEntrance(_TempleAccess):
     desc="Lower Torvus Temple Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -87,7 +87,7 @@ class TempleAccess_LowerTorvusTempleEntrance(_TempleAccess):
     ]
 
 
-class TempleAccess_MorphBallTunnel(_TempleAccess):
+class TorvusBog_TempleAccess_MorphBallTunnel(_TempleAccess):
     desc="Morph Ball Tunnel"
     exits_ = [
         MetroidPrime2Exit(

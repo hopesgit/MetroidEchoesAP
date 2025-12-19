@@ -9,33 +9,33 @@ from .....Items import MetroidPrime2Item
 
 
 def _has_scanned_panels(state, player) -> bool:
-    condition_and([
+    return condition_and([
         state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
         state.has("Torvus Bog - Hydrodynamo Station | Scanned West Panel", player),
         state.has("Torvus Bog - Hydrodynamo Station | Scanned East Panel", player),
     ])
 
 def _can_boost_jump(state, player) -> bool:
-    condition_and([
+    return condition_and([
         has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Boost Jump"),
         can_use_boost_ball(state, player)
     ])
 
 def _can_underwater_dash(state, player) -> bool:
-    condition_and([
+    return condition_and([
         has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash"),
         state.has("Space Jump Boots", player),
         not state.has("Gravity Boost", player)
     ])
 
 def _can_underwater_boost_jump(state, player) -> bool:
-    condition_and([
+    return condition_and([
         _can_boost_jump(state, player),
         _can_underwater_dash(state, player)
     ])
 
 def _underwater_movement(state, player) -> bool:
-    condition_or([
+    return condition_or([
         state.has("Gravity Boost", player),
         _can_underwater_dash(state, player)
     ])
