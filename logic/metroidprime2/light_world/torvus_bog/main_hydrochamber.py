@@ -1,8 +1,7 @@
 from BaseClasses import MultiWorld, ItemClassification
 
 from Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_boost_ball, has_missile_count, \
-    can_activate_dark_portal, can_use_screw_attack, can_use_charged_power_beam, can_use_spider_ball
+from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -17,6 +16,13 @@ def _spider_track_open(state, player) -> bool:
             state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player)
         ])
     ])
+
+
+def can_survive_alpha_blogg(state, player) -> bool:
+    itemlist = ['Space Jump Boots', 'Gravity Boost', 'Screw Attack', 'Charge Beam', 'Dark Beam', 'Dark Suit',
+                'Light Suit', 'Energy Tank']
+    threshold = 5
+    return state.has_from_list(itemlist, player, threshold)
 
 
 class _MainHydrochamber(MetroidPrime2Region):
@@ -88,13 +94,7 @@ class MainHydrochamber_Main(_MainHydrochamber):
                     code=None,
                     player=player,
                 ),
-                can_access=lambda state, player: True, # todo: combat logic
-                # the boss here is easier with the following items:
-                # - Dark Beam w/ Charge
-                # - Gravity Boost
-                # - Space Jump Boots
-                # - x E-tanks
-                # - Screw Attack
+                can_access=lambda state, player: can_survive_alpha_blogg(state, player),
                 parent=self,
             ),
         ]
