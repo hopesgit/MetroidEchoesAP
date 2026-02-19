@@ -1,6 +1,6 @@
 from BaseClasses import MultiWorld, ItemClassification
-from Utils import condition_or, condition_and
-from logic.metroidprime2 import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_boost_ball, has_missile_count
+from src.Utils import condition_or, condition_and
+from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball, has_missile_count
 
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item

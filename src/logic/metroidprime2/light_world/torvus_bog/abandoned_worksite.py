@@ -1,7 +1,7 @@
 from BaseClasses import MultiWorld, ItemClassification
 
 from src.Utils import condition_or, condition_and
-from ....metroidprime2 import has_trick_enabled, can_lay_bomb
+from ... import has_trick_enabled, can_lay_bomb
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

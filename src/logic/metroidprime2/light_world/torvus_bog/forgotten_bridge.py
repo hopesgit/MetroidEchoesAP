@@ -1,25 +1,12 @@
 from BaseClasses import MultiWorld, ItemClassification
-from Utils import condition_or, condition_and
-from logic.metroidprime2 import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_dark_beam, can_activate_dark_portal
+from src.Utils import condition_or, condition_and
+from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal
 
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
-
-# regions:
-# bridge
-# cage
-# cliffs
-# dark portal ledge
-# pickup ledge
-# shallows
-
-# this room depends on activating the bomb slot in the dark world for one of its states. I'll call that
-#   "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"
-# another state is activated via the spinner in the cage area. I'll call that
-#   "Torvus Bog - Forgotten Bridge | Spinner Activated"
 
 class _ForgottenBridge(MetroidPrime2Region):
     name="Forgotten Bridge"

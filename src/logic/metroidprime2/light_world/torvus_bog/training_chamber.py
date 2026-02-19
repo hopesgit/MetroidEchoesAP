@@ -1,7 +1,6 @@
-from BaseClasses import MultiWorld, ItemClassification
-from Utils import condition_or, condition_and
-from logic.metroidprime2 import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_darkburst, \
-    can_use_sunburst, \
+from BaseClasses import Multiworld, ItemClassification
+from src.Utils import condition_or, condition_and
+from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_darkburst, can_use_sunburst, \
     can_use_sonic_boom, can_use_boost_ball, can_use_spider_ball
 
 from .....Enums import DoorCover
@@ -59,8 +58,6 @@ class TrainingChamber_EastCagedArea(_TrainingChamber):
 
 
 class TrainingChamber_Center(_TrainingChamber):
-    # When it comes to the rotating tunnel, I'm not sure how to account for it. If its position can be tracked, that would be helpful.
-    # Otherwise, I intend to treat it as:
     # - East and West Caged Areas can only connect to the center via Gravity Boost
     # - The Center can connect outward using the spinner mechanism, but only after the Bloggs are dead
     desc="Center"

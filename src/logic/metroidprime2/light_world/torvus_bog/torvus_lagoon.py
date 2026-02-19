@@ -1,6 +1,5 @@
 from BaseClasses import MultiWorld, ItemClassification
-from logic.metroidprime2 import has_trick_enabled, can_use_screw_attack
-
+from ... import has_trick_enabled, can_use_screw_attack
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location

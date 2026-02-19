@@ -1,5 +1,3 @@
-from BaseClasses import MultiWorld, ItemClassification
-
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
