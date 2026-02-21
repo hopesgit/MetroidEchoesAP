@@ -9,6 +9,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # tricks in this room:
 # "Torvus Bog - Hydrodynamo Station | Boost Jump"
 # - Cross gaps using the speed and momentum of a boost ball while underwater. Requires good unmorph timing to get an instant unmorph.
+# - https://youtu.be/7I2Jl824CMI
 
 # "Torvus Bog - Hydrodynamo Station | Underwater Dash"
 # - Dash while entering the water, preserving your momentum by taking advantage of the underwater physics.
@@ -20,6 +21,10 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # - You can activate Air Underwater by causing a camera transition while entering the water. This is almost always done by morphing.
 # - https://youtu.be/g7DeBeDMpeU
 
+# "Torvus Bog - Hydrodynamo Station | Seeker Skip"
+# - Break the Seeker locks using Missiles and Screw Attack.
+# - Requires Air Underwater since you can't Screw Attack underwater normally.
+# - https://youtu.be/ALjnm411Ldk
 
 class TorvusBog_HydrodynamoStation_AboveWater(MetroidPrime2Region):
     name="Hydrodynamo Station"
@@ -178,7 +183,8 @@ class TorvusBog_HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
                 condition_and([
                     has_missile_count(state, player, 5),
                     state.has("Screw Attack", player),
-                    has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Air Underwater")
+                    has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Air Underwater"),
+                    has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Seeker Skip")
                 ])
             ])
         ),

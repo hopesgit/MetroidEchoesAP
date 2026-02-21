@@ -142,6 +142,7 @@ class Tricks(OptionList):
         "Torvus Bog - Hydrodynamo Shaft | Carry Air Underwater from Hydrodynamo Station",
         "Torvus Bog - Hydrodynamo Station | Air Underwater",
         "Torvus Bog - Hydrodynamo Station | Boost Jump",
+        "Torvus Bog - Hydrodynamo Station | Seeker Skip",
         "Torvus Bog - Hydrodynamo Station | Underwater Dash",
         "Torvus Bog - Main Hydrochamber | BSJ to skip Spider Track",
         "Torvus Bog - Main Hydrochamber | Climb Central Pillar (NSJ)",
