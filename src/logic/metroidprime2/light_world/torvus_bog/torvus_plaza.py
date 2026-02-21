@@ -1,7 +1,6 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball, can_use_spider_ball, can_use_screw_attack
-
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -12,11 +11,8 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # "Torvus Bog - Torvus Plaza | BSJ to Entrance",
 
 
-class _TorvusPlaza(MetroidPrime2Region):
-    name="Torvus Plaza"
-
-
-class TorvusPlaza_Entrance(_TorvusPlaza):
+class TorvusBog_TorvusPlaza_Entrance(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc="Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -48,7 +44,8 @@ class TorvusPlaza_Entrance(_TorvusPlaza):
     ]
 
 
-class TorvusPlaza_HalfPipe(_TorvusPlaza):
+class TorvusBog_TorvusPlaza_HalfPipe(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc = "Half-Pipe"
     exits_ = [
         MetroidPrime2Exit(
@@ -75,7 +72,8 @@ class TorvusPlaza_HalfPipe(_TorvusPlaza):
     ]
 
 
-class TorvusPlaza_SpiderTrack(_TorvusPlaza):
+class TorvusBog_TorvusPlaza_SpiderTrack(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc="Spider Track" # this includes the standable tree area near the back of the room.
     # It's the beginning of the track, ending just before the Sporb
     exits_ = [
@@ -108,7 +106,9 @@ class TorvusPlaza_SpiderTrack(_TorvusPlaza):
         )
     ]
 
-class TorvusPlaza_SpiderChallenge(_TorvusPlaza):
+
+class TorvusBog_TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc="Spider Challenge" # this includes the more difficult parts of the track, from the sporb area to the cannon ledge
     exits_ = [
         MetroidPrime2Exit(
@@ -137,7 +137,8 @@ class TorvusPlaza_SpiderChallenge(_TorvusPlaza):
     ]
 
 
-class TorvusPlaza_CannonLedge(_TorvusPlaza):
+class TorvusBog_TorvusPlaza_CannonLedge(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc="Cannon Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -155,7 +156,8 @@ class TorvusPlaza_CannonLedge(_TorvusPlaza):
     ]
 
 
-class TorvusPlaza_ItemLedge(_TorvusPlaza):
+class TorvusBog_TorvusPlaza_ItemLedge(MetroidPrime2Region):
+    name = "Torvus Plaza"
     desc="Item Ledge"
     exits_ = [
         MetroidPrime2Exit(

@@ -2,11 +2,8 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _UndergroundTransport(MetroidPrime2Region):
+class UndergroundTransport_Upper(MetroidPrime2Region):
     name="Underground Transport"
-
-
-class UndergroundTransport_Upper(_UndergroundTransport):
     desc="Upper"
     exits_ = [
         MetroidPrime2Exit(
@@ -23,7 +20,8 @@ class UndergroundTransport_Upper(_UndergroundTransport):
     ]
 
 
-class UndergroundTransport_Shaft(_UndergroundTransport):
+class UndergroundTransport_Shaft(MetroidPrime2Region):
+    name="Underground Transport"
     desc="Shaft"
     exits_ = [
         MetroidPrime2Exit(
@@ -37,7 +35,8 @@ class UndergroundTransport_Shaft(_UndergroundTransport):
     ]
 
 
-class UndergroundTransport_Lower(_UndergroundTransport):
+class UndergroundTransport_Lower(MetroidPrime2Region):
+    name="Underground Transport"
     desc="Upper"
     exits_ = [
         MetroidPrime2Exit(

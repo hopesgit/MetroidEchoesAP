@@ -1,8 +1,6 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_lay_pb, can_use_screw_attack, can_use_darkburst, \
-    can_use_sonic_boom
-
+from ... import has_trick_enabled, can_lay_bomb , can_use_screw_attack, can_use_darkburst, can_use_sonic_boom
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
@@ -57,16 +55,9 @@ def can_activate_bomb_slot(state, player) -> bool:
     ])
 
 
-class _Catacombs(MetroidPrime2Region):
-    """A room characterized by a gated-off Dark Portal suspended above a large pool of water.
-    Contains a Keybearer body.
-    Enemies: Bloggs in water.
-    Doors: 1 Blue, 1 Black, 1 Zebra-stripe, 1 Dark Portal"""
-    name="Catacombs"
-
-
-class Catacombs_TransitTunnelEastEntrance(_Catacombs):
+class TorvusBog_Catacombs_TransitTunnelEastEntrance(MetroidPrime2Region):
     """An isolated ledge with a blue door that connects to Transit Tunnel East."""
+    name="Catacombs"
     desc="Transit Tunnel East Entrance"
     exits_=[
         MetroidPrime2Exit(
@@ -89,8 +80,9 @@ class Catacombs_TransitTunnelEastEntrance(_Catacombs):
     ]
 
 
-class Catacombs_TransitTunnelSouthEntrance(_Catacombs):
+class TorvusBog_Catacombs_TransitTunnelSouthEntrance(MetroidPrime2Region):
     """A connected ledge with a zebra-stripe door that connects to Transit Tunnel South."""
+    name="Catacombs"
     desc="Transit Tunnel South Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -113,11 +105,12 @@ class Catacombs_TransitTunnelSouthEntrance(_Catacombs):
     ]
 
 
-class Catacombs_KeybearerLedge(_Catacombs):
+class TorvusBog_Catacombs_KeybearerLedge(MetroidPrime2Region):
     """A ledge sandwiched between two door alcoves and the large pool in the center of the room.
     The Keybearer Luminoth body is its most notable feature. Entry: G-Sch's Testament
     Contains a black door leading to Catacombs Access.
     Contains Grenchler enemies (later visits)."""
+    name="Catacombs"
     desc="Keybearer Ledge"
     exits_=[
         MetroidPrime2Exit(
@@ -153,9 +146,10 @@ class Catacombs_KeybearerLedge(_Catacombs):
     ]
 
 
-class Catacombs_UnderWater(_Catacombs):
+class TorvusBog_Catacombs_UnderWater(MetroidPrime2Region):
     """The pool in the center of the room.
     Contains Blogg enemies (first visit) and a Bomb Slot."""
+    name="Catacombs"
     desc="Under Water"
     exits_ = [
         MetroidPrime2Exit(
@@ -185,10 +179,11 @@ class Catacombs_UnderWater(_Catacombs):
         ]
 
 
-class Catacombs_PortalLedge(_Catacombs):
+class TorvusBog_Catacombs_PortalLedge(MetroidPrime2Region):
     """An isolated ledge suspended above the central pool.
     Until the Bomb Slot is used, it is barred from entry by a wrap-around gate.
     Contains a Lore Projector. Entry: The New Terror (GC)/Recovering Energy (Wii)"""
+    name="Catacombs"
     desc="Portal Ledge"
     exits_=[
         MetroidPrime2Exit(

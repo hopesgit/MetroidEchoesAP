@@ -5,7 +5,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class MeditationVista_Entrance(MetroidPrime2Region):
+class TorvusBog_MeditationVista_Entrance(MetroidPrime2Region):
     name = "Meditation Vista"
     desc = "Entrance"
     exits_ = [
@@ -26,7 +26,7 @@ class MeditationVista_Entrance(MetroidPrime2Region):
     ]
 
 
-class MeditationVista_FloatingPlatform(MetroidPrime2Region):
+class TorvusBog_MeditationVista_FloatingPlatform(MetroidPrime2Region):
     name="Meditation Vista"
     desc="Floating Platform"
     exits_ = [

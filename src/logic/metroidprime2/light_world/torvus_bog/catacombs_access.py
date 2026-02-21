@@ -1,13 +1,11 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_boost_ball, has_missile_count, \
-    can_activate_dark_portal, can_use_screw_attack, can_use_charged_power_beam, can_use_spider_ball
-
+from ... import has_trick_enabled, can_lay_bomb
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class CatacombsAccess_Catacombs_Side(MetroidPrime2Region):
+class TorvusBog_CatacombsAccess_CatacombsSide(MetroidPrime2Region):
     name="Catacombs Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -22,7 +20,7 @@ class CatacombsAccess_Catacombs_Side(MetroidPrime2Region):
     ]
 
 
-class CatacombsAccess_HydrodynamoStation(MetroidPrime2Region):
+class TorvusBog_CatacombsAccess_HydrodynamoStationSide(MetroidPrime2Region):
     name="Hydrodynamo Station Side"
     exits_ = [
         MetroidPrime2Exit(

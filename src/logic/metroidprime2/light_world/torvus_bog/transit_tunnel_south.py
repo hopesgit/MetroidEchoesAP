@@ -1,3 +1,5 @@
+"""Morph Ball puzzle room connecting Gathering Hall and Catacombs."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_and
 from ... import can_lay_bomb
@@ -13,12 +15,8 @@ def can_progress_room(state, player) -> bool:
     ])
 
 
-class _TransitTunnelSouth(MetroidPrime2Region):
-    """Morph Ball puzzle room connecting Gathering Hall and Catacombs."""
+class TorvusBog_TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
     name = "Transit Tunnel South"
-
-
-class TransitTunnelSouth_CatacombsSide(_TransitTunnelSouth):
     desc="Catacombs Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -33,7 +31,8 @@ class TransitTunnelSouth_CatacombsSide(_TransitTunnelSouth):
     ]
 
 
-class TransitTunnelSouth_GatheringHallSide(_TransitTunnelSouth):
+class TorvusBog_TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
+    name = "Transit Tunnel South"
     desc="Gathering Hall Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -48,7 +47,8 @@ class TransitTunnelSouth_GatheringHallSide(_TransitTunnelSouth):
     ]
 
 
-class TransitTunnelSouth_MorphBallPuzzle(_TransitTunnelSouth):
+class TorvusBog_TransitTunnelSouth_MorphBallPuzzle(MetroidPrime2Region):
+    name = "Transit Tunnel South"
     desc = "Morph Ball Puzzle"
     exits_= [
         MetroidPrime2Exit(

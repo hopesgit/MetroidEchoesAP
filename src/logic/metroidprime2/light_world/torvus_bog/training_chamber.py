@@ -1,19 +1,22 @@
-from BaseClasses import Multiworld, ItemClassification
+from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_darkburst, can_use_sunburst, \
-    can_use_sonic_boom, can_use_boost_ball, can_use_spider_ball
-
+from ... import (
+    has_trick_enabled,
+    can_lay_bomb,
+    can_use_screw_attack,
+    can_use_darkburst,
+    can_use_sonic_boom,
+    can_use_boost_ball,
+    can_use_spider_ball
+)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _TrainingChamber(MetroidPrime2Region):
+class TorvusBog_TrainingChamber_WestCagedArea(MetroidPrime2Region):
     name="Training Chamber"
-
-
-class TrainingChamber_WestCagedArea(_TrainingChamber):
     desc="West Caged Area"
     exits_ = [
         MetroidPrime2Exit(
@@ -35,7 +38,8 @@ class TrainingChamber_WestCagedArea(_TrainingChamber):
     ]
 
 
-class TrainingChamber_EastCagedArea(_TrainingChamber):
+class TorvusBog_TrainingChamber_EastCagedArea(MetroidPrime2Region):
+    name="Training Chamber"
     desc="East Caged Area"
     exits_ = [
         MetroidPrime2Exit(
@@ -57,9 +61,10 @@ class TrainingChamber_EastCagedArea(_TrainingChamber):
     ]
 
 
-class TrainingChamber_Center(_TrainingChamber):
+class TorvusBog_TrainingChamber_Center(MetroidPrime2Region):
     # - East and West Caged Areas can only connect to the center via Gravity Boost
     # - The Center can connect outward using the spinner mechanism, but only after the Bloggs are dead
+    name="Training Chamber"
     desc="Center"
     exits_ = [
         MetroidPrime2Exit(
@@ -107,7 +112,8 @@ class TrainingChamber_Center(_TrainingChamber):
         ]
 
 
-class TrainingChamber_StatuePlatform(_TrainingChamber):
+class TorvusBog_TrainingChamber_StatuePlatform(MetroidPrime2Region):
+    name="Training Chamber"
     desc="Statue Platform"
     exits_ = [
         MetroidPrime2Exit(
@@ -142,7 +148,6 @@ class TrainingChamber_StatuePlatform(_TrainingChamber):
                         has_trick_enabled(state, player, "Torvus Bog - Training Chamber | Activate Bomb Slot without Bombs"),
                         condition_or([
                             can_use_darkburst(state, player),
-                            can_use_sunburst(state, player),
                             can_use_sonic_boom(state, player),
                         ]),
                         state.has("Morph Ball", player)
@@ -153,7 +158,8 @@ class TrainingChamber_StatuePlatform(_TrainingChamber):
         ]
 
 
-class TrainingChamber_SouthDoorLedge(_TrainingChamber):
+class TorvusBog_TrainingChamber_SouthDoorLedge(MetroidPrime2Region):
+    name="Training Chamber"
     desc="South Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -175,7 +181,8 @@ class TrainingChamber_SouthDoorLedge(_TrainingChamber):
     ]
 
 
-class TrainingChamber_LedgeBelowSouthDoor(_TrainingChamber):
+class TorvusBog_TrainingChamber_LedgeBelowSouthDoor(MetroidPrime2Region):
+    name="Training Chamber"
     desc="Ledge Below South Door"
     exits_ = [
         MetroidPrime2Exit(
@@ -202,7 +209,8 @@ class TrainingChamber_LedgeBelowSouthDoor(_TrainingChamber):
     ]
 
 
-class TrainingChamber_BehindStatue(_TrainingChamber):
+class TorvusBog_TrainingChamber_BehindStatue(MetroidPrime2Region):
+    name="Training Chamber"
     desc="Behind Statue"
     exits_ = [
         MetroidPrime2Exit(
@@ -227,7 +235,8 @@ class TrainingChamber_BehindStatue(_TrainingChamber):
         ]
 
 
-class TrainingChamber_NorthDoorLedge(_TrainingChamber):
+class TorvusBog_TrainingChamber_NorthDoorLedge(MetroidPrime2Region):
+    name="Training Chamber"
     desc="North Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -256,7 +265,8 @@ class TrainingChamber_NorthDoorLedge(_TrainingChamber):
     ]
 
 
-class TrainingChamber_SpiderTracks(_TrainingChamber):
+class TorvusBog_TrainingChamber_SpiderTracks(MetroidPrime2Region):
+    name="Training Chamber"
     desc="Spider Tracks"
     exits_ = [
         MetroidPrime2Exit(

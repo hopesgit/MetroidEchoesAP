@@ -1,16 +1,12 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack
-
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _HydrodynamoShaft(MetroidPrime2Region):
+class TorvusBog_HydrodynamoShaft_Top(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
-
-
-class HydrodynamoShaft_Top(_HydrodynamoShaft):
     desc= "Top"
     exits_ = [
         MetroidPrime2Exit(
@@ -25,7 +21,8 @@ class HydrodynamoShaft_Top(_HydrodynamoShaft):
     ]
 
 
-class HydrodynamoShaft_Stairs(_HydrodynamoShaft):
+class TorvusBog_HydrodynamoShaft_Stairs(MetroidPrime2Region):
+    name="Hydrodynamo Shaft"
     desc= "Stairs"
     exits_ = [
         MetroidPrime2Exit(
@@ -47,7 +44,8 @@ class HydrodynamoShaft_Stairs(_HydrodynamoShaft):
     ]
 
 
-class HydrodynamoShaft_Main(_HydrodynamoShaft):
+class TorvusBog_HydrodynamoShaft_Main(MetroidPrime2Region):
+    name="Hydrodynamo Shaft"
     desc= "Main"
     exits_ = [
         MetroidPrime2Exit(
@@ -70,7 +68,8 @@ class HydrodynamoShaft_Main(_HydrodynamoShaft):
     ]
 
 
-class HydrodynamoShaft_PortalAlcove(_HydrodynamoShaft):
+class TorvusBog_HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
+    name="Hydrodynamo Shaft"
     desc= "Portal Alcove"
     exits_ = [
         MetroidPrime2Exit(
@@ -83,7 +82,8 @@ class HydrodynamoShaft_PortalAlcove(_HydrodynamoShaft):
         )
     ]
 
-class HydrodynamoShaft_Bottom(_HydrodynamoShaft):
+class TorvusBog_HydrodynamoShaft_Bottom(MetroidPrime2Region):
+    name="Hydrodynamo Shaft"
     desc= "Bottom"
     exits_ = [
         MetroidPrime2Exit(

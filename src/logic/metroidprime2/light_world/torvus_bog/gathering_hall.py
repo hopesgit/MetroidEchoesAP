@@ -1,8 +1,17 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack, can_use_grapple_beam, \
-    can_use_dark_beam, can_use_darkburst, can_use_sonic_boom, can_use_sunburst
-
+from ... import (
+    has_trick_enabled,
+    can_lay_pb,
+    can_lay_bomb,
+    can_activate_dark_portal,
+    can_use_screw_attack,
+    can_use_grapple_beam,
+    can_use_dark_beam,
+    can_use_darkburst,
+    can_use_sonic_boom,
+    can_use_sunburst
+)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
@@ -12,16 +21,16 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # solo bomb slot: lowers the gate locking off the portal
 # paired bomb slots: removes barrier around item; extends platform from wall below item ledge
 # spiny platforms don't stay flipped on room reload, so they aren't room state entities
+# the spiny platforms can no longer be interacted with once the water is drained
 
 
 def _can_operate_bomb_slot(state, player, trick: str = None) -> bool:
-    condition_and([
+    return condition_and([
         state.has("Morph Ball", player),
         condition_or([
             condition_and([
                 has_trick_enabled(state, player, trick),
                 condition_or([
-                    can_use_sunburst(state, player),
                     can_use_darkburst(state, player),
                     can_use_sonic_boom(state, player)
                 ])
@@ -31,11 +40,8 @@ def _can_operate_bomb_slot(state, player, trick: str = None) -> bool:
     ])
 
 
-class _GatheringHall(MetroidPrime2Region):
+class TorvusBog_GatheringHall_UpperDoorLedge(MetroidPrime2Region):
     name="Gathering Hall"
-
-
-class GatheringHall_UpperDoorLedge(_GatheringHall):
     desc="Upper Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -80,7 +86,8 @@ class GatheringHall_UpperDoorLedge(_GatheringHall):
     ]
 
 
-class GatheringHall_CannonLedge(_GatheringHall):
+class TorvusBog_GatheringHall_CannonLedge(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Cannon Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -122,7 +129,8 @@ class GatheringHall_CannonLedge(_GatheringHall):
     ]
 
 
-class GatheringHall_ItemLedge(_GatheringHall):
+class TorvusBog_GatheringHall_ItemLedge(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Item Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -169,7 +177,8 @@ class GatheringHall_ItemLedge(_GatheringHall):
         ]
 
 
-class GatheringHall_LaserLedge(_GatheringHall):
+class TorvusBog_GatheringHall_LaserLedge(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Laser Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -191,7 +200,8 @@ class GatheringHall_LaserLedge(_GatheringHall):
     ]
 
 
-class GatheringHall_NorthDoorLedge(_GatheringHall):
+class TorvusBog_GatheringHall_NorthDoorLedge(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="North Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -224,7 +234,8 @@ class GatheringHall_NorthDoorLedge(_GatheringHall):
     ]
 
 
-class GatheringHall_SouthDoorLedge(_GatheringHall):
+class TorvusBog_GatheringHall_SouthDoorLedge(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="South Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -271,7 +282,6 @@ class GatheringHall_SouthDoorLedge(_GatheringHall):
                         has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
                         condition_or([
                             can_use_darkburst(state, player),
-                            can_use_sunburst(state, player),
                             can_use_sonic_boom(state, player),
                         ]),
                         state.has("Morph Ball", player)
@@ -282,7 +292,8 @@ class GatheringHall_SouthDoorLedge(_GatheringHall):
         ]
 
 
-class GatheringHall_Bottom(_GatheringHall):
+class TorvusBog_GatheringHall_Bottom(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Bottom"
     exits_ = [
         MetroidPrime2Exit(
@@ -323,7 +334,8 @@ class GatheringHall_Bottom(_GatheringHall):
         ]
 
 
-class GatheringHall_PortalAlcove(_GatheringHall):
+class TorvusBog_GatheringHall_PortalAlcove(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Portal Alcove"
     exits_ = [
         MetroidPrime2Exit(
@@ -337,7 +349,8 @@ class GatheringHall_PortalAlcove(_GatheringHall):
     ]
 
 
-class GatheringHall_SpiderTracks(_GatheringHall):
+class TorvusBog_GatheringHall_SpiderTracks(MetroidPrime2Region):
+    name="Gathering Hall"
     desc="Spider Tracks"
     exits_ = [
         MetroidPrime2Exit(
@@ -371,7 +384,6 @@ class GatheringHall_SpiderTracks(_GatheringHall):
                             condition_and([
                                 has_trick_enabled(state, player,
                                                   "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
-                                can_use_sunburst(state, player),
                                 can_use_darkburst(state, player),
                                 can_use_sonic_boom(state, player)
                             ]),

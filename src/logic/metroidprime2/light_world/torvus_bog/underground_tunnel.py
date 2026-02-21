@@ -6,7 +6,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class UndergroundTunnel_Tunnel(MetroidPrime2Region):
+class TorvusBog_UndergroundTunnel_Tunnel(MetroidPrime2Region):
     name="Underground Tunnel"
     desc="Tunnel"
     exits_ = [
@@ -33,7 +33,7 @@ class UndergroundTunnel_Tunnel(MetroidPrime2Region):
         ]
 
 
-class UndergroundTunnel_AfterFalls(MetroidPrime2Region):
+class TorvusBog_UndergroundTunnel_AfterFalls(MetroidPrime2Region):
     name="Underground Tunnel"
     desc="Tunnel"
     exits_ = [

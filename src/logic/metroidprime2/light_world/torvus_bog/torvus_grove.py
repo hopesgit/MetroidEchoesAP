@@ -1,17 +1,13 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_screw_attack, can_use_boost_ball
-
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _TorvusGrove(MetroidPrime2Region):
-    name="Torvus Grove"
-
-
-class TorvusGrove_Center(_TorvusGrove):
+class TorvusBog_TorvusGrove_Center(MetroidPrime2Region):
+    name = "Torvus Grove"
     desc="Center" # pretty much the entire bottom
     exits_ = [
         MetroidPrime2Exit(
@@ -40,7 +36,8 @@ class TorvusGrove_Center(_TorvusGrove):
     ]
 
 
-class TorvusGrove_BehindBreakableWall(_TorvusGrove):
+class TorvusBog_TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
+    name = "Torvus Grove"
     desc="Behind Breakable Wall" # behind the wall broken by the felled tree
     exits_ = [
         MetroidPrime2Exit(
@@ -61,7 +58,8 @@ class TorvusGrove_BehindBreakableWall(_TorvusGrove):
         ]
 
 
-class TorvusGrove_ConnectorLedge(_TorvusGrove):
+class TorvusBog_TorvusGrove_ConnectorLedge(MetroidPrime2Region):
+    name = "Torvus Grove"
     desc="Connector Ledge" # at the top of the half-pipe
     exits_ = [
         MetroidPrime2Exit(
@@ -87,7 +85,8 @@ class TorvusGrove_ConnectorLedge(_TorvusGrove):
     ]
 
 
-class TorvusGrove_CurvedLedge(_TorvusGrove):
+class TorvusBog_TorvusGrove_CurvedLedge(MetroidPrime2Region):
+    name = "Torvus Grove"
     desc = "Curved Ledge" # past a small hole after the connector ledge
     exits_=[
         MetroidPrime2Exit(
@@ -106,7 +105,8 @@ class TorvusGrove_CurvedLedge(_TorvusGrove):
         )
     ]
 
-class TorvusGrove_IsolatedLedge(_TorvusGrove):
+class TorvusBog_TorvusGrove_IsolatedLedge(MetroidPrime2Region):
+    name = "Torvus Grove"
     desc="Isolated Ledge" # the tall one
     exits_ = [
         MetroidPrime2Exit(
@@ -123,8 +123,9 @@ class TorvusGrove_IsolatedLedge(_TorvusGrove):
         )
     ]
 
-class TorvusGrove_UpperDoorLedge(_TorvusGrove):
-    desc="Upper Door Ledge" # has door
+class TorvusBog_TorvusGrove_UpperDoorLedge(MetroidPrime2Region):
+    name = "Torvus Grove"
+    desc="Upper Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Grove (Center)",

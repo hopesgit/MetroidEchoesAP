@@ -10,7 +10,8 @@ class _PlazaAccess(MetroidPrime2Region):
     name = "Plaza Access"
 
 
-class TorvusBog_PlazaAccess_ForgottenBridgeEntrance(_PlazaAccess):
+class TorvusBog_PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
+    name = "Plaza Access"
     desc = "Forgotten Bridge Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -20,17 +21,20 @@ class TorvusBog_PlazaAccess_ForgottenBridgeEntrance(_PlazaAccess):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Forgotten Bridge Side)",
-            rule=lambda state, player: state.has("Morph Ball", player)
+            door=DoorCover.MorphBallTunnel,
+            rule=lambda state, player: True
         )
     ]
 
 
-class TorvusBog_PlazaAccess_HalfPipe(_PlazaAccess):
+class TorvusBog_PlazaAccess_HalfPipe(MetroidPrime2Region):
+    name = "Plaza Access"
     desc="Half-Pipe"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Maze)",
-            rule=lambda state, player: state.has("Morph Ball", player)
+            door=DoorCover.MorphBallTunnel,
+            rule=lambda state, player: True
         )
     ]
 
@@ -46,7 +50,8 @@ class TorvusBog_PlazaAccess_HalfPipe(_PlazaAccess):
         ]
 
 
-class TorvusBog_PlazaAccess_Maze(_PlazaAccess):
+class TorvusBog_PlazaAccess_Maze(MetroidPrime2Region):
+    name = "Plaza Access"
     desc="Maze"
     exits_ = [
         MetroidPrime2Exit(
@@ -64,7 +69,8 @@ class TorvusBog_PlazaAccess_Maze(_PlazaAccess):
     ]
 
 
-class TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(_PlazaAccess):
+class TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(MetroidPrime2Region):
+    name = "Plaza Access"
     desc="Morph Ball Tunnel Forgotten Bridge Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -85,7 +91,8 @@ class TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(_PlazaAccess):
         )
     ]
 
-class TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(_PlazaAccess):
+class TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(MetroidPrime2Region):
+    name = "Plaza Access"
     desc="Morph Ball Tunnel Torvus Plaza Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -98,7 +105,8 @@ class TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(_PlazaAccess):
     ]
 
 
-class TorvusBog_PlazaAccess_TorvusPlazaEntrance(_PlazaAccess):
+class TorvusBog_PlazaAccess_TorvusPlazaEntrance(MetroidPrime2Region):
+    name = "Plaza Access"
     desc="Torvus Plaza Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -108,6 +116,7 @@ class TorvusBog_PlazaAccess_TorvusPlazaEntrance(_PlazaAccess):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Torvus Plaza Side)",
-            rule=lambda state, player: state.has("Morph Ball", player)
+            door=DoorCover.MorphBallTunnel,
+            rule=lambda state, player: True
         )
     ]

@@ -7,11 +7,8 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _AbandonedWorksite(MetroidPrime2Region):
+class TorvusBog_AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
     name = "Abandoned Worksite"
-
-
-class AbandonedWorksite_ForgottenBridgeEntrance(_AbandonedWorksite):
     desc="Forgotten Bridge Entrance"
     exits=[
         MetroidPrime2Exit(
@@ -29,7 +26,8 @@ class AbandonedWorksite_ForgottenBridgeEntrance(_AbandonedWorksite):
     ]
 
 
-class AbandonedWorksite_GreatBridgeEntrance(_AbandonedWorksite):
+class TorvusBog_AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
+    name = "Abandoned Worksite"
     desc="Lower Great Bridge Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -51,7 +49,8 @@ class AbandonedWorksite_GreatBridgeEntrance(_AbandonedWorksite):
     ]
 
 
-class AbandonedWorksite_LedgeForgottenBridgeSide(_AbandonedWorksite):
+class TorvusBog_AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
+    name = "Abandoned Worksite"
     desc="Ledge Forgotten Bridge Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -69,7 +68,8 @@ class AbandonedWorksite_LedgeForgottenBridgeSide(_AbandonedWorksite):
     ]
 
 
-class AbandonedWorksite_LedgeGreatBridgeSide(_AbandonedWorksite):
+class TorvusBog_AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
+    name = "Abandoned Worksite"
     desc="Ledge Great Bridge Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -110,7 +110,8 @@ class AbandonedWorksite_LedgeGreatBridgeSide(_AbandonedWorksite):
     ]
 
 
-class AbandonedWorksite_MorphBallTunnel(_AbandonedWorksite):
+class TorvusBog_AbandonedWorksite_MorphBallTunnel(MetroidPrime2Region):
+    name = "Abandoned Worksite"
     desc="Morph Ball Tunnel"
     exits_ = [
         MetroidPrime2Exit(
@@ -124,7 +125,8 @@ class AbandonedWorksite_MorphBallTunnel(_AbandonedWorksite):
     ]
 
 
-class AbandonedWorksite_PickupLedge(_AbandonedWorksite):
+class TorvusBog_AbandonedWorksite_PickupLedge(MetroidPrime2Region):
+    name = "Abandoned Worksite"
     desc="Pickup Ledge"
     exits_ = [
         MetroidPrime2Exit(

@@ -1,7 +1,6 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball, has_missile_count
-
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
@@ -41,12 +40,9 @@ def _underwater_movement(state, player) -> bool:
     ])
 
 
-class _HydrodynamoStation(MetroidPrime2Region):
+class TorvusBog_HydrodynamoStation_AboveWater(MetroidPrime2Region):
     name="Hydrodynamo Station"
-
-
-class HydrodynamoStation_AboveWater(_HydrodynamoStation):
-    desc="Above Water" # warp point is here, in front of the (normally) blue door
+    desc="Above Water"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Transport (Lower)",
@@ -64,7 +60,8 @@ class HydrodynamoStation_AboveWater(_HydrodynamoStation):
     ]
 
 
-class HydrodynamoStation_Top(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_Top(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "Top"
     exits_ = [
         MetroidPrime2Exit(
@@ -78,7 +75,8 @@ class HydrodynamoStation_Top(_HydrodynamoStation):
     ]
 
 
-class HydrodynamoStation_TopDoorLedge(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "Top Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -97,7 +95,8 @@ class HydrodynamoStation_TopDoorLedge(_HydrodynamoStation):
     ]
 
 
-class HydrodynamoStation_ThreeDoors(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "Three Doors"
     exits_ = [
         MetroidPrime2Exit(
@@ -159,7 +158,8 @@ class HydrodynamoStation_ThreeDoors(_HydrodynamoStation):
     ]
 
 
-class HydrodynamoStation_NorthDoorLedge(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "North Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -215,7 +215,8 @@ class HydrodynamoStation_NorthDoorLedge(_HydrodynamoStation):
         ]
 
 
-class HydrodynamoStation_WestDoorLedge(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "West Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -271,7 +272,8 @@ class HydrodynamoStation_WestDoorLedge(_HydrodynamoStation):
         ]
 
 
-class HydrodynamoStation_EastDoorLedge(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "East Door Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -327,7 +329,8 @@ class HydrodynamoStation_EastDoorLedge(_HydrodynamoStation):
         ]
 
 
-class HydrodynamoStation_Cannon(_HydrodynamoStation): # the movable base removes this section
+class TorvusBog_HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable base removes this section
+    name="Hydrodynamo Station"
     desc = "Cannon"
     exits_ = [
         MetroidPrime2Exit(
@@ -349,7 +352,8 @@ class HydrodynamoStation_Cannon(_HydrodynamoStation): # the movable base removes
     ]
 
 
-class HydrodynamoStation_NorthScanLedge(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc="North Scan Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -391,7 +395,8 @@ class HydrodynamoStation_NorthScanLedge(_HydrodynamoStation):
         ]
 
 
-class HydrodynamoStation_AboveMovableBase(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "Above Movable Base"
     exits_ = [
         MetroidPrime2Exit(
@@ -411,7 +416,8 @@ class HydrodynamoStation_AboveMovableBase(_HydrodynamoStation):
     ]
 
 
-class HydrodynamoStation_UnderMovableBase(_HydrodynamoStation):
+class TorvusBog_HydrodynamoStation_UnderMovableBase(MetroidPrime2Region):
+    name="Hydrodynamo Station"
     desc = "Under Movable Base"
     exits_ = [
         MetroidPrime2Exit(
@@ -425,5 +431,3 @@ class HydrodynamoStation_UnderMovableBase(_HydrodynamoStation):
         ),
     ]
 
-
-# there is also an OOB but I don't believe we're doing those https://youtu.be/XJgGMzWXjeQ

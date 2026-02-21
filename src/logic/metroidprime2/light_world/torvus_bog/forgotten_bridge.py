@@ -1,18 +1,14 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal
-
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _ForgottenBridge(MetroidPrime2Region):
+class TorvusBog_ForgottenBridge_Bridge(MetroidPrime2Region):
     name="Forgotten Bridge"
-
-
-class ForgottenBridge_Bridge(_ForgottenBridge):
     desc="Bridge" # the bridge spins, so its access rules are a little complicated
     exits_ = [
         MetroidPrime2Exit(
@@ -63,7 +59,8 @@ class ForgottenBridge_Bridge(_ForgottenBridge):
     ]
 
 
-class ForgottenBridge_Cage(_ForgottenBridge):
+class TorvusBog_ForgottenBridge_Cage(MetroidPrime2Region):
+    name="Forgotten Bridge"
     desc="Cage" # this includes the path leading to two doors along with the mechanisms that lower after the spinner is used
     exits_ = [
         MetroidPrime2Exit(
@@ -118,7 +115,8 @@ class ForgottenBridge_Cage(_ForgottenBridge):
         ]
 
 
-class ForgottenBridge_Cliffs(_ForgottenBridge):
+class TorvusBog_ForgottenBridge_Cliffs(MetroidPrime2Region):
+    name="Forgotten Bridge"
     desc="Cliffs" # This includes the platforms rising from the water as well as the raised area leading to the phased bomb slot and bridge
     exits_ = [
         MetroidPrime2Exit(
@@ -140,7 +138,8 @@ class ForgottenBridge_Cliffs(_ForgottenBridge):
     ]
 
 
-class ForgottenBridge_DarkPortalLedge(_ForgottenBridge):
+class TorvusBog_ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
+    name="Forgotten Bridge"
     desc="Dark Portal Ledge" # access rules change depending on whether the bomb slot was activated
     exits_ = [
         MetroidPrime2Exit(
@@ -172,7 +171,8 @@ class ForgottenBridge_DarkPortalLedge(_ForgottenBridge):
     ]
 
 
-class ForgottenBridge_PickupLedge(_ForgottenBridge):
+class TorvusBog_ForgottenBridge_PickupLedge(MetroidPrime2Region):
+    name="Forgotten Bridge"
     desc="Pickup Ledge" # access rules change depending on whether the bomb slot was activated
     exits_ = [
         MetroidPrime2Exit(
@@ -205,7 +205,8 @@ class ForgottenBridge_PickupLedge(_ForgottenBridge):
         ]
 
 
-class ForgottenBridge_Shallows(_ForgottenBridge):
+class TorvusBog_ForgottenBridge_Shallows(MetroidPrime2Region):
+    name="Forgotten Bridge"
     desc="Shallows"
     exits=[
         MetroidPrime2Exit(

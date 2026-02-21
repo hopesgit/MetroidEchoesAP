@@ -1,7 +1,6 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball
-
+from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
@@ -9,7 +8,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 def _spider_track_open(state, player) -> bool:
-    condition_or([
+    return condition_or([
         not state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player),
         condition_and([
             state.has("Torvus Bog - Main Hydrochamber | Alpha Blogg Dead", player),
@@ -18,19 +17,9 @@ def _spider_track_open(state, player) -> bool:
     ])
 
 
-def can_survive_alpha_blogg(state, player) -> bool:
-    itemlist = ['Space Jump Boots', 'Gravity Boost', 'Screw Attack', 'Charge Beam', 'Dark Beam', 'Dark Suit',
-                'Light Suit', 'Energy Tank']
-    threshold = 5
-    return state.has_from_list(itemlist, player, threshold)
-
-
-class _MainHydrochamber(MetroidPrime2Region):
+class TorvusBog_MainHydrochamber_Top(MetroidPrime2Region):
     name = "Main Hydrochamber"
-
-
-class MainHydrochamber_Top(_MainHydrochamber):
-    name="Top"
+    desc="Top"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrochamber Shaft (Bottom)",
@@ -44,8 +33,9 @@ class MainHydrochamber_Top(_MainHydrochamber):
     ]
 
 
-class MainHydrochamber_Main(_MainHydrochamber):
-    name="Main"
+class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
+    name = "Main Hydrochamber"
+    desc="Main"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Spider Track)",
@@ -94,14 +84,15 @@ class MainHydrochamber_Main(_MainHydrochamber):
                     code=None,
                     player=player,
                 ),
-                can_access=lambda state, player: can_survive_alpha_blogg(state, player),
+                can_access=lambda state, player: can_defeat_alpha_blogg(state, player),
                 parent=self,
             ),
         ]
 
 
-class MainHydrochamber_LowerDoor(_MainHydrochamber):
-    name="Lower Door"
+class TorvusBog_MainHydrochamber_LowerDoor(MetroidPrime2Region):
+    name = "Main Hydrochamber"
+    desc="Lower Door"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Lower Door)",
@@ -114,8 +105,9 @@ class MainHydrochamber_LowerDoor(_MainHydrochamber):
     ]
 
 
-class MainHydrochamber_SpiderTrack(_MainHydrochamber):
-    name="Spider Track"
+class TorvusBog_MainHydrochamber_SpiderTrack(MetroidPrime2Region):
+    name = "Main Hydrochamber"
+    desc="Spider Track"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Portal Ledge)",
@@ -135,8 +127,9 @@ class MainHydrochamber_SpiderTrack(_MainHydrochamber):
     ]
 
 
-class MainHydrochamber_PortalLedge(_MainHydrochamber):
-    name="Portal Ledge"
+class TorvusBog_MainHydrochamber_PortalLedge(MetroidPrime2Region):
+    name = "Main Hydrochamber"
+    desc="Portal Ledge"
     exits_ = [
         MetroidPrime2Exit(
             destination="P|Dark Torvus Bog - Undertemple (Portal Ledge)",

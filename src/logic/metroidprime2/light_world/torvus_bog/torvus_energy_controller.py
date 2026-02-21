@@ -5,7 +5,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusEnergyController(MetroidPrime2Region):
+class TorvusBog_TorvusEnergyController(MetroidPrime2Region):
     name="Torvus Energy Controller"
     exits_ = [
         MetroidPrime2Exit(

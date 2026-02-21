@@ -1,20 +1,17 @@
+"""A room characterized by revolving platforms located above a small pool containing a Blogg enemy.
+    The room's two doors normally lead to Transport to Sanctuary on the north side and Training Hall on the south side.
+    Caution: A player may get stuck here if they fall into the water and lack any movement upgrades."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or
 from ... import can_lay_bomb, can_use_screw_attack
-
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _FortressTransportAccess(MetroidPrime2Region):
-    """A room characterized by revolving platforms located above a small pool containing a Blogg enemy.
-    The room's two doors normally lead to Transport to Sanctuary on the north side and Training Hall on the south side.
-    Caution: A player may get stuck here if they fall into the water and lack any movement upgrades."""
-    name="Fortress Transport Access"
-
-
-class TorvusBog_FortressTransportAccess_AboveWater(_FortressTransportAccess):
+class TorvusBog_FortressTransportAccess_AboveWater(MetroidPrime2Region):
     """The central area, containing the revolving platforms as well as the air above the water and between the ledges."""
+    name="Fortress Transport Access"
     desc = "Above Water"
     exits_ = [
         MetroidPrime2Exit(
@@ -32,8 +29,9 @@ class TorvusBog_FortressTransportAccess_AboveWater(_FortressTransportAccess):
     ]
 
 
-class TorvusBog_FortressTransportAccess_NorthLedge(_FortressTransportAccess):
+class TorvusBog_FortressTransportAccess_NorthLedge(MetroidPrime2Region):
     """The taller ledge containing the door that leads to the Torvus-Sanctuary elevator."""
+    name="Fortress Transport Access"
     desc = "North Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -52,8 +50,9 @@ class TorvusBog_FortressTransportAccess_NorthLedge(_FortressTransportAccess):
     ]
 
 
-class TorvusBog_FortressTransportAccess_SouthLedge(_FortressTransportAccess):
+class TorvusBog_FortressTransportAccess_SouthLedge(MetroidPrime2Region):
     """The shorter ledge in the room. Has a yellow door that leads back to Training Chamber."""
+    name="Fortress Transport Access"
     desc="South Ledge"
     exits_=[
         MetroidPrime2Exit(
@@ -72,10 +71,11 @@ class TorvusBog_FortressTransportAccess_SouthLedge(_FortressTransportAccess):
     ]
 
 
-class TorvusBog_FortressTransportAccess_UnderWater(_FortressTransportAccess):
+class TorvusBog_FortressTransportAccess_UnderWater(MetroidPrime2Region):
     """The central pool of water, including the steps that lead to the South Ledge.
     Contains a Blogg or Dark Blogg enemy.
     Can be difficult to leave without upgrades."""
+    name="Fortress Transport Access"
     desc = "Under Water"
     exits_ = [
         MetroidPrime2Exit(

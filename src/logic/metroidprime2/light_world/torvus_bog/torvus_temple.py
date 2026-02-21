@@ -1,18 +1,14 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_use_screw_attack, has_oob_kit, can_use_seeker_launcher, has_missile_count
-
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _TorvusTemple(MetroidPrime2Region):
-    name="Torvus Temple"
-
-
-class TorvusTemple_Arena(_TorvusTemple):
+class TorvusBog_TorvusTemple_Arena(MetroidPrime2Region):
+    name = "Torvus Temple"
     desc="Arena"
     exits_ = [
         MetroidPrime2Exit(
@@ -65,7 +61,8 @@ class TorvusTemple_Arena(_TorvusTemple):
         ]
 
 
-class TorvusTemple_Underground(_TorvusTemple):
+class TorvusBog_TorvusTemple_Underground(MetroidPrime2Region):
+    name = "Torvus Temple"
     desc="Underground"
     exits_ = [
         MetroidPrime2Exit(
@@ -104,7 +101,8 @@ class TorvusTemple_Underground(_TorvusTemple):
     ]
 
 
-class TorvusTemple_UndergroundTransportEntrance(_TorvusTemple):
+class TorvusBog_TorvusTemple_UndergroundTransportEntrance(MetroidPrime2Region):
+    name = "Torvus Temple"
     desc="Underground Transport Entrance"
     exits_ = [
         MetroidPrime2Exit(
@@ -120,7 +118,8 @@ class TorvusTemple_UndergroundTransportEntrance(_TorvusTemple):
     ]
 
 
-class TorvusTemple_Upper(_TorvusTemple):
+class TorvusBog_TorvusTemple_Upper(MetroidPrime2Region):
+    name = "Torvus Temple"
     desc="Upper"
     exits_ = [
         MetroidPrime2Exit(
@@ -136,7 +135,8 @@ class TorvusTemple_Upper(_TorvusTemple):
 
 
 # pretty hesitant about including this one
-class TorvusTemple_OutOfBounds(_TorvusTemple):
+class TorvusBog_TorvusTemple_OutOfBounds(MetroidPrime2Region):
+    name = "Torvus Temple"
     desc = "Out of Bounds"
     exits_ = [
         MetroidPrime2Exit(

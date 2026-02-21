@@ -11,6 +11,7 @@ from ... import (
     has_light_suit,
     has_trick_enabled,
 )
+
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

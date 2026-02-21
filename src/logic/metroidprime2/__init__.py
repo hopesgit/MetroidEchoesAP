@@ -1,3 +1,4 @@
+import math
 from typing import cast
 
 from BaseClasses import CollectionState
@@ -435,3 +436,51 @@ def has_oob_kit(state: CollectionState, player: int) -> bool:
         can_lay_bomb(state, player),
         state.has("Space Jump Boots", player),
     ])
+
+
+def can_defeat_alpha_blogg(state: CollectionState, player: int) -> bool:
+    """Alpha Blogg is a tough boss for a first-timer. It can also be very tough if your movement is restricted,
+    you have low (max) health, or you have low (max) ammo. It can be made easier by knowing its pattern,
+    having free-er movement, or having more damage potential."""
+    dark_ammo = sum([1 if has_dark_ammo(state, player, i) else 0 for i in [100, 150, 200, 250]])
+    charge_dark = can_use_charged_dark_beam(state, player)
+    has_power = can_use_power_beam(state, player)
+    charge_power = can_use_charged_power_beam(state, player)
+    has_supers = can_use_super_missile(state, player, 1)
+    missile_count = get_missile_count(state, player)
+    missile_score = math.floor(missile_count / 10)
+    double_jump = state.has("Space Jump Boots", player)
+    grav_boost = state.has("Gravity Boost", player)
+    ball_boost = can_use_boost_ball(state, player)
+    tanks = state.count('Energy Tank', player)
+    has_knowledge = state.has('Scan Visor', player)
+
+    survive_count = tanks
+    # suits don't provide damage reduction in this game, and there is no environmental damage,
+    # so they aren't a factor for this boss
+
+    move_count = 0
+    if grav_boost: move_count += 3
+    move_count += int(double_jump)
+    move_count += int(ball_boost)
+
+    damage_count = 0
+    damage_count += int(has_power)
+    if charge_power:
+        damage_count += 1
+        if has_supers:
+            damage_count += 1
+            damage_count += missile_score
+    if charge_dark:
+        damage_count += 2
+        damage_count += dark_ammo
+    damage_count += dark_ammo
+    damage_count += missile_score
+
+    threshold = 100
+    score = 0
+    if has_knowledge: score += 5
+    score += survive_count * 5
+    score += move_count * 10
+    score += damage_count * 3
+    return score >= threshold

@@ -1,3 +1,6 @@
+"""Morph Ball puzzle room connecting Training Chamber and Catacombs.
+Air jets in this room can lift the Morph Ball if the player doesn't have Bombs."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_and
 from ... import can_lay_bomb
@@ -6,13 +9,8 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _TransitTunnelEast(MetroidPrime2Region):
-    """Morph Ball puzzle room connecting Training Chamber and Catacombs.
-    Air jets in this room can lift the Morph Ball if the player doesn't have Bombs."""
+class TorvusBog_TransitTunnelEast_CatacombsSide(MetroidPrime2Region):
     name="Transit Tunnel East"
-
-
-class TransitTunnelEast_CatacombsSide(_TransitTunnelEast):
     desc="Catacombs Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -26,8 +24,9 @@ class TransitTunnelEast_CatacombsSide(_TransitTunnelEast):
         )
     ]
 
-class TransitTunnelEast_TrainingChamberSide(_TransitTunnelEast):
+class TorvusBog_TransitTunnelEast_TrainingChamberSide(MetroidPrime2Region):
     """Has the Bomb Slot as well as the pickup."""
+    name="Transit Tunnel East"
     desc="Training Chamber Side"
     exits_ = [
         MetroidPrime2Exit(

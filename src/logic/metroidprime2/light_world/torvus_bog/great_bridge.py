@@ -1,18 +1,14 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb
-
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class _GreatBridge(MetroidPrime2Region):
+class TorvusBog_GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
     name = "Great Bridge"
-
-
-class GreatBridge_BehindTranslatorGate(_GreatBridge):
     desc = "Behind Translator Gate"
     exits_ = [
         MetroidPrime2Exit(
@@ -34,7 +30,8 @@ class GreatBridge_BehindTranslatorGate(_GreatBridge):
     ]
 
 
-class GreatBridge_Beach(_GreatBridge):
+class TorvusBog_GreatBridge_Beach(MetroidPrime2Region):
+    name = "Great Bridge"
     desc = "Beach"
     exits_ = [
         MetroidPrime2Exit(
@@ -59,7 +56,8 @@ class GreatBridge_Beach(_GreatBridge):
     ]
 
 
-class GreatBridge_Bridge(_GreatBridge):
+class TorvusBog_GreatBridge_Bridge(MetroidPrime2Region):
+    name = "Great Bridge"
     desc="Bridge"
     exits_ = [
         MetroidPrime2Exit(
@@ -93,7 +91,8 @@ class GreatBridge_Bridge(_GreatBridge):
     ]
 
 
-class GreatBridge_CannonLedge(_GreatBridge):
+class TorvusBog_GreatBridge_CannonLedge(MetroidPrime2Region):
+    name = "Great Bridge"
     desc="Cannon Ledge"
     exits_ = [
         MetroidPrime2Exit(
@@ -134,7 +133,8 @@ class GreatBridge_CannonLedge(_GreatBridge):
         )
     ]
 
-class GreatBridge_MorphBallTunnel(_GreatBridge):
+class TorvusBog_GreatBridge_MorphBallTunnel(MetroidPrime2Region):
+    name = "Great Bridge"
     desc="Morph Ball Tunnel"
     exits_ = [
         MetroidPrime2Exit(
@@ -159,7 +159,8 @@ class GreatBridge_MorphBallTunnel(_GreatBridge):
         ]
 
 
-class GreatBridge_NorthPath(_GreatBridge):
+class TorvusBog_GreatBridge_NorthPath(MetroidPrime2Region):
+    name = "Great Bridge"
     desc="North Path"
     exits_ = [
         MetroidPrime2Exit(
@@ -196,7 +197,8 @@ class GreatBridge_NorthPath(_GreatBridge):
     ]
 
 
-class GreatBridge_ScanPanelLedge(_GreatBridge):
+class TorvusBog_GreatBridge_ScanPanelLedge(MetroidPrime2Region):
+    name = "Great Bridge"
     desc="Scan Panel Ledge"
     exits_ = [
         MetroidPrime2Exit(

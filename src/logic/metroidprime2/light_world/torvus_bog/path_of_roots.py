@@ -1,12 +1,12 @@
 from BaseClasses import MultiWorld, ItemClassification
-
+from ... import can_use_grapple_beam, can_use_screw_attack, can_use_dark_beam
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_or
 
 
-class PathOfRoots_AboveCage(MetroidPrime2Region):
+class TorvusBog_PathOfRoots_AboveCage(MetroidPrime2Region):
     name="Path of Roots"
     desc="Above Cage"
     exits_ = [
@@ -21,8 +21,8 @@ class PathOfRoots_AboveCage(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Path of Roots (Great Bridge Ledge)",
             rule=lambda state, player: condition_or([
-                state.has("Grapple Beam", player),
-                state.has("Screw Attack", player)
+                can_use_grapple_beam(state, player),
+                can_use_screw_attack(state, player)
             ])
         ),
     ]
@@ -39,7 +39,7 @@ class PathOfRoots_AboveCage(MetroidPrime2Region):
         ]
 
 
-class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
+class TorvusBog_PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
     name="Path of Roots"
     desc="Great Bridge Ledge"
     exits_ = [
@@ -51,8 +51,8 @@ class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Path of Roots (Above Cage)",
             rule=lambda state, player: condition_or([
-                state.has("Grapple Beam", player),
-                state.has("Screw Attack", player)
+                can_use_grapple_beam(state, player),
+                can_use_screw_attack(state, player)
             ])
         ),
         MetroidPrime2Exit(
@@ -62,14 +62,14 @@ class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
     ]
 
 
-class PathOfRoots_LagoonSide(MetroidPrime2Region):
+class TorvusBog_PathOfRoots_LagoonSide(MetroidPrime2Region):
     name="Path of Roots"
     desc="Lagoon Side"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Beach)",
             door=DoorCover.Dark,
-            rule=lambda state, player: state.has("Dark Beam", player)
+            rule=lambda state, player: can_use_dark_beam(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Path of Roots (Middle)",
@@ -78,7 +78,7 @@ class PathOfRoots_LagoonSide(MetroidPrime2Region):
     ]
 
 
-class PathOfRoots_Middle(MetroidPrime2Region):
+class TorvusBog_PathOfRoots_Middle(MetroidPrime2Region):
     name="Path of Roots"
     desc="Middle"
     exits_ = [
