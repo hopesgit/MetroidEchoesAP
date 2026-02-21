@@ -2,7 +2,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TorvusMapStation(MetroidPrime2Region):
+class TorvusMapStation(MetroidPrime2Region):
     name="Torvus Map Station"
     exits_ = [
         MetroidPrime2Exit(

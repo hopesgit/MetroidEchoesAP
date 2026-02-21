@@ -22,7 +22,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # the spiny platforms can no longer be interacted with once the water is drained
 
 
-class TorvusBog_GatheringHall_UpperDoorLedge(MetroidPrime2Region):
+class GatheringHall_UpperDoorLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Upper Door Ledge"
     exits_ = [
@@ -68,7 +68,7 @@ class TorvusBog_GatheringHall_UpperDoorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GatheringHall_CannonLedge(MetroidPrime2Region):
+class GatheringHall_CannonLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Cannon Ledge"
     exits_ = [
@@ -111,7 +111,7 @@ class TorvusBog_GatheringHall_CannonLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GatheringHall_ItemLedge(MetroidPrime2Region):
+class GatheringHall_ItemLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Item Ledge"
     exits_ = [
@@ -159,7 +159,7 @@ class TorvusBog_GatheringHall_ItemLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_GatheringHall_LaserLedge(MetroidPrime2Region):
+class GatheringHall_LaserLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Laser Ledge"
     exits_ = [
@@ -182,7 +182,7 @@ class TorvusBog_GatheringHall_LaserLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GatheringHall_NorthDoorLedge(MetroidPrime2Region):
+class GatheringHall_NorthDoorLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="North Door Ledge"
     exits_ = [
@@ -216,7 +216,7 @@ class TorvusBog_GatheringHall_NorthDoorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GatheringHall_SouthDoorLedge(MetroidPrime2Region):
+class GatheringHall_SouthDoorLedge(MetroidPrime2Region):
     name="Gathering Hall"
     desc="South Door Ledge"
     exits_ = [
@@ -264,7 +264,7 @@ class TorvusBog_GatheringHall_SouthDoorLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_GatheringHall_Bottom(MetroidPrime2Region):
+class GatheringHall_Bottom(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Bottom"
     exits_ = [
@@ -306,7 +306,7 @@ class TorvusBog_GatheringHall_Bottom(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_GatheringHall_PortalAlcove(MetroidPrime2Region):
+class GatheringHall_PortalAlcove(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Portal Alcove"
     exits_ = [
@@ -321,7 +321,7 @@ class TorvusBog_GatheringHall_PortalAlcove(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GatheringHall_SpiderTracks(MetroidPrime2Region):
+class GatheringHall_SpiderTracks(MetroidPrime2Region):
     name="Gathering Hall"
     desc="Spider Tracks"
     exits_ = [

@@ -7,7 +7,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_and, condition_or
 
 
-class TorvusBog_TorvusLagoon_Beach(MetroidPrime2Region):
+class TorvusLagoon_Beach(MetroidPrime2Region):
     name = "Torvus Lagoon"
     desc = "Beach"
     exits_ = [
@@ -53,7 +53,7 @@ class TorvusBog_TorvusLagoon_Beach(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
+class TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
     name = "Torvus Lagoon"
     desc = "Save Room Ledge"
     exits_ = [
@@ -79,7 +79,7 @@ class TorvusBog_TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
+class TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
     name= "Torvus Lagoon"
     desc= "Underwater Ledge"
     exits_ = [
@@ -101,7 +101,7 @@ class TorvusBog_TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TorvusLagoon_Bridge(MetroidPrime2Region):
+class TorvusLagoon_Bridge(MetroidPrime2Region):
     name = "Torvus Lagoon"
     desc = "Bridge"
     exits_ = [
@@ -120,7 +120,7 @@ class TorvusBog_TorvusLagoon_Bridge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
+class TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
     name = "Torvus Lagoon"
     desc = "Portal Chamber Ledge"
     exits_ = [
@@ -153,7 +153,7 @@ class TorvusBog_TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
+class TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
     name = "Torvus Lagoon"
     desc = "Ruined Alcove Ledge"
     exits_ = [

@@ -15,7 +15,7 @@ def can_progress_room(state, player) -> bool:
     ])
 
 
-class TorvusBog_TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
+class TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
     name = "Transit Tunnel South"
     desc="Catacombs Side"
     exits_ = [
@@ -31,7 +31,7 @@ class TorvusBog_TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
+class TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
     name = "Transit Tunnel South"
     desc="Gathering Hall Side"
     exits_ = [
@@ -47,7 +47,7 @@ class TorvusBog_TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TransitTunnelSouth_MorphBallPuzzle(MetroidPrime2Region):
+class TransitTunnelSouth_MorphBallPuzzle(MetroidPrime2Region):
     name = "Transit Tunnel South"
     desc = "Morph Ball Puzzle"
     exits_= [

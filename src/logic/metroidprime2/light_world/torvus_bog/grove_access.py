@@ -3,7 +3,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_GroveAccess(MetroidPrime2Region):
+class GroveAccess(MetroidPrime2Region):
     name="Grove Access"
     exits_ = [
         MetroidPrime2Exit(

@@ -9,7 +9,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_FortressTransportAccess_AboveWater(MetroidPrime2Region):
+class FortressTransportAccess_AboveWater(MetroidPrime2Region):
     """The central area, containing the revolving platforms as well as the air above the water and between the ledges."""
     name="Fortress Transport Access"
     desc = "Above Water"
@@ -29,7 +29,7 @@ class TorvusBog_FortressTransportAccess_AboveWater(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_FortressTransportAccess_NorthLedge(MetroidPrime2Region):
+class FortressTransportAccess_NorthLedge(MetroidPrime2Region):
     """The taller ledge containing the door that leads to the Torvus-Sanctuary elevator."""
     name="Fortress Transport Access"
     desc = "North Ledge"
@@ -50,7 +50,7 @@ class TorvusBog_FortressTransportAccess_NorthLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_FortressTransportAccess_SouthLedge(MetroidPrime2Region):
+class FortressTransportAccess_SouthLedge(MetroidPrime2Region):
     """The shorter ledge in the room. Has a yellow door that leads back to Training Chamber."""
     name="Fortress Transport Access"
     desc="South Ledge"
@@ -71,7 +71,7 @@ class TorvusBog_FortressTransportAccess_SouthLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_FortressTransportAccess_UnderWater(MetroidPrime2Region):
+class FortressTransportAccess_UnderWater(MetroidPrime2Region):
     """The central pool of water, including the steps that lead to the South Ledge.
     Contains a Blogg or Dark Blogg enemy.
     Can be difficult to leave without upgrades."""

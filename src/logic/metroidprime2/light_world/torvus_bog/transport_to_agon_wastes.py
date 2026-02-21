@@ -2,7 +2,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TransportToAgonWastes(MetroidPrime2Region):
+class TransportToAgonWastes(MetroidPrime2Region):
     name="Transport to Agon Wastes"
     exits_ = [
         MetroidPrime2Exit(

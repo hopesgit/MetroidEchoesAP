@@ -5,7 +5,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_HydrodynamoShaft_Top(MetroidPrime2Region):
+class HydrodynamoShaft_Top(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
     desc= "Top"
     exits_ = [
@@ -21,7 +21,7 @@ class TorvusBog_HydrodynamoShaft_Top(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoShaft_Stairs(MetroidPrime2Region):
+class HydrodynamoShaft_Stairs(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
     desc= "Stairs"
     exits_ = [
@@ -44,7 +44,7 @@ class TorvusBog_HydrodynamoShaft_Stairs(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoShaft_Main(MetroidPrime2Region):
+class HydrodynamoShaft_Main(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
     desc= "Main"
     exits_ = [
@@ -68,7 +68,7 @@ class TorvusBog_HydrodynamoShaft_Main(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
+class HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
     desc= "Portal Alcove"
     exits_ = [
@@ -82,7 +82,7 @@ class TorvusBog_HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
         )
     ]
 
-class TorvusBog_HydrodynamoShaft_Bottom(MetroidPrime2Region):
+class HydrodynamoShaft_Bottom(MetroidPrime2Region):
     name="Hydrodynamo Shaft"
     desc= "Bottom"
     exits_ = [

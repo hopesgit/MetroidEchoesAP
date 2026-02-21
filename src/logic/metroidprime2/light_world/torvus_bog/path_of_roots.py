@@ -6,7 +6,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_or
 
 
-class TorvusBog_PathOfRoots_AboveCage(MetroidPrime2Region):
+class PathOfRoots_AboveCage(MetroidPrime2Region):
     name="Path of Roots"
     desc="Above Cage"
     exits_ = [
@@ -39,7 +39,7 @@ class TorvusBog_PathOfRoots_AboveCage(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
+class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
     name="Path of Roots"
     desc="Great Bridge Ledge"
     exits_ = [
@@ -62,7 +62,7 @@ class TorvusBog_PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_PathOfRoots_LagoonSide(MetroidPrime2Region):
+class PathOfRoots_LagoonSide(MetroidPrime2Region):
     name="Path of Roots"
     desc="Lagoon Side"
     exits_ = [
@@ -78,7 +78,7 @@ class TorvusBog_PathOfRoots_LagoonSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_PathOfRoots_Middle(MetroidPrime2Region):
+class PathOfRoots_Middle(MetroidPrime2Region):
     name="Path of Roots"
     desc="Middle"
     exits_ = [

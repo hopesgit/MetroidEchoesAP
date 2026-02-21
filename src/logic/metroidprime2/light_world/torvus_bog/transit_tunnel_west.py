@@ -3,7 +3,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TransitTunnelWest_SouthSide(MetroidPrime2Region):
+class TransitTunnelWest_SouthSide(MetroidPrime2Region):
     name="Transit Tunnel West"
     desc="South Side"
     exits_ = [
@@ -19,7 +19,7 @@ class TorvusBog_TransitTunnelWest_SouthSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TransitTunnelWest_NorthSide(MetroidPrime2Region):
+class TransitTunnelWest_NorthSide(MetroidPrime2Region):
     name="Transit Tunnel West"
     desc="North Side"
     exits_ = [

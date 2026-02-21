@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TorvusTemple_Arena(MetroidPrime2Region):
+class TorvusTemple_Arena(MetroidPrime2Region):
     name = "Torvus Temple"
     desc="Arena"
     exits_ = [
@@ -61,7 +61,7 @@ class TorvusBog_TorvusTemple_Arena(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TorvusTemple_Underground(MetroidPrime2Region):
+class TorvusTemple_Underground(MetroidPrime2Region):
     name = "Torvus Temple"
     desc="Underground"
     exits_ = [
@@ -101,7 +101,7 @@ class TorvusBog_TorvusTemple_Underground(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusTemple_UndergroundTransportEntrance(MetroidPrime2Region):
+class TorvusTemple_UndergroundTransportEntrance(MetroidPrime2Region):
     name = "Torvus Temple"
     desc="Underground Transport Entrance"
     exits_ = [
@@ -118,7 +118,7 @@ class TorvusBog_TorvusTemple_UndergroundTransportEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusTemple_Upper(MetroidPrime2Region):
+class TorvusTemple_Upper(MetroidPrime2Region):
     name = "Torvus Temple"
     desc="Upper"
     exits_ = [
@@ -135,7 +135,7 @@ class TorvusBog_TorvusTemple_Upper(MetroidPrime2Region):
 
 
 # pretty hesitant about including this one
-class TorvusBog_TorvusTemple_OutOfBounds(MetroidPrime2Region):
+class TorvusTemple_OutOfBounds(MetroidPrime2Region):
     name = "Torvus Temple"
     desc = "Out of Bounds"
     exits_ = [

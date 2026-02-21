@@ -15,7 +15,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TrainingChamber_WestCagedArea(MetroidPrime2Region):
+class TrainingChamber_WestCagedArea(MetroidPrime2Region):
     name="Training Chamber"
     desc="West Caged Area"
     exits_ = [
@@ -38,7 +38,7 @@ class TorvusBog_TrainingChamber_WestCagedArea(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TrainingChamber_EastCagedArea(MetroidPrime2Region):
+class TrainingChamber_EastCagedArea(MetroidPrime2Region):
     name="Training Chamber"
     desc="East Caged Area"
     exits_ = [
@@ -61,7 +61,7 @@ class TorvusBog_TrainingChamber_EastCagedArea(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TrainingChamber_Center(MetroidPrime2Region):
+class TrainingChamber_Center(MetroidPrime2Region):
     # - East and West Caged Areas can only connect to the center via Gravity Boost
     # - The Center can connect outward using the spinner mechanism, but only after the Bloggs are dead
     name="Training Chamber"
@@ -112,7 +112,7 @@ class TorvusBog_TrainingChamber_Center(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TrainingChamber_StatuePlatform(MetroidPrime2Region):
+class TrainingChamber_StatuePlatform(MetroidPrime2Region):
     name="Training Chamber"
     desc="Statue Platform"
     exits_ = [
@@ -158,7 +158,7 @@ class TorvusBog_TrainingChamber_StatuePlatform(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TrainingChamber_SouthDoorLedge(MetroidPrime2Region):
+class TrainingChamber_SouthDoorLedge(MetroidPrime2Region):
     name="Training Chamber"
     desc="South Door Ledge"
     exits_ = [
@@ -181,7 +181,7 @@ class TorvusBog_TrainingChamber_SouthDoorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TrainingChamber_LedgeBelowSouthDoor(MetroidPrime2Region):
+class TrainingChamber_LedgeBelowSouthDoor(MetroidPrime2Region):
     name="Training Chamber"
     desc="Ledge Below South Door"
     exits_ = [
@@ -209,7 +209,7 @@ class TorvusBog_TrainingChamber_LedgeBelowSouthDoor(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TrainingChamber_BehindStatue(MetroidPrime2Region):
+class TrainingChamber_BehindStatue(MetroidPrime2Region):
     name="Training Chamber"
     desc="Behind Statue"
     exits_ = [
@@ -235,7 +235,7 @@ class TorvusBog_TrainingChamber_BehindStatue(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TrainingChamber_NorthDoorLedge(MetroidPrime2Region):
+class TrainingChamber_NorthDoorLedge(MetroidPrime2Region):
     name="Training Chamber"
     desc="North Door Ledge"
     exits_ = [
@@ -265,7 +265,7 @@ class TorvusBog_TrainingChamber_NorthDoorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TrainingChamber_SpiderTracks(MetroidPrime2Region):
+class TrainingChamber_SpiderTracks(MetroidPrime2Region):
     name="Training Chamber"
     desc="Spider Tracks"
     exits_ = [

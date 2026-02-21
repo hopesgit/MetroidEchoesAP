@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_MainHydrochamber_Top(MetroidPrime2Region):
+class MainHydrochamber_Top(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Top"
     exits_ = [
@@ -23,7 +23,7 @@ class TorvusBog_MainHydrochamber_Top(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
+class MainHydrochamber_Main(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Main"
     exits_ = [
@@ -80,7 +80,7 @@ class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_MainHydrochamber_LowerDoor(MetroidPrime2Region):
+class MainHydrochamber_LowerDoor(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Lower Door"
     exits_ = [
@@ -95,7 +95,7 @@ class TorvusBog_MainHydrochamber_LowerDoor(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_MainHydrochamber_SpiderTrack(MetroidPrime2Region):
+class MainHydrochamber_SpiderTrack(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Spider Track"
     exits_ = [
@@ -117,7 +117,7 @@ class TorvusBog_MainHydrochamber_SpiderTrack(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_MainHydrochamber_PortalLedge(MetroidPrime2Region):
+class MainHydrochamber_PortalLedge(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Portal Ledge"
     exits_ = [

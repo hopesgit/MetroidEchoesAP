@@ -2,7 +2,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Region, MetroidPrime2Exit
 
 
-class TorvusBog_RuinedAlcove(MetroidPrime2Region):
+class RuinedAlcove(MetroidPrime2Region):
     name = "Ruined Alcove"
     exits_ = [
         MetroidPrime2Exit(

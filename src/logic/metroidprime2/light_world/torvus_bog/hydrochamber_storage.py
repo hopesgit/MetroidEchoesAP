@@ -5,7 +5,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_HydrochamberStorage(MetroidPrime2Region):
+class HydrochamberStorage(MetroidPrime2Region):
     name="Hydrochamber Storage"
     exits_ = [
         MetroidPrime2Exit(

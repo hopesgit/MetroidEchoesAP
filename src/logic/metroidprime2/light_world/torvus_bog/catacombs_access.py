@@ -5,7 +5,7 @@ from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_CatacombsAccess_CatacombsSide(MetroidPrime2Region):
+class CatacombsAccess_CatacombsSide(MetroidPrime2Region):
     name="Catacombs Side"
     exits_ = [
         MetroidPrime2Exit(
@@ -20,7 +20,7 @@ class TorvusBog_CatacombsAccess_CatacombsSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_CatacombsAccess_HydrodynamoStationSide(MetroidPrime2Region):
+class CatacombsAccess_HydrodynamoStationSide(MetroidPrime2Region):
     name="Hydrodynamo Station Side"
     exits_ = [
         MetroidPrime2Exit(

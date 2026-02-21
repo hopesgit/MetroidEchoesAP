@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
+class GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
     name = "Great Bridge"
     desc = "Behind Translator Gate"
     exits_ = [
@@ -30,7 +30,7 @@ class TorvusBog_GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GreatBridge_Beach(MetroidPrime2Region):
+class GreatBridge_Beach(MetroidPrime2Region):
     name = "Great Bridge"
     desc = "Beach"
     exits_ = [
@@ -56,7 +56,7 @@ class TorvusBog_GreatBridge_Beach(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GreatBridge_Bridge(MetroidPrime2Region):
+class GreatBridge_Bridge(MetroidPrime2Region):
     name = "Great Bridge"
     desc="Bridge"
     exits_ = [
@@ -91,7 +91,7 @@ class TorvusBog_GreatBridge_Bridge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GreatBridge_CannonLedge(MetroidPrime2Region):
+class GreatBridge_CannonLedge(MetroidPrime2Region):
     name = "Great Bridge"
     desc="Cannon Ledge"
     exits_ = [
@@ -133,7 +133,7 @@ class TorvusBog_GreatBridge_CannonLedge(MetroidPrime2Region):
         )
     ]
 
-class TorvusBog_GreatBridge_MorphBallTunnel(MetroidPrime2Region):
+class GreatBridge_MorphBallTunnel(MetroidPrime2Region):
     name = "Great Bridge"
     desc="Morph Ball Tunnel"
     exits_ = [
@@ -159,7 +159,7 @@ class TorvusBog_GreatBridge_MorphBallTunnel(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_GreatBridge_NorthPath(MetroidPrime2Region):
+class GreatBridge_NorthPath(MetroidPrime2Region):
     name = "Great Bridge"
     desc="North Path"
     exits_ = [
@@ -197,7 +197,7 @@ class TorvusBog_GreatBridge_NorthPath(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_GreatBridge_ScanPanelLedge(MetroidPrime2Region):
+class GreatBridge_ScanPanelLedge(MetroidPrime2Region):
     name = "Great Bridge"
     desc="Scan Panel Ledge"
     exits_ = [

@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
+class AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Forgotten Bridge Entrance"
     exits=[
@@ -26,7 +26,7 @@ class TorvusBog_AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
+class AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Lower Great Bridge Side"
     exits_ = [
@@ -49,7 +49,7 @@ class TorvusBog_AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
+class AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Ledge Forgotten Bridge Side"
     exits_ = [
@@ -68,7 +68,7 @@ class TorvusBog_AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
+class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Ledge Great Bridge Side"
     exits_ = [
@@ -110,7 +110,7 @@ class TorvusBog_AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_AbandonedWorksite_MorphBallTunnel(MetroidPrime2Region):
+class AbandonedWorksite_MorphBallTunnel(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Morph Ball Tunnel"
     exits_ = [
@@ -125,7 +125,7 @@ class TorvusBog_AbandonedWorksite_MorphBallTunnel(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_AbandonedWorksite_PickupLedge(MetroidPrime2Region):
+class AbandonedWorksite_PickupLedge(MetroidPrime2Region):
     name = "Abandoned Worksite"
     desc="Pickup Ledge"
     exits_ = [

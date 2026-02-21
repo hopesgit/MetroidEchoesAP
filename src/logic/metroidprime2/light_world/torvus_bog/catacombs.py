@@ -25,7 +25,7 @@ def can_clip_through_gate(state, player, inside: bool = False) -> bool:
     ])
 
 
-class TorvusBog_Catacombs_TransitTunnelEastEntrance(MetroidPrime2Region):
+class Catacombs_TransitTunnelEastEntrance(MetroidPrime2Region):
     """An isolated ledge with a blue door that connects to Transit Tunnel East."""
     name="Catacombs"
     desc="Transit Tunnel East Entrance"
@@ -50,7 +50,7 @@ class TorvusBog_Catacombs_TransitTunnelEastEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_Catacombs_TransitTunnelSouthEntrance(MetroidPrime2Region):
+class Catacombs_TransitTunnelSouthEntrance(MetroidPrime2Region):
     """A connected ledge with a zebra-stripe door that connects to Transit Tunnel South."""
     name="Catacombs"
     desc="Transit Tunnel South Entrance"
@@ -75,7 +75,7 @@ class TorvusBog_Catacombs_TransitTunnelSouthEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_Catacombs_KeybearerLedge(MetroidPrime2Region):
+class Catacombs_KeybearerLedge(MetroidPrime2Region):
     """A ledge sandwiched between two door alcoves and the large pool in the center of the room.
     The Keybearer Luminoth body is its most notable feature. Entry: G-Sch's Testament
     Contains a black door leading to Catacombs Access.
@@ -116,7 +116,7 @@ class TorvusBog_Catacombs_KeybearerLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_Catacombs_UnderWater(MetroidPrime2Region):
+class Catacombs_UnderWater(MetroidPrime2Region):
     """The pool in the center of the room.
     Contains Blogg enemies (first visit) and a Bomb Slot."""
     name="Catacombs"
@@ -149,7 +149,7 @@ class TorvusBog_Catacombs_UnderWater(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_Catacombs_PortalLedge(MetroidPrime2Region):
+class Catacombs_PortalLedge(MetroidPrime2Region):
     """An isolated ledge suspended above the central pool.
     Until the Bomb Slot is used, it is barred from entry by a wrap-around gate.
     Contains a Lore Projector. Entry: The New Terror (GC)/Recovering Energy (Wii)"""

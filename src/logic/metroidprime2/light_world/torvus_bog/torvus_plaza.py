@@ -11,7 +11,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # "Torvus Bog - Torvus Plaza | BSJ to Entrance",
 
 
-class TorvusBog_TorvusPlaza_Entrance(MetroidPrime2Region):
+class TorvusPlaza_Entrance(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc="Entrance"
     exits_ = [
@@ -44,7 +44,7 @@ class TorvusBog_TorvusPlaza_Entrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusPlaza_HalfPipe(MetroidPrime2Region):
+class TorvusPlaza_HalfPipe(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc = "Half-Pipe"
     exits_ = [
@@ -72,7 +72,7 @@ class TorvusBog_TorvusPlaza_HalfPipe(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusPlaza_SpiderTrack(MetroidPrime2Region):
+class TorvusPlaza_SpiderTrack(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc="Spider Track" # this includes the standable tree area near the back of the room.
     # It's the beginning of the track, ending just before the Sporb
@@ -107,7 +107,7 @@ class TorvusBog_TorvusPlaza_SpiderTrack(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
+class TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc="Spider Challenge" # this includes the more difficult parts of the track, from the sporb area to the cannon ledge
     exits_ = [
@@ -137,7 +137,7 @@ class TorvusBog_TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusPlaza_CannonLedge(MetroidPrime2Region):
+class TorvusPlaza_CannonLedge(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc="Cannon Ledge"
     exits_ = [
@@ -156,7 +156,7 @@ class TorvusBog_TorvusPlaza_CannonLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusPlaza_ItemLedge(MetroidPrime2Region):
+class TorvusPlaza_ItemLedge(MetroidPrime2Region):
     name = "Torvus Plaza"
     desc="Item Ledge"
     exits_ = [

@@ -7,7 +7,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_ForgottenBridge_Bridge(MetroidPrime2Region):
+class ForgottenBridge_Bridge(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Bridge" # the bridge spins, so its access rules are a little complicated
     exits_ = [
@@ -59,7 +59,7 @@ class TorvusBog_ForgottenBridge_Bridge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_ForgottenBridge_Cage(MetroidPrime2Region):
+class ForgottenBridge_Cage(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Cage" # this includes the path leading to two doors along with the mechanisms that lower after the spinner is used
     exits_ = [
@@ -115,7 +115,7 @@ class TorvusBog_ForgottenBridge_Cage(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_ForgottenBridge_Cliffs(MetroidPrime2Region):
+class ForgottenBridge_Cliffs(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Cliffs" # This includes the platforms rising from the water as well as the raised area leading to the phased bomb slot and bridge
     exits_ = [
@@ -138,7 +138,7 @@ class TorvusBog_ForgottenBridge_Cliffs(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
+class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Dark Portal Ledge" # access rules change depending on whether the bomb slot was activated
     exits_ = [
@@ -171,7 +171,7 @@ class TorvusBog_ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_ForgottenBridge_PickupLedge(MetroidPrime2Region):
+class ForgottenBridge_PickupLedge(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Pickup Ledge" # access rules change depending on whether the bomb slot was activated
     exits_ = [
@@ -205,7 +205,7 @@ class TorvusBog_ForgottenBridge_PickupLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_ForgottenBridge_Shallows(MetroidPrime2Region):
+class ForgottenBridge_Shallows(MetroidPrime2Region):
     name="Forgotten Bridge"
     desc="Shallows"
     exits=[

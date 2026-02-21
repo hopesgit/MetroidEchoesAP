@@ -6,7 +6,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TempleAccess_Upper(MetroidPrime2Region):
+class TempleAccess_Upper(MetroidPrime2Region):
     name = "Temple Access"
     desc="Upper"
     exits_ = [
@@ -30,7 +30,7 @@ class TorvusBog_TempleAccess_Upper(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TempleAccess_PickupTube(MetroidPrime2Region):
+class TempleAccess_PickupTube(MetroidPrime2Region):
     name = "Temple Access"
     desc="Pickup Tube"
     exits_ = [
@@ -52,7 +52,7 @@ class TorvusBog_TempleAccess_PickupTube(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TempleAccess_LowerGreatBridgeEntrance(MetroidPrime2Region):
+class TempleAccess_LowerGreatBridgeEntrance(MetroidPrime2Region):
     name = "Temple Access"
     desc="Lower Great Bridge Entrance"
     exits_ = [
@@ -68,7 +68,7 @@ class TorvusBog_TempleAccess_LowerGreatBridgeEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TempleAccess_LowerTorvusTempleEntrance(MetroidPrime2Region):
+class TempleAccess_LowerTorvusTempleEntrance(MetroidPrime2Region):
     name = "Temple Access"
     desc="Lower Torvus Temple Entrance"
     exits_ = [
@@ -84,7 +84,7 @@ class TorvusBog_TempleAccess_LowerTorvusTempleEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TempleAccess_MorphBallTunnel(MetroidPrime2Region):
+class TempleAccess_MorphBallTunnel(MetroidPrime2Region):
     name = "Temple Access"
     desc="Morph Ball Tunnel"
     exits_ = [

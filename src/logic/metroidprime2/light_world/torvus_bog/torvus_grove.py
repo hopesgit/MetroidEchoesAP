@@ -6,7 +6,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TorvusGrove_Center(MetroidPrime2Region):
+class TorvusGrove_Center(MetroidPrime2Region):
     name = "Torvus Grove"
     desc="Center" # pretty much the entire bottom
     exits_ = [
@@ -36,7 +36,7 @@ class TorvusBog_TorvusGrove_Center(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
+class TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
     name = "Torvus Grove"
     desc="Behind Breakable Wall" # behind the wall broken by the felled tree
     exits_ = [
@@ -58,7 +58,7 @@ class TorvusBog_TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_TorvusGrove_ConnectorLedge(MetroidPrime2Region):
+class TorvusGrove_ConnectorLedge(MetroidPrime2Region):
     name = "Torvus Grove"
     desc="Connector Ledge" # at the top of the half-pipe
     exits_ = [
@@ -85,7 +85,7 @@ class TorvusBog_TorvusGrove_ConnectorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_TorvusGrove_CurvedLedge(MetroidPrime2Region):
+class TorvusGrove_CurvedLedge(MetroidPrime2Region):
     name = "Torvus Grove"
     desc = "Curved Ledge" # past a small hole after the connector ledge
     exits_=[
@@ -105,7 +105,7 @@ class TorvusBog_TorvusGrove_CurvedLedge(MetroidPrime2Region):
         )
     ]
 
-class TorvusBog_TorvusGrove_IsolatedLedge(MetroidPrime2Region):
+class TorvusGrove_IsolatedLedge(MetroidPrime2Region):
     name = "Torvus Grove"
     desc="Isolated Ledge" # the tall one
     exits_ = [
@@ -123,7 +123,7 @@ class TorvusBog_TorvusGrove_IsolatedLedge(MetroidPrime2Region):
         )
     ]
 
-class TorvusBog_TorvusGrove_UpperDoorLedge(MetroidPrime2Region):
+class TorvusGrove_UpperDoorLedge(MetroidPrime2Region):
     name = "Torvus Grove"
     desc="Upper Door Ledge"
     exits_ = [

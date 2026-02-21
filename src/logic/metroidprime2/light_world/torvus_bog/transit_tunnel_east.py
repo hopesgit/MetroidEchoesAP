@@ -9,7 +9,7 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
-class TorvusBog_TransitTunnelEast_CatacombsSide(MetroidPrime2Region):
+class TransitTunnelEast_CatacombsSide(MetroidPrime2Region):
     name="Transit Tunnel East"
     desc="Catacombs Side"
     exits_ = [
@@ -24,7 +24,7 @@ class TorvusBog_TransitTunnelEast_CatacombsSide(MetroidPrime2Region):
         )
     ]
 
-class TorvusBog_TransitTunnelEast_TrainingChamberSide(MetroidPrime2Region):
+class TransitTunnelEast_TrainingChamberSide(MetroidPrime2Region):
     """Has the Bomb Slot as well as the pickup."""
     name="Transit Tunnel East"
     desc="Training Chamber Side"

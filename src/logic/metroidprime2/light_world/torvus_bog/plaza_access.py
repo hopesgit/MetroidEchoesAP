@@ -10,7 +10,7 @@ class _PlazaAccess(MetroidPrime2Region):
     name = "Plaza Access"
 
 
-class TorvusBog_PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
+class PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
     name = "Plaza Access"
     desc = "Forgotten Bridge Entrance"
     exits_ = [
@@ -27,7 +27,7 @@ class TorvusBog_PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_PlazaAccess_HalfPipe(MetroidPrime2Region):
+class PlazaAccess_HalfPipe(MetroidPrime2Region):
     name = "Plaza Access"
     desc="Half-Pipe"
     exits_ = [
@@ -50,7 +50,7 @@ class TorvusBog_PlazaAccess_HalfPipe(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_PlazaAccess_Maze(MetroidPrime2Region):
+class PlazaAccess_Maze(MetroidPrime2Region):
     name = "Plaza Access"
     desc="Maze"
     exits_ = [
@@ -69,7 +69,7 @@ class TorvusBog_PlazaAccess_Maze(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(MetroidPrime2Region):
+class PlazaAccess_MorphBallTunnelForgottenBridgeSide(MetroidPrime2Region):
     name = "Plaza Access"
     desc="Morph Ball Tunnel Forgotten Bridge Side"
     exits_ = [
@@ -91,7 +91,7 @@ class TorvusBog_PlazaAccess_MorphBallTunnelForgottenBridgeSide(MetroidPrime2Regi
         )
     ]
 
-class TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(MetroidPrime2Region):
+class PlazaAccess_MorphBallTunnelTorvusPlazaSide(MetroidPrime2Region):
     name = "Plaza Access"
     desc="Morph Ball Tunnel Torvus Plaza Side"
     exits_ = [
@@ -105,7 +105,7 @@ class TorvusBog_PlazaAccess_MorphBallTunnelTorvusPlazaSide(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_PlazaAccess_TorvusPlazaEntrance(MetroidPrime2Region):
+class PlazaAccess_TorvusPlazaEntrance(MetroidPrime2Region):
     name = "Plaza Access"
     desc="Torvus Plaza Entrance"
     exits_ = [

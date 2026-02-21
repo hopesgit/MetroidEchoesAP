@@ -26,7 +26,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # - Requires Air Underwater since you can't Screw Attack underwater normally.
 # - https://youtu.be/ALjnm411Ldk
 
-class TorvusBog_HydrodynamoStation_AboveWater(MetroidPrime2Region):
+class HydrodynamoStation_AboveWater(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc="Above Water"
     exits_ = [
@@ -46,7 +46,7 @@ class TorvusBog_HydrodynamoStation_AboveWater(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoStation_Top(MetroidPrime2Region):
+class HydrodynamoStation_Top(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "Top"
     exits_ = [
@@ -61,7 +61,7 @@ class TorvusBog_HydrodynamoStation_Top(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
+class HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "Top Door Ledge"
     exits_ = [
@@ -81,7 +81,7 @@ class TorvusBog_HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
+class HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "Three Doors"
     exits_ = [
@@ -144,7 +144,7 @@ class TorvusBog_HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
+class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "North Door Ledge"
     exits_ = [
@@ -202,7 +202,7 @@ class TorvusBog_HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
+class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "West Door Ledge"
     exits_ = [
@@ -259,7 +259,7 @@ class TorvusBog_HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
+class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "East Door Ledge"
     exits_ = [
@@ -316,7 +316,7 @@ class TorvusBog_HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable base removes this section
+class HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable base removes this section
     name="Hydrodynamo Station"
     desc = "Cannon"
     exits_ = [
@@ -339,7 +339,7 @@ class TorvusBog_HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable ba
     ]
 
 
-class TorvusBog_HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
+class HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc="North Scan Ledge"
     exits_ = [
@@ -382,7 +382,7 @@ class TorvusBog_HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
         ]
 
 
-class TorvusBog_HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
+class HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "Above Movable Base"
     exits_ = [
@@ -403,7 +403,7 @@ class TorvusBog_HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
     ]
 
 
-class TorvusBog_HydrodynamoStation_UnderMovableBase(MetroidPrime2Region):
+class HydrodynamoStation_UnderMovableBase(MetroidPrime2Region):
     name="Hydrodynamo Station"
     desc = "Under Movable Base"
     exits_ = [
