@@ -8,9 +8,7 @@ from ... import (
     can_use_screw_attack,
     can_use_grapple_beam,
     can_use_dark_beam,
-    can_use_darkburst,
-    can_use_sonic_boom,
-    can_use_sunburst
+    can_activate_bomb_slot
 )
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
@@ -22,22 +20,6 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 # paired bomb slots: removes barrier around item; extends platform from wall below item ledge
 # spiny platforms don't stay flipped on room reload, so they aren't room state entities
 # the spiny platforms can no longer be interacted with once the water is drained
-
-
-def _can_operate_bomb_slot(state, player, trick: str = None) -> bool:
-    return condition_and([
-        state.has("Morph Ball", player),
-        condition_or([
-            condition_and([
-                has_trick_enabled(state, player, trick),
-                condition_or([
-                    can_use_darkburst(state, player),
-                    can_use_sonic_boom(state, player)
-                ])
-            ]),
-            state.has("Morph Ball Bomb", player)
-        ]),
-    ])
 
 
 class TorvusBog_GatheringHall_UpperDoorLedge(MetroidPrime2Region):
@@ -276,17 +258,7 @@ class TorvusBog_GatheringHall_SouthDoorLedge(MetroidPrime2Region):
                     code=None,
                     player=player,
                 ),
-                can_access=lambda state, player: condition_or([
-                    can_lay_bomb(state, player),
-                    condition_and([
-                        has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
-                        condition_or([
-                            can_use_darkburst(state, player),
-                            can_use_sonic_boom(state, player),
-                        ]),
-                        state.has("Morph Ball", player)
-                    ])
-                ]),
+                can_access=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
                 parent=self,
             ),
         ]
@@ -380,15 +352,7 @@ class TorvusBog_GatheringHall_SpiderTracks(MetroidPrime2Region):
                     condition_and([
                         state.has_all(["Morph Ball", "Space Jump Boots", "Screw Attack"], player),
                         has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
-                        condition_or([
-                            condition_and([
-                                has_trick_enabled(state, player,
-                                                  "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
-                                can_use_darkburst(state, player),
-                                can_use_sonic_boom(state, player)
-                            ]),
-                            state.has("Morph Ball Bomb", player),
-                        ]),
+                        can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
                     ])
                 ]),
                 parent=self,

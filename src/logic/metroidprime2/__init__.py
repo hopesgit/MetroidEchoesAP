@@ -405,6 +405,84 @@ def can_activate_safe_zone(state: CollectionState, player: int) -> bool:
     ])
 
 
+def can_activate_bomb_slot(state, player, trick) -> bool:
+    """Trick is not required if the player can lay bombs"""
+    return condition_and([
+        state.has('Morph Ball'),
+        condition_or([
+            can_lay_bomb(state, player),
+            condition_and([
+                has_trick_enabled(state, player, trick),
+                condition_or([
+                    can_use_darkburst(state, player),
+                    can_use_sonic_boom(state, player)
+                ])
+            ])
+        ])
+    ])
+
+
+def hydrodynamo_station_has_scanned_panels(state, player) -> bool:
+    return condition_and([
+        state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
+        state.has("Torvus Bog - Hydrodynamo Station | Scanned West Panel", player),
+        state.has("Torvus Bog - Hydrodynamo Station | Scanned East Panel", player),
+    ])
+
+
+def main_hydrochamber_spider_track_open(state, player) -> bool:
+    return condition_or([
+        not state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player),
+        condition_and([
+            state.has("Torvus Bog - Main Hydrochamber | Alpha Blogg Dead", player),
+            state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player)
+        ])
+    ])
+
+
+def can_reach_underwater_bomb_slot(state, player, trick) -> bool:
+    """Trick is not required if the player has Gravity Boost"""
+    return condition_or([
+        condition_and([
+            state.has('Space Jump Boots', player),
+            has_trick_enabled(state, player, trick)
+        ]),
+        state.has('Gravity Boost', player)
+    ])
+
+
+def can_boost_jump(state, player, trick) -> bool:
+    return condition_and([
+        has_trick_enabled(state, player, trick),
+        can_use_boost_ball(state, player)
+    ])
+
+
+def can_underwater_dash(state, player, trick) -> bool:
+    """This trick depends on the underwater physics, so it is no longer usable if the player has Grav Boost."""
+    return condition_and([
+        has_trick_enabled(state, player, trick),
+        state.has("Space Jump Boots", player),
+        not state.has("Gravity Boost", player)
+    ])
+
+
+def can_underwater_boost_jump(state, player, boost_jump_trick, underwater_dash_trick) -> bool:
+    # https://youtu.be/7I2Jl824CMI
+    return condition_and([
+        can_boost_jump(state, player, boost_jump_trick),
+        can_underwater_dash(state, player, underwater_dash_trick)
+    ])
+
+
+def underwater_movement(state, player, underwater_dash_trick) -> bool:
+    """Represents being able to get greater-than-usual horizontal movement while underwater."""
+    return condition_or([
+        state.has("Gravity Boost", player),
+        can_underwater_dash(state, player, underwater_dash_trick)
+    ])
+
+
 def has_enough_sky_temple_keys(state: CollectionState, player: int) -> bool:
     options = cast(MetroidPrime2Options, state.multiworld.worlds[player].options)
     needed_sky_temple_keys_count: int = options.sky_temple_keys_count.value

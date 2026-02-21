@@ -1,43 +1,24 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball, has_missile_count
+from ... import has_trick_enabled, can_lay_bomb, has_missile_count, hydrodynamo_station_has_scanned_panels, underwater_movement
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
+# tricks in this room:
+# "Torvus Bog - Hydrodynamo Station | Boost Jump"
+# - Cross gaps using the speed and momentum of a boost ball while underwater. Requires good unmorph timing to get an instant unmorph.
 
-def _has_scanned_panels(state, player) -> bool:
-    return condition_and([
-        state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
-        state.has("Torvus Bog - Hydrodynamo Station | Scanned West Panel", player),
-        state.has("Torvus Bog - Hydrodynamo Station | Scanned East Panel", player),
-    ])
+# "Torvus Bog - Hydrodynamo Station | Underwater Dash"
+# - Dash while entering the water, preserving your momentum by taking advantage of the underwater physics.
+# - https://youtu.be/IUcPDkHKd0I
+# - https://youtu.be/nY4U_0Uyn0M
 
-def _can_boost_jump(state, player) -> bool:
-    return condition_and([
-        has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Boost Jump"),
-        can_use_boost_ball(state, player)
-    ])
-
-def _can_underwater_dash(state, player) -> bool:
-    return condition_and([
-        has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash"),
-        state.has("Space Jump Boots", player),
-        not state.has("Gravity Boost", player)
-    ])
-
-def _can_underwater_boost_jump(state, player) -> bool:
-    return condition_and([
-        _can_boost_jump(state, player),
-        _can_underwater_dash(state, player)
-    ])
-
-def _underwater_movement(state, player) -> bool:
-    return condition_or([
-        state.has("Gravity Boost", player),
-        _can_underwater_dash(state, player)
-    ])
+# "Torvus Bog - Hydrodynamo Station | Air Underwater"
+# - Trick the game into thinking you are not in the water when you are. This allows for standard movement.
+# - You can activate Air Underwater by causing a camera transition while entering the water. This is almost always done by morphing.
+# - https://youtu.be/g7DeBeDMpeU
 
 
 class TorvusBog_HydrodynamoStation_AboveWater(MetroidPrime2Region):
@@ -145,7 +126,7 @@ class TorvusBog_HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not _has_scanned_panels(state, player)
+            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
@@ -176,7 +157,7 @@ class TorvusBog_HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not _has_scanned_panels(state, player)
+            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
@@ -233,15 +214,15 @@ class TorvusBog_HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not _has_scanned_panels(state, player)
+            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (North Door Ledge)",
-            rule=lambda state, player: _underwater_movement(state, player)
+            rule=lambda state, player: underwater_movement(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (East Door Ledge)",
-            rule=lambda state, player: _underwater_movement(state, player)
+            rule=lambda state, player: underwater_movement(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
@@ -290,15 +271,15 @@ class TorvusBog_HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not _has_scanned_panels(state, player)
+            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (West Door Ledge)",
-            rule=lambda state, player: _underwater_movement(state, player)
+            rule=lambda state, player: underwater_movement(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (North Door Ledge)",
-            rule=lambda state, player: _underwater_movement(state, player)
+            rule=lambda state, player: underwater_movement(state, player, "Torvus Bog - Hydrodynamo Station | Underwater Dash")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
@@ -367,7 +348,7 @@ class TorvusBog_HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Cannon)",
             rule=lambda state, player: condition_and([
-                not _has_scanned_panels(state, player),
+                not hydrodynamo_station_has_scanned_panels(state, player),
                 condition_or([
                     not state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
                     state.has("Space Jump Boots", player),
@@ -405,13 +386,13 @@ class TorvusBog_HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
                 state.has("Gravity Boost", player),
                 condition_and(
                     state.has("Morph Ball", player), # the bubble jets at the bottom of the room push you up while morphed if you don't have gravity boost
-                    not _has_scanned_panels(state, player)
+                    not hydrodynamo_station_has_scanned_panels(state, player)
                 )
             ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Under Movable Base)",
-            rule=lambda state, player: _has_scanned_panels(state, player)
+            rule=lambda state, player: hydrodynamo_station_has_scanned_panels(state, player)
         ),
     ]
 
@@ -427,7 +408,6 @@ class TorvusBog_HydrodynamoStation_UnderMovableBase(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
-            rule=lambda state, player: _has_scanned_panels(state, player)
+            rule=lambda state, player: hydrodynamo_station_has_scanned_panels(state, player)
         ),
     ]
-

@@ -1,20 +1,10 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg
+from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg, main_hydrochamber_spider_track_open
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-
-
-def _spider_track_open(state, player) -> bool:
-    return condition_or([
-        not state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player),
-        condition_and([
-            state.has("Torvus Bog - Main Hydrochamber | Alpha Blogg Dead", player),
-            state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player)
-        ])
-    ])
 
 
 class TorvusBog_MainHydrochamber_Top(MetroidPrime2Region):
@@ -39,7 +29,7 @@ class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Spider Track)",
-            rule=lambda state, player: _spider_track_open(state, player)
+            rule=lambda state, player: main_hydrochamber_spider_track_open(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Top)",
@@ -47,7 +37,7 @@ class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
             rule=lambda state, player: condition_or([
                 # boss is dead
                 condition_and([
-                    _spider_track_open(state, player),
+                    main_hydrochamber_spider_track_open(state, player),
                     state.has("Gravity Boost", player),
                     condition_or([
                         state.has('Space Jump Boots', player), # vanilla strats
@@ -68,7 +58,7 @@ class TorvusBog_MainHydrochamber_Main(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Lower Door)",
-            rule=lambda state, player: _spider_track_open(state, player)
+            rule=lambda state, player: main_hydrochamber_spider_track_open(state, player)
         ),
     ]
 
@@ -96,7 +86,7 @@ class TorvusBog_MainHydrochamber_LowerDoor(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Lower Door)",
-            rule=lambda state, player: _spider_track_open(state, player)
+            rule=lambda state, player: main_hydrochamber_spider_track_open(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrochamber Storage",
@@ -122,7 +112,7 @@ class TorvusBog_MainHydrochamber_SpiderTrack(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Main)",
-            rule=lambda state, player: _spider_track_open(state, player)
+            rule=lambda state, player: main_hydrochamber_spider_track_open(state, player)
         ),
     ]
 
@@ -137,6 +127,6 @@ class TorvusBog_MainHydrochamber_PortalLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Main)",
-            rule=lambda state, player: _spider_track_open(state, player)
+            rule=lambda state, player: main_hydrochamber_spider_track_open(state, player)
         ),
     ]

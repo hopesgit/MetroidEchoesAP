@@ -1,6 +1,4 @@
-from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
-from ... import can_lay_bomb,can_use_darkburst, can_use_sonic_boom
+from ... import can_activate_bomb_slot
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
@@ -11,29 +9,11 @@ class TorvusBog_ControllerAccess(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Temple (Upper)",
             door=DoorCover.Any,
-            rule=lambda state, player: condition_or([
-                can_lay_bomb(state, player),
-                condition_and([
-                    state.has("Morph Ball", player),
-                    condition_and([
-                        can_use_darkburst(state, player),
-                        can_use_sonic_boom(state, player)
-                    ])
-                ])
-            ])
+            rule=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Controller Access | Activate Bomb Slot without Bombs")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Energy Controller",
             door=DoorCover.Any,
-            rule=lambda state, player: condition_or([
-                can_lay_bomb(state, player),
-                condition_and([
-                    state.has("Morph Ball", player),
-                    condition_and([
-                        can_use_darkburst(state, player),
-                        can_use_sonic_boom(state, player)
-                    ])
-                ])
-            ])
+            rule=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Controller Access | Activate Bomb Slot without Bombs")
         )
     ]
