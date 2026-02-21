@@ -1,9 +1,9 @@
 from typing import Callable, Optional, TYPE_CHECKING
 
-from BaseClasses import CollectionState, Region, MultiWorld
-
 from .Enums import DoorCover
 from .Locations import MetroidPrime2Location
+
+from BaseClasses import CollectionState, Region, MultiWorld
 
 if TYPE_CHECKING:
     from .Items import MetroidPrime2Item

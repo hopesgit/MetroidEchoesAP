@@ -1,7 +1,6 @@
 from typing import Callable, Optional
 
 from BaseClasses import CollectionState, Location, Region
-
 from .Items import MetroidPrime2Item
 from .Utils import strip_description_from_region_name
 
