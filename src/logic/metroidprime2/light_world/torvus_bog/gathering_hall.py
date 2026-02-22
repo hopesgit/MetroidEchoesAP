@@ -150,13 +150,10 @@ class GatheringHall_ItemLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: True
+        )
 
 
 class GatheringHall_LaserLedge(MetroidPrime2Region):
@@ -249,19 +246,16 @@ class GatheringHall_SouthDoorLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Solo Bomb Slot Activated",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Gathering Hall | Solo Bomb Slot Activated",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
-                parent=self,
+        self.add_location(
+            name="Solo Bomb Slot Activated",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Solo Bomb Slot Activated",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player
             ),
-        ]
+            can_access=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
+        )
 
 
 class GatheringHall_Bottom(MetroidPrime2Region):
@@ -291,19 +285,16 @@ class GatheringHall_Bottom(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Water Drained",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Gathering Hall | Water Drained",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: can_lay_pb(state, player, 2),
-                parent=self,
+        self.add_location(
+            name="Water Drained",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Water Drained",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: can_lay_pb(state, player, 2)
+        )
 
 
 class GatheringHall_PortalAlcove(MetroidPrime2Region):
@@ -334,27 +325,24 @@ class GatheringHall_SpiderTracks(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Paired Bomb Slots Activated",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Gathering Hall | Paired Bomb Slots Activated",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: condition_or([
-                    condition_and([
-                        can_lay_bomb(state, player),
-                        state.has_all(["Spider Ball", "Boost Ball"], player),
-                        can_lay_pb(state, player, 2)
-                    ]),
-                    condition_and([
-                        state.has_all(["Morph Ball", "Space Jump Boots", "Screw Attack"], player),
-                        has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
-                        can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
-                    ])
-                ]),
-                parent=self,
+        self.add_location(
+            name="Paired Bomb Slots Activated",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Paired Bomb Slots Activated",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: condition_or([
+                condition_and([
+                    can_lay_bomb(state, player),
+                    state.has_all(["Spider Ball", "Boost Ball"], player),
+                    can_lay_pb(state, player, 2)
+                ]),
+                condition_and([
+                    state.has_all(["Morph Ball", "Space Jump Boots", "Screw Attack"], player),
+                    has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
+                    can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
+                ])
+            ])
+        )

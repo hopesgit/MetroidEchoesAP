@@ -1,7 +1,7 @@
 from BaseClasses import MultiWorld, ItemClassification
 
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb
+from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_grapple_beam
 from .....Enums import DoorCover
 from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -63,7 +63,7 @@ class AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Morph Ball Tunnel)",
-            rule=lambda state, player: state.has("Morph Ball")
+            rule=lambda state, player: state.has("Morph Ball", player)
         )
     ]
 
@@ -75,8 +75,8 @@ class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Pickup Ledge)",
             rule=lambda state, player: condition_or([
-                state.has("Grapple Beam", player),
-                state.has_all(["Space Jump Boots", "Screw Attack"], player),
+                can_use_grapple_beam(state, player),
+                can_use_screw_attack(state, player),
                 condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | BSJ to Pickup Ledge"),
                     state.has_all(["Space Jump Boots", "Morph Ball", "Morph Ball Bomb"], player)
@@ -136,8 +136,8 @@ class AbandonedWorksite_PickupLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Ledge Great Bridge Side)",
             rule=lambda state, player: condition_or([
-                state.has("Grapple Beam", player),
-                state.has_all(['Space Jump Boots', "Screw Attack"], player)
+                can_use_grapple_beam(state, player),
+                can_use_screw_attack(state, player)
             ])
         )
     ]
@@ -145,10 +145,7 @@ class AbandonedWorksite_PickupLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: True
+        )

@@ -24,13 +24,10 @@ class UndergroundTunnel_Tunnel(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: state.has("Morph Ball", player),
-                parent=self
-            )
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: state.has("Morph Ball", player)
+        )
 
 
 class UndergroundTunnel_AfterFalls(MetroidPrime2Region):

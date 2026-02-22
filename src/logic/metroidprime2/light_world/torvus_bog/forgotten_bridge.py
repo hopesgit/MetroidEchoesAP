@@ -100,19 +100,16 @@ class ForgottenBridge_Cage(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Spinner Activated",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Forgotten Bridge | Spinner Activated",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: state.has_all(["Morph Ball", "Boost Ball"], player),
-                parent=self,
+        self.add_location(
+            name="Spinner Activated",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Forgotten Bridge | Spinner Activated",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: state.has_all(["Morph Ball", "Boost Ball"], player)
+        )
 
 
 class ForgottenBridge_Cliffs(MetroidPrime2Region):
@@ -196,13 +193,10 @@ class ForgottenBridge_PickupLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: True,
+        )
 
 
 class ForgottenBridge_Shallows(MetroidPrime2Region):

@@ -92,13 +92,10 @@ class TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: True
+        )
 
 
 class TorvusLagoon_Bridge(MetroidPrime2Region):
@@ -138,19 +135,16 @@ class TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
+        self.add_location(
+            name="Torvus Bog - Torvus Lagoon | Gates Lowered",
+            can_access=lambda state, player: state.has("Scan Visor", player),
+            locked_item= MetroidPrime2Item(
                 name="Torvus Bog - Torvus Lagoon | Gates Lowered",
-                can_access=lambda state, player: state.has("Scan Visor", player),
-                locked_item= MetroidPrime2Item(
-                    name="Torvus Bog - Torvus Lagoon | Gates Lowered",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player
-                ),
-                parent=self
-            ),
-        ]
+                classification=ItemClassification.progression,
+                code=None,
+                player=player
+            )
+        )
 
 
 class TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
@@ -159,7 +153,7 @@ class TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Bridge)",
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Gates Lowered")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Gates Lowered", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Ruined Alcove",

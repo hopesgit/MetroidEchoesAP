@@ -3,7 +3,6 @@ from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
@@ -150,13 +149,10 @@ class GreatBridge_MorphBallTunnel(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Power Bomb Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Power Bomb Expansion)",
+            can_access=lambda state, player: True
+        )
 
 
 class GreatBridge_NorthPath(MetroidPrime2Region):
@@ -223,16 +219,13 @@ class GreatBridge_ScanPanelLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Cannon Activated",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Great Bridge | Cannon Activated",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: state.has("Scan Visor", player),
-                parent=self,
+        self.add_location(
+            name="Cannon Activated",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Great Bridge | Cannon Activated",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: state.has("Scan Visor", player)
+        )

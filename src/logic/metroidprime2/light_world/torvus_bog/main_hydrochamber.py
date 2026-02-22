@@ -7,6 +7,20 @@ from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
+# tricks:
+# Alpha Blogg Skip:
+# - Get onto the first platform from the bottom with a Bomb Space Jump, then fly over to the upper door using Grav Boost.
+# - https://youtu.be/OSnzyN6ZFR0
+
+# BSJ to skip Spider Track:
+# - The track is standable, but you must Bomb Space Jump to get onto it.
+# - https://youtu.be/KPs8MIRVY-I
+
+# Climb to Top Post-Alpha Blogg (NSJ):
+# - The last jump requires an instant unmorph after rolling off the second platform from the bottom.
+# - https://www.youtube.com/watch?v=tDa-PxtRTzo
+
+
 class MainHydrochamber_Top(MetroidPrime2Region):
     name = "Main Hydrochamber"
     desc="Top"
@@ -29,7 +43,7 @@ class MainHydrochamber_Main(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Spider Track)",
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Top)",
@@ -39,7 +53,10 @@ class MainHydrochamber_Main(MetroidPrime2Region):
                 condition_and([
                     state.has("Gravity Boost", player),
                     condition_or([
-                        state.has('Space Jump Boots', player), # vanilla strats
+                        condition_and([
+                            state.has('Space Jump Boots', player), # vanilla strats
+                            state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
+                        ]),
                         condition_and([ # instant unmorph strats
                             has_trick_enabled(state, player,
                                               "Torvus Bog - Main Hydrochamber | Climb to Top Post-Alpha Blogg (NSJ)"),
@@ -47,11 +64,11 @@ class MainHydrochamber_Main(MetroidPrime2Region):
                         ])
                     ])
                 ]),
-                # sticky samus strats
                 condition_and([
-                    has_trick_enabled(state, player, "Torvus Bog - Main Hydrochamber | Climb Central Pillar (NSJ)"),
-                    state.has("Gravity Boost", player),
-                    not state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player)
+                    has_trick_enabled(state, player, "Torvus Bog - Main Hydrochamber | Alpha Blogg Skip"),
+                    state.has('Gravity Boost', player),
+                    can_lay_bomb(state, player),
+                    state.has('Space Jump Boots', player)
                 ])
             ])
         ),
@@ -64,19 +81,16 @@ class MainHydrochamber_Main(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Alpha Blogg Dead",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Main Hydrochamber | Alpha Blogg Dead",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: can_defeat_alpha_blogg(state, player),
-                parent=self,
+        self.add_location(
+            name="Alpha Blogg Dead",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Main Hydrochamber | Alpha Blogg Dead",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: can_defeat_alpha_blogg(state, player)
+        )
 
 
 class MainHydrochamber_LowerDoor(MetroidPrime2Region):
@@ -84,12 +98,12 @@ class MainHydrochamber_LowerDoor(MetroidPrime2Region):
     desc="Lower Door"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Main Hydrochamber (Lower Door)",
+            destination="Torvus Bog - Main Hydrochamber (Main)",
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrochamber Storage",
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
         ),
     ]
 

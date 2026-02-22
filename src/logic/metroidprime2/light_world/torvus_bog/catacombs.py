@@ -1,9 +1,8 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_activate_bomb_slot, can_reach_underwater_bomb_slot
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
+from .....Utils import condition_or, condition_and
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
@@ -131,23 +130,19 @@ class Catacombs_UnderWater(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Bomb Slot Activated",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Catacombs | Bomb Slot Activated",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: condition_and([
-                    can_reach_underwater_bomb_slot(state, player, "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot"),
-                    can_activate_bomb_slot(state, player, "Torvus Bog - Catacombs | Activate Bomb Slot without Bombs")
-                ]),
-                parent=self,
+        self.add_location(
+            name="Bomb Slot Activated",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Catacombs | Bomb Slot Activated",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player
             ),
-        ]
-
+            can_access=lambda state, player: condition_and([
+                can_reach_underwater_bomb_slot(state, player, "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot"),
+                can_activate_bomb_slot(state, player, "Torvus Bog - Catacombs | Activate Bomb Slot without Bombs")
+            ])
+        )
 
 class Catacombs_PortalLedge(MetroidPrime2Region):
     """An isolated ledge suspended above the central pool.

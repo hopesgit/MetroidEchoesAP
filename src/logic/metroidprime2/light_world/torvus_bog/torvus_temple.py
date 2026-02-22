@@ -3,7 +3,6 @@ from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_use_screw_attack, has_oob_kit, can_use_seeker_launcher, has_missile_count
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
@@ -30,35 +29,30 @@ class TorvusTemple_Arena(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pirates Dead",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Torvus Temple | Pirates Dead",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: True,
-                parent=self,
+        self.add_location(
+            name="Pirates Dead",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Torvus Temple | Pirates Dead",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-            MetroidPrime2Location(
-                name="Item Collected",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Torvus Temple | Item Collected",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: True,
-                parent=self,
+            can_access=lambda state, player: True
+        )
+        self.add_location(
+            name="Item Collected",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Torvus Temple | Item Collected",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-            MetroidPrime2Location(
-                name="Pickup (Super Missile)",
-                can_access=lambda state, player: True,
-                parent=self
-            )
-        ]
+            can_access=lambda state, player: True
+        )
+        self.add_location(
+            name="Pickup (Super Missile)",
+            can_access=lambda state, player: True
+        )
 
 
 class TorvusTemple_Underground(MetroidPrime2Region):

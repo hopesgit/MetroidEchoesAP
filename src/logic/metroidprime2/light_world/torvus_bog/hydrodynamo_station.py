@@ -193,13 +193,10 @@ class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: True,
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: True
+        )
 
 
 class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
@@ -244,19 +241,16 @@ class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Scanned West Panel",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Hydrodynamo Station | Scanned West Panel",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: state.has("Scan Visor", player),
-                parent=self,
+        self.add_location(
+            name="Scanned West Panel",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Hydrodynamo Station | Scanned West Panel",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: state.has("Scan Visor", player)
+        )
 
 
 class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
@@ -301,19 +295,16 @@ class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Scanned East Panel",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Hydrodynamo Station | Scanned East Panel",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: state.has("Scan Visor", player),
-                parent=self,
+        self.add_location(
+            name="Scanned East Panel",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Hydrodynamo Station | Scanned East Panel",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: state.has("Scan Visor", player)
+        )
 
 
 class HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable base removes this section
@@ -367,19 +358,16 @@ class HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Scanned North Panel",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Hydrodynamo Station | Scanned North Panel",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: state.has("Scan Visor", player),
-                parent=self,
+        self.add_location(
+            name="Scanned North Panel",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Hydrodynamo Station | Scanned North Panel",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: state.has("Scan Visor", player)
+        )
 
 
 class HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):

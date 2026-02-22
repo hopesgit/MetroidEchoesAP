@@ -8,8 +8,7 @@ class UndergroundTransport_Upper(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Transport (Shaft)",
-            door=DoorCover.ScanVisor,
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Scan Visor", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Temple (Underground)",
@@ -41,11 +40,10 @@ class UndergroundTransport_Lower(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Transport (Shaft)",
-            door=DoorCover.ScanVisor,
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Scan Visor", player)
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Torvus Temple (Above Water)",
+            destination="Torvus Bog - Hydrodynamo Station (Above Water)",
             door=DoorCover.Any,
             rule=lambda state, player: True
         )

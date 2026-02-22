@@ -11,7 +11,6 @@ from ... import (
 )
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
@@ -97,19 +96,16 @@ class TrainingChamber_Center(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Bloggs Dead",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Training Chamber | Bloggs Dead",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: True,
-                parent=self,
+        self.add_location(
+            name="Bloggs Dead",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Training Chamber | Bloggs Dead",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: True
+        )
 
 
 class TrainingChamber_StatuePlatform(MetroidPrime2Region):
@@ -133,29 +129,26 @@ class TrainingChamber_StatuePlatform(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Statue Moved",
-                locked_item=MetroidPrime2Item(
-                    name="Torvus Bog - Training Chamber | Statue Moved",
-                    classification=ItemClassification.progression,
-                    code=None,
-                    player=player,
-                ),
-                can_access=lambda state, player: condition_or([
-                    can_lay_bomb(state, player),
-                    condition_and([
-                        has_trick_enabled(state, player, "Torvus Bog - Training Chamber | Activate Bomb Slot without Bombs"),
-                        condition_or([
-                            can_use_darkburst(state, player),
-                            can_use_sonic_boom(state, player),
-                        ]),
-                        state.has("Morph Ball", player)
-                    ])
-                ]),
-                parent=self,
+        self.add_location(
+            name="Statue Moved",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Training Chamber | Statue Moved",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
             ),
-        ]
+            can_access=lambda state, player: condition_or([
+                can_lay_bomb(state, player),
+                condition_and([
+                    has_trick_enabled(state, player, "Torvus Bog - Training Chamber | Activate Bomb Slot without Bombs"),
+                    condition_or([
+                        can_use_darkburst(state, player),
+                        can_use_sonic_boom(state, player),
+                    ]),
+                    state.has("Morph Ball", player)
+                ])
+            ])
+        )
 
 
 class TrainingChamber_SouthDoorLedge(MetroidPrime2Region):
@@ -226,13 +219,10 @@ class TrainingChamber_BehindStatue(MetroidPrime2Region):
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
         super().__init__(region_name, player, multiworld)
 
-        self.locations = [
-            MetroidPrime2Location(
-                name="Pickup (Missile Expansion)",
-                can_access=lambda state, player: state.has("Torvus Bog - Training Chamber | Statue Moved"),
-                parent=self
-            ),
-        ]
+        self.add_location(
+            name="Pickup (Missile Expansion)",
+            can_access=lambda state, player: state.has("Torvus Bog - Training Chamber | Statue Moved")
+        )
 
 
 class TrainingChamber_NorthDoorLedge(MetroidPrime2Region):
