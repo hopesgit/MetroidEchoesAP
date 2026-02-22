@@ -5,6 +5,7 @@ from ... import (
     can_use_boost_ball,
     can_use_screw_attack,
     can_use_seeker_launcher,
+    has_missile_count,
 )
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item

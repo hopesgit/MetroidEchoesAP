@@ -1,6 +1,6 @@
 from BaseClasses import ItemClassification, MultiWorld
-
 from ... import can_use_seeker_launcher
+
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
