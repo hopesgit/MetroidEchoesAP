@@ -12,6 +12,7 @@ from ..Utils import condition_and, get_all_classes_from_parent_module, snake_cas
 from BaseClasses import CollectionState, Entrance, MultiWorld
 from ...generic.Rules import set_rule
 
+
 def regions_(player: int, multiworld: MultiWorld) -> dict[str, dict[str, MetroidPrime2Region]]:
     reg = re.compile(r'^(?:\w+\.)+(\w+)\.\w+$')
 
