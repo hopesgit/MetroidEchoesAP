@@ -35,11 +35,12 @@ class UndergroundTunnel_Tunnel(MetroidPrime2Region):
 
 class UndergroundTunnel_AfterFalls(MetroidPrime2Region):
     name="Underground Tunnel"
-    desc="Tunnel"
+    desc="After Falls"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Tunnel (Tunnel)",
             rule=lambda state, player: condition_or([
+                # TODO: change to can_ball_jump later
                 can_lay_bomb(state, player),
                 condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Underground Tunnel | Instant Morph to enter Tunnel"),

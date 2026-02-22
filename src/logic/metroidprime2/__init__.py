@@ -405,10 +405,10 @@ def can_activate_safe_zone(state: CollectionState, player: int) -> bool:
     ])
 
 
-def can_activate_bomb_slot(state, player, trick) -> bool:
+def can_activate_bomb_slot(state: CollectionState, player: int, trick: str) -> bool:
     """Trick is not required if the player can lay bombs"""
     return condition_and([
-        state.has('Morph Ball'),
+        state.has('Morph Ball', player),
         condition_or([
             can_lay_bomb(state, player),
             condition_and([
@@ -422,7 +422,7 @@ def can_activate_bomb_slot(state, player, trick) -> bool:
     ])
 
 
-def hydrodynamo_station_has_scanned_panels(state, player) -> bool:
+def hydrodynamo_station_has_scanned_panels(state: CollectionState, player: int) -> bool:
     return condition_and([
         state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
         state.has("Torvus Bog - Hydrodynamo Station | Scanned West Panel", player),
@@ -430,17 +430,7 @@ def hydrodynamo_station_has_scanned_panels(state, player) -> bool:
     ])
 
 
-def main_hydrochamber_spider_track_open(state, player) -> bool:
-    return condition_or([
-        not state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player),
-        condition_and([
-            state.has("Torvus Bog - Main Hydrochamber | Alpha Blogg Dead", player),
-            state.has("Torvus Bog - Hydrochamber Storage | Item Collected", player)
-        ])
-    ])
-
-
-def can_reach_underwater_bomb_slot(state, player, trick) -> bool:
+def can_reach_underwater_bomb_slot(state: CollectionState, player: int, trick: str) -> bool:
     """Trick is not required if the player has Gravity Boost"""
     return condition_or([
         condition_and([
@@ -451,14 +441,14 @@ def can_reach_underwater_bomb_slot(state, player, trick) -> bool:
     ])
 
 
-def can_boost_jump(state, player, trick) -> bool:
+def can_boost_jump(state: CollectionState, player: int, trick: str) -> bool:
     return condition_and([
         has_trick_enabled(state, player, trick),
         can_use_boost_ball(state, player)
     ])
 
 
-def can_underwater_dash(state, player, trick) -> bool:
+def can_underwater_dash(state: CollectionState, player: int, trick: str) -> bool:
     """This trick depends on the underwater physics, so it is no longer usable if the player has Grav Boost."""
     return condition_and([
         has_trick_enabled(state, player, trick),
@@ -467,7 +457,8 @@ def can_underwater_dash(state, player, trick) -> bool:
     ])
 
 
-def can_underwater_boost_jump(state, player, boost_jump_trick, underwater_dash_trick) -> bool:
+def can_underwater_boost_jump(state: CollectionState, player: int,
+                              boost_jump_trick: str, underwater_dash_trick: str) -> bool:
     # https://youtu.be/7I2Jl824CMI
     return condition_and([
         can_boost_jump(state, player, boost_jump_trick),
@@ -475,7 +466,7 @@ def can_underwater_boost_jump(state, player, boost_jump_trick, underwater_dash_t
     ])
 
 
-def underwater_movement(state, player, underwater_dash_trick) -> bool:
+def underwater_movement(state: CollectionState, player: int, underwater_dash_trick: str) -> bool:
     """Represents being able to get greater-than-usual horizontal movement while underwater."""
     return condition_or([
         state.has("Gravity Boost", player),
