@@ -13,7 +13,7 @@ class UndergroundTransport_Upper(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Temple (Underground)",
             door=DoorCover.Any,
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Temple (Pirates Dead)")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Temple (Pirates Dead)", player)
             # you MUST have this, or you get stuck in the doorway after the door is opened
         )
     ]

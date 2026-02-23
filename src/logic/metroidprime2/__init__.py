@@ -452,8 +452,7 @@ def can_underwater_dash(state: CollectionState, player: int, trick: str) -> bool
     """This trick depends on the underwater physics, so it is no longer usable if the player has Grav Boost."""
     return condition_and([
         has_trick_enabled(state, player, trick),
-        state.has("Space Jump Boots", player),
-        not state.has("Gravity Boost", player)
+        state.has("Space Jump Boots", player)
     ])
 
 

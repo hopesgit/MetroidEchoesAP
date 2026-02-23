@@ -6,7 +6,7 @@ class TransportToSanctuaryFortress(MetroidPrime2Region):
     name="Transport to Sanctuary Fortress"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (North Ledge)",
+            destination="Torvus Bog - Fortress Transport Access (Upper Ledge)",
             door = DoorCover.Any,
             rule=lambda state, player: True
         ),
