@@ -2,10 +2,10 @@
 Air jets in this room can lift the Morph Ball if the player doesn't have Bombs."""
 
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_and
 from ... import can_lay_bomb
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_and
 
 
 class TransitTunnelEast_CatacombsSide(MetroidPrime2Region):

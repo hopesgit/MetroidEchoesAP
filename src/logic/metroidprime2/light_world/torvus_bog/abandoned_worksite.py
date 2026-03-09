@@ -1,6 +1,7 @@
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_grapple_beam
+from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_grapple_beam, can_use_boost_ball, \
+    can_boost_jump
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
@@ -44,8 +45,14 @@ class AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Pickup Ledge)",
-            rule=lambda state, player: state.has("Grapple Beam", player) # you can just grapple up there from the floor
-        ),
+            rule=lambda state, player: condition_or([
+                state.has("Grapple Beam", player), # you can just grapple up there from the floor
+                condition_and([
+                    has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | BSJ to Pickup Ledge"),
+                    state.has_all(["Space Jump Boots", "Morph Ball", "Morph Ball Bomb"], player)
+                ]),
+            ])
+        )
     ]
 
 
@@ -58,7 +65,7 @@ class AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
             rule=lambda state, player: condition_or([
                 can_lay_bomb(state, player),
                 state.has("Space Jump Boots", player),
-                state.has("Screw Attack", player)
+                can_use_screw_attack(state, player, is_nsj=True)
             ])
         ),
         MetroidPrime2Exit(
@@ -78,21 +85,14 @@ class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
                 can_use_grapple_beam(state, player),
                 can_use_screw_attack(state, player),
                 condition_and([
-                    has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | BSJ to Pickup Ledge"),
-                    state.has_all(["Space Jump Boots", "Morph Ball", "Morph Ball Bomb"], player)
-                ]),
-                condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | NSJ BSJ to Pickup Ledge"),
                     state.has_all(["Morph Ball", "Morph Ball Bomb"], player)
                 ]),
                 condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | NSJ SA to Pickup Ledge"),
-                    state.has("Screw Attack", player)
+                    can_use_screw_attack(state, player, is_nsj=True)
                 ]),
-                condition_and([
-                    has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | Boost Jump to Pickup Ledge"),
-                    state.has_all(["Morph Ball", "Boost Ball"], player)
-                ]),
+                can_boost_jump(state, player, "Torvus Bog - Abandoned Worksite | Boost Jump to Pickup Ledge"),
                 condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Abandoned Worksite | Roll Jump to Pickup Ledge"),
                     state.has_all(["Morph Ball", "Space Jump Boots"], player)

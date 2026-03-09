@@ -1,5 +1,4 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import (
     has_trick_enabled,
     can_lay_bomb,
@@ -12,6 +11,7 @@ from ... import (
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 
 class TrainingChamber_WestCagedArea(MetroidPrime2Region):

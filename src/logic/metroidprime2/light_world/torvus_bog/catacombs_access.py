@@ -1,15 +1,15 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_and, condition_or
 
 
 class CatacombsAccess_CatacombsSide(MetroidPrime2Region):
     name="Catacombs Side"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Catacombs (Door Across From Portal)",
+            destination="Torvus Bog - Catacombs (Keybearer Ledge)",
             door=DoorCover.Dark,
             rule=lambda state, player: True
         ),

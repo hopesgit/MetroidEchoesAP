@@ -28,7 +28,7 @@ class TransitTunnelWest_NorthSide(MetroidPrime2Region):
             rule=lambda state, player: can_lay_bomb(state, player)
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Training Chamber (West Gated Area)",
+            destination="Torvus Bog - Training Chamber (West Caged Area)",
             door=DoorCover.Light,
             rule=lambda state, player: True
         )

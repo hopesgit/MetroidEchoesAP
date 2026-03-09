@@ -430,6 +430,14 @@ def hydrodynamo_station_has_scanned_panels(state: CollectionState, player: int) 
     ])
 
 
+def transit_tunnel_south_can_progress_room(state, player) -> bool:
+    return condition_and([
+        state.has('Gravity Boost', player),
+        can_lay_bomb(state, player)
+    ])
+
+
+
 def can_reach_underwater_bomb_slot(state: CollectionState, player: int, trick: str) -> bool:
     """Trick is not required if the player has Gravity Boost"""
     return condition_or([

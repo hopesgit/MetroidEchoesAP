@@ -1,17 +1,10 @@
 """Morph Ball puzzle room connecting Gathering Hall and Catacombs."""
 
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_and
-from ... import can_lay_bomb
+from ... import can_lay_bomb, transit_tunnel_south_can_progress_room
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-
-
-def can_progress_room(state, player) -> bool:
-    return condition_and([
-        state.has('Gravity Boost', player),
-        can_lay_bomb(state, player)
-    ])
+from .....Utils import condition_and
 
 
 class TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
@@ -25,7 +18,7 @@ class TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Morph Ball Puzzle)",
-            rule=lambda state, player: can_progress_room(state, player)
+            rule=lambda state, player: transit_tunnel_south_can_progress_room(state, player)
         )
     ]
 
@@ -41,7 +34,7 @@ class TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Morph Ball Puzzle)",
-            rule=lambda state, player: can_progress_room(state, player)
+            rule=lambda state, player: transit_tunnel_south_can_progress_room(state, player)
         )
     ]
 
@@ -52,11 +45,11 @@ class TransitTunnelSouth_MorphBallPuzzle(MetroidPrime2Region):
     exits_= [
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Catacombs Side)",
-            rule=lambda state, player: can_progress_room(state, player)
+            rule=lambda state, player: transit_tunnel_south_can_progress_room(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Gathering Hall Side)",
-            rule=lambda state, player: can_progress_room(state, player)
+            rule=lambda state, player: transit_tunnel_south_can_progress_room(state, player)
         )
     ]
 

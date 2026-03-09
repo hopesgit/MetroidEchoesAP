@@ -3,10 +3,10 @@
     Caution: A player may get stuck here if they fall into the water and lack any movement upgrades."""
 
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or
 from ... import can_lay_bomb, can_use_screw_attack
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or
 
 
 class FortressTransportAccess_AboveWater(MetroidPrime2Region):

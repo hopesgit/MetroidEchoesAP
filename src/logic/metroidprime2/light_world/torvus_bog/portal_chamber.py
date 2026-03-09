@@ -1,9 +1,8 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import can_activate_dark_portal, can_lay_bomb, can_use_boost_ball, has_trick_enabled
 from .....Enums import DoorCover
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 
 class PortalChamber_Center(MetroidPrime2Region):

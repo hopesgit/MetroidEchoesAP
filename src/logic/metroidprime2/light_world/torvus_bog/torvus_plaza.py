@@ -1,9 +1,8 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball, can_use_spider_ball, can_use_screw_attack
 from .....Enums import DoorCover
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 # tricks:
 # "Torvus Bog - Torvus Plaza | STE SA to Item",
@@ -64,7 +63,7 @@ class TorvusPlaza_HalfPipe(MetroidPrime2Region):
             rule = lambda state, player: condition_and([
                 can_use_boost_ball(state, player),
                 condition_or([
-                    state.has("Spider Ball", player),
+                    can_use_spider_ball(state, player),
                     has_trick_enabled(state, player, "Torvus Bog - Torvus Plaza | Boost-only/Cannonball")
                 ])
             ])
@@ -170,6 +169,6 @@ class TorvusPlaza_ItemLedge(MetroidPrime2Region):
         super().__init__(region_name, player, multiworld)
 
         self.add_location(
-            name="Pickup (Power Bomb Expansion)",
+            name="Pickup (Energy Tank)",
             can_access=lambda state, player: True
         )

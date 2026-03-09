@@ -1,9 +1,9 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_use_screw_attack, has_oob_kit, can_use_seeker_launcher, has_missile_count
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 
 class TorvusTemple_Arena(MetroidPrime2Region):
