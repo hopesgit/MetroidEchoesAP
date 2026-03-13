@@ -15,7 +15,13 @@ class CatacombsAccess_CatacombsSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs Access (Hydrodynamo Station Side)",
-            rule=lambda state, player: True
+            rule=lambda state, player: condition_or([
+                state.has("Space Jump Boots", player),
+                condition_and([
+                    can_lay_bomb(state, player),
+                    has_trick_enabled(state, player, "Torvus Bog - Catacombs Access | Instant Unmorph DBJ")
+                ])
+            ])
         )
     ]
 
@@ -30,12 +36,6 @@ class CatacombsAccess_HydrodynamoStationSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs Access (Catacombs Side)",
-            rule=lambda state, player: condition_or([
-                state.has("Space Jump Boots", player),
-                condition_and([
-                    can_lay_bomb(state, player),
-                    has_trick_enabled(state, player, "Torvus Bog - Catacombs Access | Instant Unmorph DBJ")
-                ])
-            ])
+            rule=lambda state, player: True
         )
     ]

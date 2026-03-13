@@ -122,6 +122,7 @@ class Tricks(OptionList):
         "Torvus Bog - Abandoned Worksite | Roll Jump to Pickup Ledge",
         "Torvus Bog - Catacombs | Activate Bomb Slot without Bombs",
         "Torvus Bog - Catacombs | Clip Through Gate", # bounce off of wall through cage bars using Screw Attack
+        "Torvus Bog - Catacombs | Exit Water NSJ",
         "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot",
         "Torvus Bog - Catacombs Access | Instant Unmorph DBJ",
         "Torvus Bog - Controller Access | Activate Bomb Slot without Bombs",
@@ -130,7 +131,6 @@ class Tricks(OptionList):
         "Torvus Bog - Forgotten Bridge | BSJ into Cage",
         "Torvus Bog - Forgotten Bridge | Bomb Jump Between Platforms",
         "Torvus Bog - Forgotten Bridge | Air Underwater",
-        # "Torvus Bog - Forgotten Bridge | Climb by Standing on Enemies", # not sure about including this one since you can break it by killing the grenchlers
         "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs",
         "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments",
         "Torvus Bog - Great Bridge | Instant Unmorph to Cannon Ledge",
@@ -155,7 +155,7 @@ class Tricks(OptionList):
         "Torvus Bog - Torvus Grove | Scan Dash to reach Curved Ledge",
         "Torvus Bog - Torvus Grove | Instant Unmorph to reach Isolated Ledge"
         "Torvus Bog - Torvus Lagoon | Air Underwater",
-        "Torvus Bog - Torvus Lagoon | STE to Bridge", #STE is "Standable Terrain Exploit(ation)"
+        "Torvus Bog - Torvus Lagoon | STE to Bridge",
         "Torvus Bog - Torvus Lagoon | STE to Save Room Ledge",
         "Torvus Bog - Torvus Plaza | STE SA to Item",
         "Torvus Bog - Torvus Plaza | Boost-only/Cannonball",

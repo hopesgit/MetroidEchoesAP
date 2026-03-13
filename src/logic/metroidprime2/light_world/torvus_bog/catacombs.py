@@ -1,5 +1,12 @@
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_activate_bomb_slot, can_reach_underwater_bomb_slot
+from ... import (
+    has_trick_enabled,
+    can_lay_bomb,
+    can_use_screw_attack,
+    can_activate_bomb_slot,
+    can_reach_underwater_bomb_slot,
+    catacombs_can_clip_through_gate
+)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Utils import condition_or, condition_and
@@ -7,21 +14,10 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 # tricks:
-#         "Torvus Bog - Catacombs | Clip Through Gate",
-#         "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot",
 #         "Torvus Bog - Catacombs | Activate Bomb Slot without Bombs",
-
-def can_clip_through_gate(state, player, inside: bool = False) -> bool:
-    return condition_and([
-        condition_or([
-            can_use_screw_attack(state, player),
-            condition_and([
-                inside,
-                state.has('Morph Ball', player)
-            ])
-        ]),
-        has_trick_enabled(state, player, "Torvus Bog - Catacombs | Clip Through Gate")
-    ])
+#         "Torvus Bog - Catacombs | Clip Through Gate",
+#         "Torvus Bog - Catacombs | Exit Water NSJ",
+#         "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot",
 
 
 class Catacombs_TransitTunnelEastEntrance(MetroidPrime2Region):
@@ -60,10 +56,6 @@ class Catacombs_TransitTunnelSouthEntrance(MetroidPrime2Region):
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Catacombs (Portal Ledge)",
-            rule=lambda state, player: can_use_screw_attack(state, player)
-        ),
-        MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs (Transit Tunnel East Ledge)",
             rule=lambda state, player: can_use_screw_attack(state, player)
         ),
@@ -89,7 +81,7 @@ class Catacombs_KeybearerLedge(MetroidPrime2Region):
                     state.has('Torvus Bog - Catacombs | Bomb Slot Activated', player),
                     state.has('Space Jump Boots', player),
                 ]),
-                can_clip_through_gate(state, player)
+                catacombs_can_clip_through_gate(state, player)
             ])
         ),
         MetroidPrime2Exit(
@@ -123,7 +115,11 @@ class Catacombs_UnderWater(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs (Keybearer Ledge)",
-            rule=lambda state, player: True
+            rule=lambda state, player: condition_or([
+                state.has("Space Jump Boots", player),
+                has_trick_enabled(state, player, "Torvus Bog - Catacombs | Exit Water NSJ"),
+                can_lay_bomb(state, player) # requires DBJ, but this seems reasonable to expect someone to do
+            ])
         )
     ]
 
@@ -158,9 +154,9 @@ class Catacombs_PortalLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs (Under Water)",
-            rule=lambda state, player: condition_and([
+            rule=lambda state, player: condition_or([
                 state.has('Torvus Bog - Catacombs | Bomb Slot Activated', player),
-                can_clip_through_gate(state, player, True)
+                catacombs_can_clip_through_gate(state, player, True)
             ])
         ),
         MetroidPrime2Exit(
