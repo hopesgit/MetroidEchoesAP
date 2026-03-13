@@ -22,15 +22,18 @@ class TorvusPlaza_Entrance(MetroidPrime2Region):
             destination="Torvus Bog - Torvus Plaza (Spider Track)",
             rule=lambda state, player: condition_or([
                 # normal conditions
-                state.has_all(["Morph Ball", "Spider Ball", "Boost Ball"], player),
+                condition_and([
+                    can_use_boost_ball(state, player),
+                    can_use_spider_ball(state, player)
+                ]),
                 # using SA
                 condition_and([
-                    state.has_all(["Space Jump Boots", "Screw Attack"], player),
+                    can_use_screw_attack(state, player),
                     has_trick_enabled(state, player, "Torvus Bog - Torvus Plaza | STE SA to Item")
                 ]),
                 # using Boost
                 condition_and([
-                    state.has_all(["Morph Ball", "Boost Ball"], player),
+                    can_use_boost_ball(state, player),
                     has_trick_enabled(state, player, "Torvus Bog - Torvus Plaza | Boost-only/Cannonball")
                 ])
             ])

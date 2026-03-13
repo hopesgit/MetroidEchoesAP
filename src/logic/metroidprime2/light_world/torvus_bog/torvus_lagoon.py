@@ -2,7 +2,6 @@ from BaseClasses import MultiWorld, ItemClassification
 from ... import has_trick_enabled, can_use_screw_attack
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_and, condition_or
 
@@ -27,7 +26,7 @@ class TorvusLagoon_Beach(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Bridge)",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Torvus Lagoon | Gates Lowered"),
+                state.has("Torvus Bog - Torvus Lagoon | Gates Lowered", player),
                 condition_or([
                     state.has("Space Jump Boots", player),
                     state.has("Screw Attack", player),
@@ -60,7 +59,7 @@ class TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Save Station A",
             door=DoorCover.Missile,
-            rule=lambda state, player: state.has("Missile Launcher", player)
+            rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Beach)",
@@ -69,10 +68,10 @@ class TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Lagoon - Bridge",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Torvus Lagoon | Gates Lowered"),
+                state.has("Torvus Bog - Torvus Lagoon | Gates Lowered", player),
                 condition_or([
                     state.has("Space Jump Boots", player),
-                    state.has("Screw Attack", player)
+                    can_use_screw_attack(state, player, is_nsj=True)
                 ])
             ])
         )

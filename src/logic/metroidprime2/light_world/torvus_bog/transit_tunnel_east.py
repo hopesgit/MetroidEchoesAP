@@ -1,5 +1,5 @@
 """Morph Ball puzzle room connecting Training Chamber and Catacombs.
-Air jets in this room can lift the Morph Ball if the player doesn't have Bombs."""
+Air jets in this room can lift the Morph Ball if the player has neither Bombs nor Gravity Boost."""
 
 from BaseClasses import MultiWorld, ItemClassification
 from ... import can_lay_bomb
@@ -19,7 +19,8 @@ class TransitTunnelEast_CatacombsSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel East (Training Chamber Side)",
-            rule=lambda state, player: True
+            rule=lambda state, player: can_lay_bomb(state, player)
+            #todo: replace with can_ball_jump once that's a thing
         )
     ]
 
@@ -35,7 +36,8 @@ class TransitTunnelEast_TrainingChamberSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel East (Catacombs Side)",
-            rule=lambda state, player: True
+            rule=lambda state, player: can_lay_bomb(state, player)
+            #todo: replace with can_ball_jump once that's a thing
         )
     ]
 

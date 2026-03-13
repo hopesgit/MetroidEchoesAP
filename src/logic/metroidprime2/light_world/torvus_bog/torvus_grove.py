@@ -1,8 +1,8 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_screw_attack, can_use_boost_ball
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 
 class TorvusGrove_Center(MetroidPrime2Region):
@@ -25,12 +25,12 @@ class TorvusGrove_Center(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Meditation Vista (Entrance)",
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Grove | Pirates Dead")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Grove | Pirates Dead", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Tunnel (After Falls)",
             door=DoorCover.Light,
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Grove | Pirates Dead")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Grove | Pirates Dead", player)
         )
     ]
 

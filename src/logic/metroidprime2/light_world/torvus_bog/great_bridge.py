@@ -1,9 +1,9 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_or, condition_and
 
 
 class GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
@@ -18,13 +18,7 @@ class GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Great Bridge (Cannon Ledge)",
             door=DoorCover.EmeraldTranslator,
-            rule=lambda state, player: condition_or([
-                condition_and([
-                    state.has("Scan Visor", player),
-                    state.has("Emerald Translator", player)
-                ]),
-                state.has("Space Jump Boots", player)
-            ])
+            rule=lambda state, player: state.has("Space Jump Boots", player)
         )
     ]
 
@@ -120,7 +114,7 @@ class GreatBridge_CannonLedge(MetroidPrime2Region):
                     state.has("Morph Ball", player)
                 ]),
                 condition_and([
-                    state.has("Space Jump Boots", player),
+                    state.has_all(["Space Jump Boots", "Scan Visor"], player),
                     has_trick_enabled(state, player, "Torvus Bog - Great Bridge | Slope Jump over Translator Gate"),
                     has_trick_enabled(state, player, "Torvus Bog - Great Bridge | Scan Dash across Top")
                 ])

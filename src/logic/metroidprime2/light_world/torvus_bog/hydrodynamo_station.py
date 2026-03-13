@@ -1,10 +1,14 @@
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, has_missile_count, hydrodynamo_station_has_scanned_panels, underwater_movement
+from ... import (
+    has_trick_enabled,
+    can_lay_bomb,
+    has_missile_count,
+    hydrodynamo_station_has_scanned_panels,
+    underwater_movement)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_and, condition_or
 
 # tricks in this room:
 # "Torvus Bog - Hydrodynamo Station | Boost Jump"
