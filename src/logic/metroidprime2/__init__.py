@@ -425,7 +425,10 @@ def can_activate_bomb_slot(state: CollectionState, player: int, trick: str) -> b
 def catacombs_can_clip_through_gate(state, player, inside: bool = False) -> bool:
     return condition_and([
         condition_or([
-            can_use_screw_attack(state, player),
+            condition_and([
+                can_use_screw_attack(state, player),
+                not inside
+            ]),
             condition_and([
                 inside,
                 state.has('Morph Ball', player)

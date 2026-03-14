@@ -75,7 +75,7 @@ class TorvusTemple_Underground(MetroidPrime2Region):
             rule=lambda state, player: condition_or([
                 can_use_seeker_launcher(state, player),
                 condition_and([
-                    has_trick_enabled(state, player, "Torvus Bog - Torvus Temple | Open Seeker Door without Seeker Missiles"),
+                    has_trick_enabled(state, player, "Torvus Bog - Torvus Temple | Seeker Skip"),
                     has_missile_count(state, player, 2),
                     can_use_screw_attack(state, player)
                 ])
