@@ -1,3 +1,5 @@
+"""A room characterized by its underwater bomb slot and dark portal wrapped by a gate."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import (
     has_trick_enabled,
@@ -120,6 +122,14 @@ class Catacombs_UnderWater(MetroidPrime2Region):
                 has_trick_enabled(state, player, "Torvus Bog - Catacombs | Exit Water NSJ"),
                 can_lay_bomb(state, player) # requires DBJ, but this seems reasonable to expect someone to do
             ])
+        ),
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Catacombs (Transit Tunnel East Entrance)",
+            rule=lambda state, player: condition_or([
+                state.has("Space Jump Boots", player),
+                has_trick_enabled(state, player, "Torvus Bog - Catacombs | Exit Water NSJ"),
+                can_lay_bomb(state, player)  # requires DBJ, but this seems reasonable to expect someone to do
+            ])
         )
     ]
 
@@ -158,10 +168,6 @@ class Catacombs_PortalLedge(MetroidPrime2Region):
                 state.has('Torvus Bog - Catacombs | Bomb Slot Activated', player),
                 catacombs_can_clip_through_gate(state, player, True)
             ])
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Catacombs (Keybearer Ledge)",
-            rule=lambda state, player: state.has('Torvus Bog - Catacombs | Bomb Slot Activated', player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs (Transit Tunnel East Entrance",

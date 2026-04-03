@@ -429,10 +429,7 @@ def catacombs_can_clip_through_gate(state, player, inside: bool = False) -> bool
                 can_use_screw_attack(state, player),
                 not inside
             ]),
-            condition_and([
-                inside,
-                state.has('Morph Ball', player)
-            ])
+            inside
         ]),
         has_trick_enabled(state, player, "Torvus Bog - Catacombs | Clip Through Gate")
     ])

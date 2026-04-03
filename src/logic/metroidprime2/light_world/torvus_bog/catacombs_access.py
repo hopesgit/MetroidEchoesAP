@@ -17,10 +17,7 @@ class CatacombsAccess_CatacombsSide(MetroidPrime2Region):
             destination="Torvus Bog - Catacombs Access (Hydrodynamo Station Side)",
             rule=lambda state, player: condition_or([
                 state.has("Space Jump Boots", player),
-                condition_and([
-                    can_lay_bomb(state, player),
-                    has_trick_enabled(state, player, "Torvus Bog - Catacombs Access | Instant Unmorph DBJ")
-                ])
+                can_lay_bomb(state, player)
             ])
         )
     ]

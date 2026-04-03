@@ -124,7 +124,6 @@ class Tricks(OptionList):
         "Torvus Bog - Catacombs | Clip Through Gate", # bounce off of wall through cage bars using Screw Attack
         "Torvus Bog - Catacombs | Exit Water NSJ",
         "Torvus Bog - Catacombs | Underwater Dash to Bomb Slot",
-        "Torvus Bog - Catacombs Access | Instant Unmorph DBJ",
         "Torvus Bog - Controller Access | Activate Bomb Slot without Bombs",
         "Torvus Bog - Forgotten Bridge | Scan Dash from Bridge",
         "Torvus Bog - Forgotten Bridge | Roll Jump from Bridge",
