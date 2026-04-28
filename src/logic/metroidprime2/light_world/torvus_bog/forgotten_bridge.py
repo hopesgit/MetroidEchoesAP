@@ -1,5 +1,19 @@
+"""
+A room characterized by a large spinning bridge in the center of the room. It contains:
+- One phased Bomb Slot
+- One Spinner
+- One caged area
+- One Dark Portal
+- One Super Missile Cover door
+- One Missile Cover door
+- One white door
+- Grenchler or Dark Pirate Commando enemies
+
+Logic assumes that the bomb slot in Dark Forgotten Bridge has already been activated.
+"""
+
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal
+from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack, can_use_boost_ball
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -7,38 +21,17 @@ from .....Utils import condition_or, condition_and
 
 
 class ForgottenBridge_Bridge(MetroidPrime2Region):
+    """The bridge. It rotates."""
     name="Forgotten Bridge"
-    desc="Bridge" # the bridge spins, so its access rules are a little complicated
+    desc="Bridge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Pickup Ledge)",
-            rule=lambda state, player: condition_or([
-                state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                condition_and([
-                    not state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                    state.has_all(["Space Jump Boots", "Screw Attack"], player)
-                ]),
-                condition_and([
-                    not state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                    state.has_all(["Space Jump Boots", "Scan Visor"], player),
-                    has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Scan Dash from Bridge")
-                ]),
-                condition_and([
-                    not state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                    state.has_all(["Space Jump Boots", "Morph Ball"], player),
-                    has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Roll Jump from Bridge")
-                ])
-            ])
+            rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Dark Portal Ledge)",
-            rule=lambda state, player: condition_or([
-                not state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                condition_and([
-                    state.has(state, player, "Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                    state.has_all(["Space Jump Boots", "Screw Attack"], player)
-                ])
-            ])
+            rule=lambda state, player: can_use_screw_attack(state, player, is_nsj=False)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Shallows)",
@@ -59,8 +52,10 @@ class ForgottenBridge_Bridge(MetroidPrime2Region):
 
 
 class ForgottenBridge_Cage(MetroidPrime2Region):
+    """A path between two side rooms that is not open to the rest of the room until a Spinner is used in this subregion.
+    Also includes the platforms that lower after the Spinner has been operated."""
     name="Forgotten Bridge"
-    desc="Cage" # this includes the path leading to two doors along with the mechanisms that lower after the spinner is used
+    desc="Cage"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Cliffs)",
@@ -107,13 +102,14 @@ class ForgottenBridge_Cage(MetroidPrime2Region):
                 code=None,
                 player=player,
             ),
-            can_access=lambda state, player: state.has_all(["Morph Ball", "Boost Ball"], player)
+            can_access=lambda state, player: can_use_boost_ball(state, player)
         )
 
 
 class ForgottenBridge_Cliffs(MetroidPrime2Region):
+    """Includes all the ledges leading up from the water to the phased bomb slot and bridge."""
     name="Forgotten Bridge"
-    desc="Cliffs" # This includes the platforms rising from the water as well as the raised area leading to the phased bomb slot and bridge
+    desc="Cliffs"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Shallows)",
@@ -159,17 +155,14 @@ class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Bridge)",
-            rule=lambda state, player: condition_or([
-                state.has("Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                state.has("Space Jump Boots")
-            ])
+            rule=lambda state, player: state.has("Space Jump Boots", player)
         )
     ]
 
 
 class ForgottenBridge_PickupLedge(MetroidPrime2Region):
     name="Forgotten Bridge"
-    desc="Pickup Ledge" # access rules change depending on whether the bomb slot was activated
+    desc="Pickup Ledge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Forgotten Bridge Entrance)",
@@ -182,10 +175,7 @@ class ForgottenBridge_PickupLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Bridge)",
-            rule=lambda state, player: condition_or([
-                not state.has("Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated"),
-                state.has_all(["Space Jump Boots", "Screw Attack"], player)
-            ])
+            rule=lambda state, player: True
         )
     ]
 

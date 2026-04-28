@@ -1,3 +1,5 @@
+"""A room characterized by its split nature. Morph Ball tunnels provide connections between all but the pickup ledge subregion."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import (
@@ -12,6 +14,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 class AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
+    """The part of the room leading to/from Forgotten Bridge. Has a Super Missile door and a Morph Ball tunnel protected by a Sporb."""
     name = "Abandoned Worksite"
     desc="Forgotten Bridge Entrance"
     exits=[
@@ -32,6 +35,8 @@ class AbandonedWorksite_ForgottenBridgeEntrance(MetroidPrime2Region):
 
 
 class AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
+    """The part of the room leading to/from Great Bridge. Has a piston to lead Samus to a Morph Ball tunnel.
+    The grapple point above can be accessed from down here."""
     name = "Abandoned Worksite"
     desc="Great Bridge Entrance"
     exits_ = [
@@ -62,6 +67,7 @@ class AbandonedWorksite_GreatBridgeEntrance(MetroidPrime2Region):
 
 
 class AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
+    """The ledge on the Forgotten Bridge side of the room, joined to the Great Bridge side of the room by a Morph Ball tunnel."""
     name = "Abandoned Worksite"
     desc="Ledge Forgotten Bridge Side"
     exits_ = [
@@ -81,6 +87,7 @@ class AbandonedWorksite_LedgeForgottenBridgeSide(MetroidPrime2Region):
 
 
 class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
+    """The ledge on the Great Bridge side of the room, joined to the Forgotten Bridge side of the room by a Morph Ball tunnel."""
     name = "Abandoned Worksite"
     desc="Ledge Great Bridge Side"
     exits_ = [
@@ -116,6 +123,7 @@ class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
 
 
 class AbandonedWorksite_PickupLedge(MetroidPrime2Region):
+    """A ledge containing a pickup. Sits above the Great Bridge entrance and across from the ledge on the Great Bridge side."""
     name = "Abandoned Worksite"
     desc="Pickup Ledge"
     exits_ = [
