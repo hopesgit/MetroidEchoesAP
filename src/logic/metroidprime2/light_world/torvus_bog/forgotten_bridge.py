@@ -60,7 +60,7 @@ class ForgottenBridge_Cage(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Cliffs)",
             rule=lambda state, player: condition_or([
-                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated"),
+                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player),
                 condition_and([
                     has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | BSJ into Cage"),
                     can_lay_bomb(state, player),
@@ -71,7 +71,7 @@ class ForgottenBridge_Cage(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Bridge)",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated"),
+                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player),
                 state.has_all(["Space Jump Boots", "Screw Attack"], player)
             ])
         ),
@@ -141,8 +141,8 @@ class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Cage)",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated"),
-                state.has("Space Jump Boots")
+                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player),
+                state.has("Space Jump Boots", player)
             ])
         ),
         MetroidPrime2Exit(
