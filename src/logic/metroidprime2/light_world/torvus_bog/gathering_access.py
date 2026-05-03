@@ -1,3 +1,5 @@
+"""Room connecting Hydrodynamo Station and Gathering Hall. Has white doors on both sides."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

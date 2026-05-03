@@ -1,3 +1,5 @@
+""""""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
 from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack
@@ -6,6 +8,7 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 class HydrodynamoShaft_Top(MetroidPrime2Region):
+    """The top section of the room, accessible through the blue door at the very bottom of Hydrodymano Station."""
     name="Hydrodynamo Shaft"
     desc= "Top"
     exits_ = [
@@ -22,6 +25,7 @@ class HydrodynamoShaft_Top(MetroidPrime2Region):
 
 
 class HydrodynamoShaft_Stairs(MetroidPrime2Region):
+    """The stairs. Can be difficult to reach from below."""
     name="Hydrodynamo Shaft"
     desc= "Stairs"
     exits_ = [
@@ -45,6 +49,7 @@ class HydrodynamoShaft_Stairs(MetroidPrime2Region):
 
 
 class HydrodynamoShaft_Main(MetroidPrime2Region):
+    """The subregion that links the Bottom, Stairs, and Portal Ledge room subregions."""
     name="Hydrodynamo Shaft"
     desc= "Main"
     exits_ = [
@@ -69,6 +74,7 @@ class HydrodynamoShaft_Main(MetroidPrime2Region):
 
 
 class HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
+    """Contains a Dark Portal."""
     name="Hydrodynamo Shaft"
     desc= "Portal Alcove"
     exits_ = [
@@ -83,6 +89,7 @@ class HydrodynamoShaft_PortalAlcove(MetroidPrime2Region):
     ]
 
 class HydrodynamoShaft_Bottom(MetroidPrime2Region):
+    """Contains a blue door leading to Main Hydrochamber."""
     name="Hydrodynamo Shaft"
     desc= "Bottom"
     exits_ = [

@@ -1,3 +1,5 @@
+"""A large room with several doors, characterized by a large bridge that leads to the upper section of Temple Access."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb
 from .....Enums import DoorCover
@@ -7,6 +9,7 @@ from .....Utils import condition_or, condition_and
 
 
 class GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
+    """Requires the Translator Gate to be lowered, or """
     name = "Great Bridge"
     desc = "Behind Translator Gate"
     exits_ = [
@@ -24,6 +27,8 @@ class GreatBridge_BehindTranslatorGate(MetroidPrime2Region):
 
 
 class GreatBridge_Beach(MetroidPrime2Region):
+    """Contains the water in the lower part of the room as well as the ledge that can be reached without jumping.
+    Contains Grenchler and Shrieker enemies on different room layers."""
     name = "Great Bridge"
     desc = "Beach"
     exits_ = [
@@ -33,8 +38,8 @@ class GreatBridge_Beach(MetroidPrime2Region):
                 state.has("Space Jump Boots", player),
                 state.has("Screw Attack", player),
                 condition_and([
-                    state.has("Morph Ball"),
-                    state.has("Boost Ball"),
+                    state.has("Morph Ball", player),
+                    state.has("Boost Ball", player),
                     has_trick_enabled(state, player, "Torvus Bog - Great Bridge | Wall Boost to North Path")
                 ])
             ])
@@ -50,6 +55,7 @@ class GreatBridge_Beach(MetroidPrime2Region):
 
 
 class GreatBridge_Bridge(MetroidPrime2Region):
+    """The top of the bridge. Some Shriekbats hang from the ceiling near the upper door here."""
     name = "Great Bridge"
     desc="Bridge"
     exits_ = [
@@ -85,6 +91,8 @@ class GreatBridge_Bridge(MetroidPrime2Region):
 
 
 class GreatBridge_CannonLedge(MetroidPrime2Region):
+    """Contains the cannon that shoots Samus over to the bridge. Also has a Translator Gate which separates it from the
+    Behind Translator Gate subregion."""
     name = "Great Bridge"
     desc="Cannon Ledge"
     exits_ = [
@@ -127,6 +135,7 @@ class GreatBridge_CannonLedge(MetroidPrime2Region):
     ]
 
 class GreatBridge_MorphBallTunnel(MetroidPrime2Region):
+    """Blocked by Bendezium-containing rocks on both ends. Contains a pickup. Links the Scan Panel Ledge and Bridge subregions."""
     name = "Great Bridge"
     desc="Morph Ball Tunnel"
     exits_ = [
@@ -150,6 +159,7 @@ class GreatBridge_MorphBallTunnel(MetroidPrime2Region):
 
 
 class GreatBridge_NorthPath(MetroidPrime2Region):
+    """The walkway connecting the lower Temple Access door and the Missile Cover door."""
     name = "Great Bridge"
     desc="North Path"
     exits_ = [
@@ -188,6 +198,7 @@ class GreatBridge_NorthPath(MetroidPrime2Region):
 
 
 class GreatBridge_ScanPanelLedge(MetroidPrime2Region):
+    """Contains a scan panel that enables the Kinetic Orb Cannon. Also connects to the Morph Ball tunnel through a Bendezium blockage."""
     name = "Great Bridge"
     desc="Scan Panel Ledge"
     exits_ = [

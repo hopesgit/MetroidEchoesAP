@@ -1,3 +1,5 @@
+"""Connects Torvus Grove and the caged area of Forgotten Bridge."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

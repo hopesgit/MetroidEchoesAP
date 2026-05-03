@@ -131,8 +131,9 @@ class ForgottenBridge_Cliffs(MetroidPrime2Region):
 
 
 class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
+    """Contains a portal to Dark Aether."""
     name="Forgotten Bridge"
-    desc="Dark Portal Ledge" # access rules change depending on whether the bomb slot was activated
+    desc="Dark Portal Ledge"
     exits_ = [
         MetroidPrime2Exit(
             destination="P|Dark Torvus Bog - Dark Forgotten Bridge (Light Portal Ledge)",
@@ -161,6 +162,7 @@ class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
 
 
 class ForgottenBridge_PickupLedge(MetroidPrime2Region):
+    "Contains a pickup and a Super Missile Cover door. Connects to the bridge once the bridge has been rotated."
     name="Forgotten Bridge"
     desc="Pickup Ledge"
     exits_ = [
@@ -189,6 +191,7 @@ class ForgottenBridge_PickupLedge(MetroidPrime2Region):
 
 
 class ForgottenBridge_Shallows(MetroidPrime2Region):
+    """The water."""
     name="Forgotten Bridge"
     desc="Shallows"
     exits=[

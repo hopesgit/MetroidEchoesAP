@@ -1,3 +1,7 @@
+"""Room connecting Torvus Temple and Torvus Energy Controller. It's the same as the rooms in Agon and Sanctuary.
+
+Rotates by activating a bomb slot in the middle of the room. The bomb slot is not permanently activated."""
+
 from ... import can_activate_bomb_slot
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

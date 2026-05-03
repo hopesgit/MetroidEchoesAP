@@ -1,3 +1,6 @@
+"""A the hub room of the lower level of Torvus. A large portion of this room is underwater.Has many doors to enter and things to scan.
+The bottom raises up once all three panels are scanned, revealing a door."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import (
     has_trick_enabled,
@@ -31,6 +34,8 @@ from .....Utils import condition_and, condition_or
 # - https://youtu.be/ALjnm411Ldk
 
 class HydrodynamoStation_AboveWater(MetroidPrime2Region):
+    """Contains the entrance to Underground Transport, plus some rotating platforms that can be jumped
+    on to reach the top. Puffer enemies in the air can menace Samus while she navigates the platforms."""
     name="Hydrodynamo Station"
     desc="Above Water"
     exits_ = [
@@ -51,6 +56,8 @@ class HydrodynamoStation_AboveWater(MetroidPrime2Region):
 
 
 class HydrodynamoStation_Top(MetroidPrime2Region):
+    """The Kinetic Orb launcher in the center of the room launches you to the top of the tower. Samus can break a Missile
+    door cover to reach Save Station B and Samus can jump down to reach the rest of the room."""
     name="Hydrodynamo Station"
     desc = "Top"
     exits_ = [
@@ -66,6 +73,7 @@ class HydrodynamoStation_Top(MetroidPrime2Region):
 
 
 class HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
+    """The ledge containing the door to Save Station B. The door has a Missile cover."""
     name="Hydrodynamo Station"
     desc = "Top Door Ledge"
     exits_ = [
@@ -86,6 +94,8 @@ class HydrodynamoStation_TopDoorLedge(MetroidPrime2Region):
 
 
 class HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
+    """The first underwater section of the room, contains ledges with doors leading to Gathering Hall, Training Chamber, and
+    Catacombs. The ledges in front of each door are their own subregions"""
     name="Hydrodynamo Station"
     desc = "Three Doors"
     exits_ = [
@@ -134,10 +144,6 @@ class HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
             rule=lambda state, player: state.has("Gravity Boost", player)
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
-        ),
-        MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
             rule=lambda state, player: True # just fall down
         ),
@@ -149,6 +155,7 @@ class HydrodynamoStation_ThreeDoors(MetroidPrime2Region):
 
 
 class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
+    """Contains a door leading to Training Access, which is blocked by a Seeker Cover."""
     name="Hydrodynamo Station"
     desc = "North Door Ledge"
     exits_ = [
@@ -163,10 +170,6 @@ class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
                 state.has("Space Jump Boots", player),
                 state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player)
             ])  # this jump is very tight; it's doable with nothing, but I think that's unlikely for most players
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
@@ -188,6 +191,7 @@ class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
                     has_missile_count(state, player, 5),
                     state.has("Screw Attack", player),
                     has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Air Underwater"),
+                    # air underwater is needed for seeker skip here because that's the only way to use Screw Attack underwater
                     has_trick_enabled(state, player, "Torvus Bog - Hydrodynamo Station | Seeker Skip")
                 ])
             ])
@@ -204,6 +208,7 @@ class HydrodynamoStation_NorthDoorLedge(MetroidPrime2Region):
 
 
 class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
+    """Has a scan panel and a white door leading to Gathering Access."""
     name="Hydrodynamo Station"
     desc = "West Door Ledge"
     exits_ = [
@@ -218,10 +223,6 @@ class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
                 state.has("Space Jump Boots", player),
                 state.has("Torvus Bog - Hydrodynamo Station | Scanned West Panel", player)
             ]) #this jump is very tight; it's doable with nothing, but I think that's unlikely for most players
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (North Door Ledge)",
@@ -258,6 +259,7 @@ class HydrodynamoStation_WestDoorLedge(MetroidPrime2Region):
 
 
 class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
+    """Ledge with a scan panel and a dark door leading to Catacombs Access."""
     name="Hydrodynamo Station"
     desc = "East Door Ledge"
     exits_ = [
@@ -272,10 +274,6 @@ class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
                 state.has("Space Jump Boots", player),
                 state.has("Torvus Bog - Hydrodynamo Station | Scanned East Panel", player)
             ])  # this jump is very tight; it's doable with nothing, but I think that's unlikely for most players
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: not hydrodynamo_station_has_scanned_panels(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (West Door Ledge)",
@@ -311,30 +309,8 @@ class HydrodynamoStation_EastDoorLedge(MetroidPrime2Region):
         )
 
 
-class HydrodynamoStation_Cannon(MetroidPrime2Region): # the movable base removes this section
-    name="Hydrodynamo Station"
-    desc = "Cannon"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Three Doors)",
-            rule=lambda state, player: state.has("Gravity Boost", player)
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Top)",
-            rule=lambda state, player: state.has("Morph Ball", player)
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Above Movable Base)",
-            rule=lambda state, player: True # just fall down
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (North Scan Ledge)",
-            rule=lambda state, player: True
-        )
-    ]
-
-
 class HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
+    """Contains the northern scan panel. You would need to fall down from Three Doors to reach this."""
     name="Hydrodynamo Station"
     desc="North Scan Ledge"
     exits_ = [
@@ -345,17 +321,6 @@ class HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Three Doors)",
             rule=lambda state, player: state.has("Gravity Boost", player)
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: condition_and([
-                not hydrodynamo_station_has_scanned_panels(state, player),
-                condition_or([
-                    not state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),
-                    state.has("Space Jump Boots", player),
-                    state.has("Gravity Boost", player)
-                ])
-            ])
         )
     ]
 
@@ -375,27 +340,24 @@ class HydrodynamoStation_NorthScanLedge(MetroidPrime2Region):
 
 
 class HydrodynamoStation_AboveMovableBase(MetroidPrime2Region):
+    """Made smaller when the base below moves up. Also contains the Kinetic Orb Cannon, but the
+    cannon can't be logically relevant because it becomes inoperable after raising the movable base."""
     name="Hydrodynamo Station"
     desc = "Above Movable Base"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Hydrodynamo Station (Cannon)",
-            rule=lambda state, player: condition_or([
-                state.has("Gravity Boost", player),
-                condition_and(
-                    state.has("Morph Ball", player), # the bubble jets at the bottom of the room push you up while morphed if you don't have gravity boost
-                    not hydrodynamo_station_has_scanned_panels(state, player)
-                )
-            ])
-        ),
-        MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Under Movable Base)",
             rule=lambda state, player: hydrodynamo_station_has_scanned_panels(state, player)
         ),
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Hydrodynamo Station (Three Doors)",
+            rule=lambda state, player: state.has("Gravity Boost", player)
+        )
     ]
 
 
 class HydrodynamoStation_UnderMovableBase(MetroidPrime2Region):
+    """Opened by scanning all three panels in the underwater section of the room."""
     name="Hydrodynamo Station"
     desc = "Under Movable Base"
     exits_ = [

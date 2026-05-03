@@ -113,7 +113,7 @@ class AbandonedWorksite_LedgeGreatBridgeSide(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Ledge Forgotten Bridge Side)",
-            rule=lambda state, player: state.has("Morph Ball")
+            rule=lambda state, player: state.has("Morph Ball", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Abandoned Worksite (Great Bridge Entrance)",

@@ -1,3 +1,6 @@
+"""Contains the Gravity Boost in vanilla. Picking up the item would be the trigger for the Alpha Blogg boss,
+but it has been moved in the Archipelago randomizer."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
