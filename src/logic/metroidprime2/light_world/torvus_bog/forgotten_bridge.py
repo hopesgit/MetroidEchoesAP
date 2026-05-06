@@ -13,11 +13,17 @@ Logic assumes that the bomb slot in Dark Forgotten Bridge has already been activ
 """
 
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack, can_use_boost_ball
+from ... import (
+    can_activate_dark_portal,
+    can_lay_bomb,
+    can_use_boost_ball,
+    can_use_screw_attack,
+    has_trick_enabled,
+)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-from .....Utils import condition_or, condition_and
+from .....Utils import condition_and, condition_or
 
 
 class ForgottenBridge_Bridge(MetroidPrime2Region):

@@ -9,26 +9,6 @@ from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_or
 
 
-class FortressTransportAccess_AboveWater(MetroidPrime2Region):
-    """The central area, containing the revolving platforms as well as the air above the water and between the ledges."""
-    name="Fortress Transport Access"
-    desc = "Above Water"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Under Water)",
-            rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Upper Ledge)",
-            rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Lower Ledge)",
-            rule=lambda state, player: True
-        )
-    ]
-
-
 class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
     """The taller ledge containing the door that leads to the Torvus-Sanctuary elevator."""
     name="Fortress Transport Access"
@@ -43,13 +23,8 @@ class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Above Water)",
-            rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (North Door Ledge)",
-            door=DoorCover.Any,
-            rule=lambda state, player: True
+            destination="Torvus Bog - Fortress Transport Access (Lower Ledge)",
+            rule=lambda state, player: True # it's easier to cross the platforms with space jump or screw
         )
     ]
 
@@ -57,7 +32,7 @@ class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
 class FortressTransportAccess_LowerLedge(MetroidPrime2Region):
     """The shorter ledge in the room. Has a yellow door that leads back to Training Chamber."""
     name="Fortress Transport Access"
-    desc="South Ledge"
+    desc="Lower Ledge"
     exits_=[
         MetroidPrime2Exit(
             destination="Torvus Bog - Training Chamber (North Door Ledge)",
@@ -69,14 +44,14 @@ class FortressTransportAccess_LowerLedge(MetroidPrime2Region):
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Above Water)",
-            rule=lambda state, player: True #but it's easier to cross the platforms with space jump or screw
+            destination="Torvus Bog - Fortress Transport Access (Upper Ledge)",
+            rule=lambda state, player: True # it's easier to cross the platforms with space jump or screw
         ),
     ]
 
 
 class FortressTransportAccess_UnderWater(MetroidPrime2Region):
-    """The central pool of water, including the steps that lead to the South Ledge.
+    """The central pool of water, including the steps that lead to the Lower Ledge.
     Contains a Blogg or Dark Blogg enemy.
     Can be difficult to leave without upgrades."""
     name="Fortress Transport Access"
@@ -88,14 +63,6 @@ class FortressTransportAccess_UnderWater(MetroidPrime2Region):
                 can_lay_bomb(state, player),
                 state.has('Space Jump Boots', player),
                 state.has('Gravity Boost', player),
-                can_use_screw_attack(state, player) # this method requires some finicky movement in NSJ, but you can do it
-            ])
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Fortress Transport Access (Above Water)",
-            rule=lambda state, player: condition_or([
-                state.has('Gravity Boost', player),
-                state.has('Space Jump Boots', player),
                 can_use_screw_attack(state, player) # this method requires some finicky movement in NSJ, but you can do it
             ])
         )
