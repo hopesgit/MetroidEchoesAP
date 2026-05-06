@@ -1,3 +1,6 @@
+"""Morph Ball puzzle room connecting Training Chamber and Gathering Hall.
+Air jets in this room can lift the Morph Ball if the player does not have Gravity Boost."""
+
 from ... import can_lay_bomb
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region

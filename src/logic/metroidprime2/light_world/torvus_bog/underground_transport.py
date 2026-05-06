@@ -1,13 +1,16 @@
+"""An elevator room. Unlike most elevators, this room does not have an elevator cutscene. Connects upper and lower Torvus."""
+
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 class UndergroundTransport_Upper(MetroidPrime2Region):
+    """Connects with Torvus Temple."""
     name="Underground Transport"
     desc="Upper"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Underground Transport (Shaft)",
+            destination="Torvus Bog - Underground Transport (Lower)",
             rule=lambda state, player: state.has("Scan Visor", player)
         ),
         MetroidPrime2Exit(
@@ -19,27 +22,13 @@ class UndergroundTransport_Upper(MetroidPrime2Region):
     ]
 
 
-class UndergroundTransport_Shaft(MetroidPrime2Region):
+class UndergroundTransport_Lower(MetroidPrime2Region):
+    """Connects with Hydrodynamo Station."""
     name="Underground Transport"
-    desc="Shaft"
+    desc="Lower"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Underground Transport (Upper)",
-            rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Underground Transport (Lower)",
-            rule=lambda state, player: True
-        ),
-    ]
-
-
-class UndergroundTransport_Lower(MetroidPrime2Region):
-    name="Underground Transport"
-    desc="Upper"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Underground Transport (Shaft)",
             rule=lambda state, player: state.has("Scan Visor", player)
         ),
         MetroidPrime2Exit(

@@ -1,12 +1,22 @@
+"""
+Connects Torvus Temple and Torvus Grove. There is an item in the floor on the Torvus Temple side.
+The room is notable for having a short morph ball tunnel "hidden" by a small waterfall.
+Has:
+- Grenchler (1st pass) / Seedburster swarm (later passes) enemies
+- 2 Sporb enemies
+- An Emerald Lore Projector. Entry: Our War Begins (GC) / The Ing Attack (Wii)
+- A pickup (Missile Expansion)
+"""
+
 from BaseClasses import MultiWorld, ItemClassification
 from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_use_boost_ball
+from ... import can_lay_bomb, can_use_boost_ball, has_trick_enabled
 from .....Enums import DoorCover
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 class UndergroundTunnel_Tunnel(MetroidPrime2Region):
+    """Be sure to check under the grating! The wooden tunnel makes for a striking environment."""
     name="Underground Tunnel"
     desc="Tunnel"
     exits_ = [
@@ -16,7 +26,7 @@ class UndergroundTunnel_Tunnel(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Temple (Underground)",
-            door=DoorCover.Any,
+            door=DoorCover.SuperMissile,
             rule=lambda state, player: True
         )
     ]
@@ -31,6 +41,7 @@ class UndergroundTunnel_Tunnel(MetroidPrime2Region):
 
 
 class UndergroundTunnel_AfterFalls(MetroidPrime2Region):
+    """Two Sporbs guard the tunnel here."""
     name="Underground Tunnel"
     desc="After Falls"
     exits_ = [
@@ -47,7 +58,6 @@ class UndergroundTunnel_AfterFalls(MetroidPrime2Region):
                     has_trick_enabled(state, player, "Torvus Bog - Underground Tunnel | Wall Boost to enter Tunnel"),
                     can_use_boost_ball(state, player)
                 ]),
-                # I have a suspicion that Screw Attack (probably NSJ) would also work here, but haven't seen evidence yet
             ])
         ),
         MetroidPrime2Exit(

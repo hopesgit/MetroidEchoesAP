@@ -1,3 +1,6 @@
+"""A combat room leading to Meditation Vista. Contains a pickup that can be gotten after power-bombing the roots of the
+large central tree."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import has_trick_enabled, can_lay_pb, can_lay_bomb, can_use_screw_attack, can_use_boost_ball
 from .....Enums import DoorCover
@@ -6,6 +9,7 @@ from .....Utils import condition_or, condition_and
 
 
 class TorvusGrove_Center(MetroidPrime2Region):
+    """Contains the large tree in the center, a half-pipe, two doors, and some Pirate Commando enemies triggered via cutscene."""
     name = "Torvus Grove"
     desc="Center" # pretty much the entire bottom
     exits_ = [
@@ -36,6 +40,7 @@ class TorvusGrove_Center(MetroidPrime2Region):
 
 
 class TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
+    """Contains a pickup."""
     name = "Torvus Grove"
     desc="Behind Breakable Wall" # behind the wall broken by the felled tree
     exits_ = [
@@ -55,6 +60,7 @@ class TorvusGrove_BehindBreakableWall(MetroidPrime2Region):
 
 
 class TorvusGrove_ConnectorLedge(MetroidPrime2Region):
+    """Contains the first walkway above the half-pipe."""
     name = "Torvus Grove"
     desc="Connector Ledge" # at the top of the half-pipe
     exits_ = [
@@ -82,6 +88,7 @@ class TorvusGrove_ConnectorLedge(MetroidPrime2Region):
 
 
 class TorvusGrove_CurvedLedge(MetroidPrime2Region):
+    """The second high ledge."""
     name = "Torvus Grove"
     desc = "Curved Ledge" # past a small hole after the connector ledge
     exits_=[
@@ -102,6 +109,7 @@ class TorvusGrove_CurvedLedge(MetroidPrime2Region):
     ]
 
 class TorvusGrove_IsolatedLedge(MetroidPrime2Region):
+    """The third high ledge."""
     name = "Torvus Grove"
     desc="Isolated Ledge" # the tall one
     exits_ = [
@@ -120,6 +128,7 @@ class TorvusGrove_IsolatedLedge(MetroidPrime2Region):
     ]
 
 class TorvusGrove_UpperDoorLedge(MetroidPrime2Region):
+    """The fourth high ledge. Contains a dark door that leads to Grove Access."""
     name = "Torvus Grove"
     desc="Upper Door Ledge"
     exits_ = [

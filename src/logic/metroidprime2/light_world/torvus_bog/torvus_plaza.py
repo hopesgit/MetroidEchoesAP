@@ -11,6 +11,7 @@ from .....Utils import condition_or, condition_and
 
 
 class TorvusPlaza_Entrance(MetroidPrime2Region):
+    """The ledge that contains the door. Overlooks the half-pipe."""
     name = "Torvus Plaza"
     desc="Entrance"
     exits_ = [
@@ -47,6 +48,8 @@ class TorvusPlaza_Entrance(MetroidPrime2Region):
 
 
 class TorvusPlaza_HalfPipe(MetroidPrime2Region):
+    """The half-pipe. Use the boost to get through! Also contains the raised area leading up to a sealed hole where an
+    arena is in Dark Aether."""
     name = "Torvus Plaza"
     desc = "Half-Pipe"
     exits_ = [
@@ -75,9 +78,9 @@ class TorvusPlaza_HalfPipe(MetroidPrime2Region):
 
 
 class TorvusPlaza_SpiderTrack(MetroidPrime2Region):
+    """The section of spider track ending before the Sporb. Also includes the area in the back of the room with a standable tree."""
     name = "Torvus Plaza"
-    desc="Spider Track" # this includes the standable tree area near the back of the room.
-    # It's the beginning of the track, ending just before the Sporb
+    desc="Spider Track"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Arena (Half-Pipe)",
@@ -110,8 +113,10 @@ class TorvusPlaza_SpiderTrack(MetroidPrime2Region):
 
 
 class TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
+    """The more difficult sections of the track, including the area covered by the Sporb as well as the parts with rotating
+    and moving elements. Leads all the way to the ledge containing the Kinetic Orb Cannon."""
     name = "Torvus Plaza"
-    desc="Spider Challenge" # this includes the more difficult parts of the track, from the sporb area to the cannon ledge
+    desc="Spider Challenge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Arena (Entrance)",
@@ -140,6 +145,7 @@ class TorvusPlaza_SpiderChallenge(MetroidPrime2Region):
 
 
 class TorvusPlaza_CannonLedge(MetroidPrime2Region):
+    """Contains a Kinetic Orb Cannon leading to the item ledge."""
     name = "Torvus Plaza"
     desc="Cannon Ledge"
     exits_ = [
@@ -159,6 +165,7 @@ class TorvusPlaza_CannonLedge(MetroidPrime2Region):
 
 
 class TorvusPlaza_ItemLedge(MetroidPrime2Region):
+    """Contains a pickup. Is the highest point in the room."""
     name = "Torvus Plaza"
     desc="Item Ledge"
     exits_ = [

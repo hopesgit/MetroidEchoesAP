@@ -1,3 +1,6 @@
+"""The room containing the entry cutscene for Torvus. This room is largely underwater, and contains many doors. The above-water
+doors (that don't lead to Save Station A) are unreachable until a panel is scanned."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import has_trick_enabled, can_use_screw_attack
 from .....Enums import DoorCover
@@ -7,6 +10,7 @@ from .....Utils import condition_and, condition_or
 
 
 class TorvusLagoon_Beach(MetroidPrime2Region):
+    """The strip of land leading into the water."""
     name = "Torvus Lagoon"
     desc = "Beach"
     exits_ = [
@@ -53,6 +57,7 @@ class TorvusLagoon_Beach(MetroidPrime2Region):
 
 
 class TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
+    """The ledge leading to Save Station A. Contains a door with a Missile Cover."""
     name = "Torvus Lagoon"
     desc = "Save Room Ledge"
     exits_ = [
@@ -79,6 +84,7 @@ class TorvusLagoon_SaveRoomLedge(MetroidPrime2Region):
 
 
 class TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
+    """The pickup ledge underwater. Requires Gravity Boost or tricks to reach."""
     name= "Torvus Lagoon"
     desc= "Underwater Ledge"
     exits_ = [
@@ -98,16 +104,17 @@ class TorvusLagoon_UnderwaterLedge(MetroidPrime2Region):
 
 
 class TorvusLagoon_Bridge(MetroidPrime2Region):
+    """Doesn't exist until the gates are lowered. This section is the walkway connecting the Portal Chamber and Ruined Alcove entrances."""
     name = "Torvus Lagoon"
     desc = "Bridge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Portal Chamber Ledge)",
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Bridge Lowered")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Bridge Lowered", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Ruined Alcove Ledge)",
-            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Bridge Lowered")
+            rule=lambda state, player: state.has("Torvus Bog - Torvus Lagoon | Bridge Lowered", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Torvus Lagoon (Beach)",
@@ -117,6 +124,7 @@ class TorvusLagoon_Bridge(MetroidPrime2Region):
 
 
 class TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
+    """Ledge leading to Portal Chamber. Has the scan panel that opens up the walkway to the Ruined Alcove entrance."""
     name = "Torvus Lagoon"
     desc = "Portal Chamber Ledge"
     exits_ = [
@@ -147,6 +155,7 @@ class TorvusLagoon_PortalChamberLedge(MetroidPrime2Region):
 
 
 class TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
+    """Has a door leading to Ruined Alcove."""
     name = "Torvus Lagoon"
     desc = "Ruined Alcove Ledge"
     exits_ = [
@@ -157,6 +166,6 @@ class TorvusLagoon_RuinedAlcoveLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Ruined Alcove",
             door=DoorCover.Dark,
-            rule=lambda state, player: state.has("Dark Beam", player)
+            rule=lambda state, player: True
         )
     ]

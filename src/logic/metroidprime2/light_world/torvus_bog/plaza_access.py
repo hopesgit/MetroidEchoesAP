@@ -1,15 +1,13 @@
+"""A short Morph Ball puzzle room that requires Bombs for traversal and Boost to get the item."""
+
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_use_screw_attack, can_use_boost_ball
+from ... import can_lay_bomb, can_use_boost_ball
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-from .....Utils import condition_and
-
-
-class _PlazaAccess(MetroidPrime2Region):
-    name = "Plaza Access"
 
 
 class PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
+    """The entrance on the Forgotten Bridge side. You are most likely starting here."""
     name = "Plaza Access"
     desc = "Forgotten Bridge Entrance"
     exits_ = [
@@ -20,12 +18,13 @@ class PlazaAccess_ForgottenBridgeEntrance(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Forgotten Bridge Side)",
-            rule=lambda state, player: state.has("Morph Ball", player)
+            rule=lambda state, player: can_lay_bomb(state, player)
         )
     ]
 
 
 class PlazaAccess_HalfPipe(MetroidPrime2Region):
+    """Entered via tunnel. Ride this half-pipe to the top to get a pickup."""
     name = "Plaza Access"
     desc="Half-Pipe"
     exits_ = [
@@ -45,6 +44,7 @@ class PlazaAccess_HalfPipe(MetroidPrime2Region):
 
 
 class PlazaAccess_Maze(MetroidPrime2Region):
+    """Has a few contraptions that need flipping via bomb slot in order to traverse the room."""
     name = "Plaza Access"
     desc="Maze"
     exits_ = [
@@ -53,54 +53,18 @@ class PlazaAccess_Maze(MetroidPrime2Region):
             rule=lambda state, player: can_lay_bomb(state, player)
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Torvus Plaza Side)",
+            destination="Torvus Bog - Plaza Access (Torvus Plaza Entrance)",
             rule=lambda state, player: can_lay_bomb(state, player)
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Forgotten Bridge Side)",
-            rule=lambda state, player: can_lay_bomb(state, player)
-        ),
-    ]
-
-
-class PlazaAccess_MorphBallTunnelForgottenBridgeSide(MetroidPrime2Region):
-    name = "Plaza Access"
-    desc="Morph Ball Tunnel Forgotten Bridge Side"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Forgotten Bridge Side)",
-            rule=lambda state, player: can_lay_bomb(state, player)
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Maze)",
-            rule=lambda state, player: can_lay_bomb(state, player)
-        ),
-        MetroidPrime2Exit(
-            destination= "Torvus Bog - Plaza Access (Half-Pipe)",
-            rule=lambda state, player: condition_and([
-                can_lay_bomb(state, player),
-                can_use_screw_attack(state, player),
-                has_trick_enabled(state, player, "Torvus Bog - Plaza Access | Out of Bounds")
-            ])
-        )
-    ]
-
-class PlazaAccess_MorphBallTunnelTorvusPlazaSide(MetroidPrime2Region):
-    name = "Plaza Access"
-    desc="Morph Ball Tunnel Torvus Plaza Side"
-    exits_ = [
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Torvus Plaza Side)",
-            rule=lambda state, player: can_lay_bomb(state, player)
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Maze)",
+            destination="Torvus Bog - Plaza Access (Forgotten Bridge Entrance)",
             rule=lambda state, player: can_lay_bomb(state, player)
         ),
     ]
 
 
 class PlazaAccess_TorvusPlazaEntrance(MetroidPrime2Region):
+    """Contains a blue door leading to Torvus Plaza."""
     name = "Plaza Access"
     desc="Torvus Plaza Entrance"
     exits_ = [
@@ -110,7 +74,7 @@ class PlazaAccess_TorvusPlazaEntrance(MetroidPrime2Region):
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Plaza Access (Morph Ball Tunnel Torvus Plaza Side)",
-            rule=lambda state, player: state.has("Morph Ball", player)
+            destination="Torvus Bog - Plaza Access (Maze)",
+            rule=lambda state, player: can_lay_bomb(state, player)
         )
     ]

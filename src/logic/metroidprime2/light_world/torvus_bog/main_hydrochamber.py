@@ -1,5 +1,8 @@
+"""This room is most notable for being where the Alpha Blogg fight takes place. It has a large fan contraption that gets
+destroyed during the boss cutscene."""
+
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg
+from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg, can_activate_dark_portal
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -21,6 +24,7 @@ from .....Utils import condition_or, condition_and
 
 
 class MainHydrochamber_Top(MetroidPrime2Region):
+    """The ledge containing the exit door."""
     name = "Main Hydrochamber"
     desc="Top"
     exits_ = [
@@ -37,16 +41,17 @@ class MainHydrochamber_Top(MetroidPrime2Region):
 
 
 class MainHydrochamber_Main(MetroidPrime2Region):
+    """Most of the room. Contains the fan platforms that are accessible after the boss battle."""
     name = "Main Hydrochamber"
     desc="Main"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Spider Track)",
-            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
+            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Top)",
-            # options: main (has grav boost, has beaten boss or didn't pick up item in storage)
+            # options: main (has grav boost or has beaten boss)
             rule=lambda state, player: condition_or([
                 # boss is dead
                 condition_and([
@@ -54,7 +59,7 @@ class MainHydrochamber_Main(MetroidPrime2Region):
                     condition_or([
                         condition_and([
                             state.has('Space Jump Boots', player), # vanilla strats
-                            state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
+                            state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead", player)
                         ]),
                         condition_and([ # instant unmorph strats
                             has_trick_enabled(state, player,
@@ -93,6 +98,7 @@ class MainHydrochamber_Main(MetroidPrime2Region):
 
 
 class MainHydrochamber_LowerDoor(MetroidPrime2Region):
+    """Leads to Hydrochamber Storage. Gets blocked off by the rotating room during the boss fight."""
     name = "Main Hydrochamber"
     desc="Lower Door"
     exits_ = [
@@ -102,12 +108,13 @@ class MainHydrochamber_LowerDoor(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrochamber Storage",
-            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead")
+            rule=lambda state, player: state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead", player)
         ),
     ]
 
 
 class MainHydrochamber_SpiderTrack(MetroidPrime2Region):
+    """Leads to a Dark Portal. Gets blocked off by the rotating room during the boss fight."""
     name = "Main Hydrochamber"
     desc="Spider Track"
     exits_ = [
@@ -130,12 +137,13 @@ class MainHydrochamber_SpiderTrack(MetroidPrime2Region):
 
 
 class MainHydrochamber_PortalLedge(MetroidPrime2Region):
+    """Accessible via the Spider track. Connects to Dark Aether."""
     name = "Main Hydrochamber"
     desc="Portal Ledge"
     exits_ = [
         MetroidPrime2Exit(
             destination="P|Dark Torvus Bog - Undertemple (Portal Ledge)",
-            rule=lambda state, player: True
+            rule=lambda state, player: can_activate_dark_portal(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Main Hydrochamber (Main)",

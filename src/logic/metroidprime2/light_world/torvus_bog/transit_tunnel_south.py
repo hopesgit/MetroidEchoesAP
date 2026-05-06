@@ -13,8 +13,8 @@ class TransitTunnelSouth_CatacombsSide(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Catacombs (Transit Tunnel South Entrance)",
-            rule=lambda state, player: True,
-            door=DoorCover.Annihilator
+            door=DoorCover.Annihilator,
+            rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Morph Ball Puzzle)",
@@ -29,8 +29,8 @@ class TransitTunnelSouth_GatheringHallSide(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (South Door Ledge)",
-            rule=lambda state, player: True,
-            door=DoorCover.Annihilator
+            door=DoorCover.Annihilator,
+            rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Transit Tunnel South (Morph Ball Puzzle)",

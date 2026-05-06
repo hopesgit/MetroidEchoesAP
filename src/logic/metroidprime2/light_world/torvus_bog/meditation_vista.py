@@ -1,11 +1,14 @@
+"""A seemingly simple room containing a portal device to enter Dark Aether. With Screw Attack, the player can reach a
+floating platform that can carry them to a pickup."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import can_use_screw_attack
 from .....Enums import DoorCover
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 
 
 class MeditationVista_Entrance(MetroidPrime2Region):
+    """Contains a portal device."""
     name = "Meditation Vista"
     desc = "Entrance"
     exits_ = [
@@ -27,6 +30,7 @@ class MeditationVista_Entrance(MetroidPrime2Region):
 
 
 class MeditationVista_FloatingPlatform(MetroidPrime2Region):
+    """Ride this to reach an item."""
     name="Meditation Vista"
     desc="Floating Platform"
     exits_ = [

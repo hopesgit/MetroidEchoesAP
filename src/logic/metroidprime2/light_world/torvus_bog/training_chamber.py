@@ -1,12 +1,14 @@
+
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import (
-    has_trick_enabled,
     can_lay_bomb,
-    can_use_screw_attack,
-    can_use_darkburst,
-    can_use_sonic_boom,
     can_use_boost_ball,
-    can_use_spider_ball
+    can_use_darkburst,
+    can_use_screw_attack,
+    can_use_sonic_boom,
+    can_use_spider_ball,
+    has_trick_enabled
 )
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item

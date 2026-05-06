@@ -25,7 +25,7 @@ class TorvusEnergyController(MetroidPrime2Region):
                 code=None,
                 player=player,
             ),
-            can_access=lambda state, player: state.has("Dark Torvus Bog - Dark Torvus Energy Controller | Energy Recovered")
+            can_access=lambda state, player: state.has("Dark Torvus Bog - Dark Torvus Energy Controller | Energy Recovered", player)
         )
         self.add_location(
             name="Pickup (Emerald Translator)",

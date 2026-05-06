@@ -7,7 +7,7 @@ class SaveStationB(MetroidPrime2Region):
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Hydrodynamo Station (Top Door Ledge)",
-            door=DoorCover.Any,
+            door=DoorCover.Missile,
             rule=lambda state, player: True
         )
     ]

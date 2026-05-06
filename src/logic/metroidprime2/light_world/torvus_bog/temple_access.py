@@ -1,3 +1,6 @@
+"""Connects the upper parts of Great Bridge and Torvus Temple and the lower parts of both rooms. There is a one-way tunnel
+in the center of the room that contains a pickup."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import has_trick_enabled, can_lay_bomb, can_lay_bomb_or_pb, can_use_screw_attack, can_use_boost_ball
 from .....Enums import DoorCover
@@ -6,6 +9,7 @@ from .....Utils import condition_or, condition_and
 
 
 class TempleAccess_Upper(MetroidPrime2Region):
+    """The upper section. Bomb a tunnel cover to fall down to the bottom section."""
     name = "Temple Access"
     desc="Upper"
     exits_ = [
@@ -19,7 +23,7 @@ class TempleAccess_Upper(MetroidPrime2Region):
             rule=lambda state, player: condition_or([
                 can_lay_bomb_or_pb(state, player),
                 can_use_screw_attack(state, player)
-            ]) # this check can be a point of no return if you're missing bombs...
+            ]) # this check can be a point of no return if you're missing bombs.
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Great Bridge (Bridge)",
@@ -30,6 +34,7 @@ class TempleAccess_Upper(MetroidPrime2Region):
 
 
 class TempleAccess_PickupTube(MetroidPrime2Region):
+    """Contains a pickup. This is a one-way trip downward to the main morph ball tunnel."""
     name = "Temple Access"
     desc="Pickup Tube"
     exits_ = [
@@ -49,6 +54,7 @@ class TempleAccess_PickupTube(MetroidPrime2Region):
 
 
 class TempleAccess_LowerGreatBridgeEntrance(MetroidPrime2Region):
+    """A small section of the room that contains a door to Great Bridge."""
     name = "Temple Access"
     desc="Lower Great Bridge Entrance"
     exits_ = [
@@ -65,6 +71,7 @@ class TempleAccess_LowerGreatBridgeEntrance(MetroidPrime2Region):
 
 
 class TempleAccess_LowerTorvusTempleEntrance(MetroidPrime2Region):
+    """Contains a door that connects to the underground area of Torvus Temple."""
     name = "Temple Access"
     desc="Lower Torvus Temple Entrance"
     exits_ = [
@@ -81,6 +88,7 @@ class TempleAccess_LowerTorvusTempleEntrance(MetroidPrime2Region):
 
 
 class TempleAccess_MorphBallTunnel(MetroidPrime2Region):
+    """The morph ball tunnel in the center of the bottom section of the room."""
     name = "Temple Access"
     desc="Morph Ball Tunnel"
     exits_ = [

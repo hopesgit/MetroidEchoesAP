@@ -1,12 +1,14 @@
+"""Has a cage with an item on top. You're expected to come back here once you can use Grapple Beam in vanilla."""
+
 from BaseClasses import MultiWorld, ItemClassification
 from ... import can_use_grapple_beam, can_use_screw_attack, can_use_dark_beam
 from .....Enums import DoorCover
-from .....Locations import MetroidPrime2Location
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
 from .....Utils import condition_or
 
 
 class PathOfRoots_AboveCage(MetroidPrime2Region):
+    """The small area above the cage. You can grab a pickup here."""
     name="Path of Roots"
     desc="Above Cage"
     exits_ = [
@@ -37,6 +39,8 @@ class PathOfRoots_AboveCage(MetroidPrime2Region):
 
 
 class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
+    """A ledge containing a blue door that leads to Great Bridge. Also has a lore projector.
+    Entry: The Ing Attack (GC) / Dark Aether (Trilogy)"""
     name="Path of Roots"
     desc="Great Bridge Ledge"
     exits_ = [
@@ -60,6 +64,7 @@ class PathOfRoots_GreatBridgeLedge(MetroidPrime2Region):
 
 
 class PathOfRoots_LagoonSide(MetroidPrime2Region):
+    """Contains a dark door that connects to Torvus Lagoon."""
     name="Path of Roots"
     desc="Lagoon Side"
     exits_ = [
@@ -76,6 +81,7 @@ class PathOfRoots_LagoonSide(MetroidPrime2Region):
 
 
 class PathOfRoots_Middle(MetroidPrime2Region):
+    """Contains the watery area below the Great Bridge Ledge. Also contains the under-side of the cage."""
     name="Path of Roots"
     desc="Middle"
     exits_ = [
