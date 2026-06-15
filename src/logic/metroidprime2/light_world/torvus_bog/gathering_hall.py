@@ -51,13 +51,9 @@ class GatheringHall_UpperDoorLedge(MetroidPrime2Region):
             rule=lambda state, player: True
         ),
         MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (Laser Platform)",
-            rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Item Ledge)",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Gathering Hall | Paired Bomb Slots Activated", player)
+                state.has("Torvus Bog - Gathering Hall | Paired Bomb Slots Activated", player),
                 can_use_screw_attack(state, player),
             ])
         ),
@@ -79,9 +75,16 @@ class GatheringHall_UpperDoorLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Spider Tracks)",
-            rule=lambda state, player: condition_and([
-                has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
-                can_use_screw_attack(state, player)
+            rule=lambda state, player: condition_or([
+                condition_and([
+                    has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
+                    can_use_screw_attack(state, player)
+                ]),
+                condition_and([
+                    has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segments"),
+                    state.has("Space Jump", player),
+                    can_lay_bomb(state, player)
+                ])
             ])
         )
     ]
@@ -113,7 +116,7 @@ class GatheringHall_CannonLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Upper Door Ledge)",
-            rule=lambda state, player: True
+            rule=lambda state, player: state.has("Morph Ball", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Bottom)",
@@ -135,35 +138,13 @@ class GatheringHall_ItemLedge(MetroidPrime2Region):
     desc="Item Ledge"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (North Door Ledge)",
-            rule=lambda state, player: condition_or([
-                can_use_grapple_beam(state, player),
-                can_use_screw_attack(state, player)
-            ])
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (South Door Ledge)",
-            rule=lambda state, player: condition_or([
-                can_use_grapple_beam(state, player),
-                can_use_screw_attack(state, player)
-            ])
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (Laser Ledge)",
-            rule=lambda state, player: can_use_screw_attack(state, player)
-        ),
-        MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Upper Door Ledge)",
             rule=lambda state, player: can_use_screw_attack(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Cannon Ledge)",
             rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (Bottom)",
-            rule=lambda state, player: True
-        ),
+        )
     ]
 
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
@@ -176,7 +157,7 @@ class GatheringHall_ItemLedge(MetroidPrime2Region):
 
 
 class GatheringHall_LaserLedge(MetroidPrime2Region):
-    """Can be accessed via the spiny platforms. The platform here is used to """
+    """Can be accessed via the spiny platforms."""
     name="Gathering Hall"
     desc="Laser Ledge"
     exits_ = [
@@ -218,17 +199,14 @@ class GatheringHall_NorthDoorLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Laser Ledge)",
             rule=lambda state, player: condition_or([
-                can_use_dark_beam(state, player),
+                state.has_all(["Torvus Bog - Gathering Hall | Spiny Platform Flipped 1",
+                               "Torvus Bog - Gathering Hall | Spiny Platform Flipped 2"], player),
                 can_use_screw_attack(state, player)
             ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Bottom)",
             rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (South Door Ledge)",
-            rule=lambda state, player: can_use_screw_attack(state, player),
         )
     ]
 
@@ -257,10 +235,6 @@ class GatheringHall_SouthDoorLedge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Bottom)",
             rule=lambda state, player: True
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (North Door Ledge)",
-            rule=lambda state, player: can_use_screw_attack(state, player),
         )
     ]
 
@@ -275,12 +249,13 @@ class GatheringHall_SouthDoorLedge(MetroidPrime2Region):
                 code=None,
                 player=player
             ),
-            can_access=lambda state, player: can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
+            can_access=lambda state, player: can_activate_bomb_slot(state, player,
+                                                "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
         )
 
 
 class GatheringHall_Bottom(MetroidPrime2Region):
-    """The flooded section of the room. Can be drained. The spiky platforms end up here once the water is drained.
+    """The flooded section of the room. The water can be drained. The spiky platforms end up here once the water is drained.
     There is a Blogg enemy in the water until it is drained."""
     name="Gathering Hall"
     desc="Bottom"
@@ -289,22 +264,16 @@ class GatheringHall_Bottom(MetroidPrime2Region):
             destination="Torvus Bog - Gathering Hall (North Door Ledge)",
             rule=lambda state, player: condition_or([
                 state.has("Space Jump Boots", player),
-                state.has("Gravity Boost", player)
-            ])
-        ),
-        MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (Spider Tracks)",
-            rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Gathering Hall | Water Drained", player),
-                can_lay_bomb(state, player),
-                can_use_boost_ball(state, player),
-                can_use_spider_ball(state, player),
+                condition_or([
+                    state.has("Torvus Bog - Gathering Hall | Water Drained", player),
+                    state.has("Gravity Boost", player)
+                ])
             ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Gathering Hall (Portal Alcove)",
             rule=lambda state, player: state.has("Torvus Bog - Gathering Hall | Solo Bomb Slot Activated", player)
-        ),
+        )
     ]
 
     def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
@@ -313,12 +282,32 @@ class GatheringHall_Bottom(MetroidPrime2Region):
         self.add_location(
             name="Water Drained",
             locked_item=MetroidPrime2Item(
-                name="Torvus Bog - Gathering Hall | Water Drained",
+                name="Torvus Bog - Gathering Hall | Glass Destroyed",
                 classification=ItemClassification.progression,
                 code=None,
                 player=player,
             ),
-            can_access=lambda state, player: can_lay_pb(state, player, 2)
+            can_access=lambda state, player: can_lay_pb(state, player, 1)
+        )
+        self.add_location(
+            name="Spiny Platform Flipped 1",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Spiny Platform Flipped 1",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player
+            ),
+            can_access=lambda state, player: can_use_dark_beam(state, player)
+        )
+        self.add_location(
+            name="Spiny Platform Flipped 2",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Spiny Platform Flipped 2",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player
+            ),
+            can_access=lambda state, player: can_use_dark_beam(state, player)
         )
 
 
@@ -338,6 +327,37 @@ class GatheringHall_PortalAlcove(MetroidPrime2Region):
     ]
 
 
+class GatheringHall_HalfPipe(MetroidPrime2Region):
+    """The half-pipe. Leads to the Spider Tracks overhead if the player has the ability to use the Boost Ball. You cannot
+    access this section without blowing up the glass over the half pipe, which requires the ability to use Power Bombs."""
+    name="Gathering Hall"
+    desc="Half-Pipe"
+    exits_ = [
+        MetroidPrime2Exit(
+            destination="Torvus Bog - Gathering Hall (Spider Tracks)",
+            rule=lambda state, player: condition_and([
+                state.has("Torvus Bog - Gathering Hall | Water Drained", player),
+                can_use_boost_ball(state, player),
+                can_use_spider_ball(state, player),
+            ])
+        ),
+    ]
+
+    def __init__(self, region_name: str, player: int, multiworld: MultiWorld):
+        super().__init__(region_name, player, multiworld)
+
+        self.add_location(
+            name="Water Drained",
+            locked_item=MetroidPrime2Item(
+                name="Torvus Bog - Gathering Hall | Water Drained",
+                classification=ItemClassification.progression,
+                code=None,
+                player=player,
+            ),
+            can_access=lambda state, player: can_lay_pb(state, player, 1)
+        )
+
+
 class GatheringHall_SpiderTracks(MetroidPrime2Region):
     """Spider tracks suspended above the water/half-pipe. They bring the player to the paired bomb slots when used, and
     can be stood on using tricks for the same purpose."""
@@ -345,7 +365,7 @@ class GatheringHall_SpiderTracks(MetroidPrime2Region):
     desc="Spider Tracks"
     exits_ = [
         MetroidPrime2Exit(
-            destination="Torvus Bog - Gathering Hall (Bottom)",
+            destination="Torvus Bog - Gathering Hall (Half-Pipe)",
             rule=lambda state, player: True
         )
     ]
@@ -363,15 +383,47 @@ class GatheringHall_SpiderTracks(MetroidPrime2Region):
             ),
             can_access=lambda state, player: condition_or([
                 condition_and([
+                    # vanilla routing
                     can_lay_bomb(state, player),
-                    can_lay_pb(state, player, 2),
                     can_use_boost_ball(state, player),
                     can_use_spider_ball(state, player)
                 ]),
                 condition_and([
-                    can_use_screw_attack(state, player),
-                    has_trick_enabled(state, player, "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
-                    can_activate_bomb_slot(state, player, "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
+                    # trick routing
+                    # can activate the slot
+                    can_activate_bomb_slot(state, player,
+                                           "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
+                    # can reach rotating track segment
+                    condition_or([
+                        # Roll Jump method
+                        condition_and([
+                            state.has_all(["Morph Ball", "Space Jump Boots"], player),
+                            has_trick_enabled(state, player,
+                                "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segment"),
+                        ]),
+                        # Screw Attack method
+                        condition_and([
+                            can_use_screw_attack(state, player),
+                            has_trick_enabled(state, player,
+                                        "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
+                        ])
+                    ]),
+                    # can reach slot from rotating track segment
+                    condition_or([
+                        condition_and([
+                            # spider boost from track segment to slot after falling off the top of the spider track
+                            can_use_boost_ball(state, player),
+                            can_use_spider_ball(state, player)
+                        ]),
+                        condition_and([
+                            # midair morph into the slot
+                            state.has("Morph Ball", player),
+                            # does this need to be a trick? Could it be considered part of the trick for either method
+                            #   of reaching the track segment?
+                            has_trick_enabled(state, player,
+                                    "Torvus Bog - Gathering Hall | Midair Morph to Reach Paired Bomb Slots")
+                        ])
+                    ])
                 ])
             ])
         )

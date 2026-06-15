@@ -131,6 +131,7 @@ class Tricks(OptionList):
         "Torvus Bog - Forgotten Bridge | Bomb Jump Between Platforms",
         "Torvus Bog - Forgotten Bridge | Air Underwater",
         "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs",
+        "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segments",
         "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments",
         "Torvus Bog - Great Bridge | Instant Unmorph to Cannon Ledge",
         "Torvus Bog - Great Bridge | Instant Unmorph to Scan Ledge",
