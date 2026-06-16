@@ -2,11 +2,10 @@
     The room's two doors normally lead to Transport to Sanctuary on the north side and Training Hall on the south side.
     Caution: A player may get stuck here if they fall into the water and lack any movement upgrades."""
 
-from BaseClasses import MultiWorld, ItemClassification
-from ... import can_lay_bomb, can_use_screw_attack
+from ... import can_lay_bomb, can_use_screw_attack, has_trick_enabled
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-from .....Utils import condition_or
+from .....Utils import condition_or, condition_and
 
 
 class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
@@ -24,7 +23,7 @@ class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Fortress Transport Access (Lower Ledge)",
-            rule=lambda state, player: True # it's easier to cross the platforms with space jump or screw
+            rule=lambda state, player: True
         )
     ]
 
@@ -45,7 +44,17 @@ class FortressTransportAccess_LowerLedge(MetroidPrime2Region):
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Fortress Transport Access (Upper Ledge)",
-            rule=lambda state, player: True # it's easier to cross the platforms with space jump or screw
+            rule=lambda state, player: condition_or([
+                state.has("Space Jump Boots", player),
+                has_trick_enabled(state, player,
+                                  "Torvus Bog - Fortress Transport Access | NSJ Jump Between Platforms"),
+                can_use_screw_attack(state, player),
+                condition_and([
+                    can_use_screw_attack(state, player, is_nsj=True, z_axis=True),
+                    has_trick_enabled(state, player,
+                                      "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms")
+                ])
+            ])
         ),
     ]
 
@@ -63,7 +72,12 @@ class FortressTransportAccess_UnderWater(MetroidPrime2Region):
                 can_lay_bomb(state, player),
                 state.has('Space Jump Boots', player),
                 state.has('Gravity Boost', player),
-                can_use_screw_attack(state, player) # this method requires some finicky movement in NSJ, but you can do it
+                can_use_screw_attack(state, player),
+                condition_and([
+                    has_trick_enabled(state, player,
+                                      "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms"),
+                    can_use_screw_attack(state, player, is_nsj=True)
+                ])
             ])
         )
     ]

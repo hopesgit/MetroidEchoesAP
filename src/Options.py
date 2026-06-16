@@ -130,6 +130,8 @@ class Tricks(OptionList):
         "Torvus Bog - Forgotten Bridge | Reverse Air Underwater",
         "Torvus Bog - Forgotten Bridge | Roll Jump from Bridge",
         "Torvus Bog - Forgotten Bridge | Scan Dash from Bridge",
+        "Torvus Bog - Fortress Transport Access | NSJ Jump Between Platforms",
+        "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms",
         "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs",
         "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segments",
         "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments",
