@@ -435,6 +435,18 @@ def catacombs_can_clip_through_gate(state, player, inside: bool = False) -> bool
     ])
 
 
+def forgotten_bridge_bridge_to_portal(state, player) -> bool:
+    if state.has("Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated", player):
+        return condition_or([
+            can_use_screw_attack(state, player),
+            condition_and([
+                has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Reverse Air Underwater"),
+                state.has("Gravity Boost", player)
+            ])
+        ])
+    return True
+
+
 def hydrodynamo_station_has_scanned_panels(state: CollectionState, player: int) -> bool:
     return condition_and([
         state.has("Torvus Bog - Hydrodynamo Station | Scanned North Panel", player),

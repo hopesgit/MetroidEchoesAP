@@ -8,8 +8,6 @@ A room characterized by a large spinning bridge in the center of the room. It co
 - One Missile Cover door
 - One white door
 - Grenchler or Dark Pirate Commando enemies
-
-Logic assumes that the bomb slot in Dark Forgotten Bridge has already been activated.
 """
 
 from BaseClasses import MultiWorld, ItemClassification
@@ -18,6 +16,7 @@ from ... import (
     can_lay_bomb,
     can_use_boost_ball,
     can_use_screw_attack,
+    forgotten_bridge_bridge_to_portal,
     has_trick_enabled,
 )
 from .....Enums import DoorCover
@@ -27,17 +26,20 @@ from .....Utils import condition_and, condition_or
 
 
 class ForgottenBridge_Bridge(MetroidPrime2Region):
-    """The bridge. It rotates."""
+    """The bridge. It rotates once after the bomb slot has been used in this room's dark twin."""
     name="Forgotten Bridge"
     desc="Bridge"
     exits_ = [
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Pickup Ledge)",
-            rule=lambda state, player: True
+            rule=lambda state, player: condition_or([
+                can_use_screw_attack(state, player),
+                state.has("Dark Torvus Bog - Dark Forgotten Bridge | Bomb Slot Activated", player)
+            ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Dark Portal Ledge)",
-            rule=lambda state, player: can_use_screw_attack(state, player, is_nsj=False)
+            rule=lambda state, player: forgotten_bridge_bridge_to_portal(state, player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Shallows)",
@@ -50,7 +52,7 @@ class ForgottenBridge_Bridge(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Cage)",
             rule=lambda state, player: condition_and([
-                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated)", player),
+                state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player),
                 state.has("Space Jump Boots", player)
             ])
         ),
@@ -78,12 +80,12 @@ class ForgottenBridge_Cage(MetroidPrime2Region):
             destination="Torvus Bog - Forgotten Bridge (Bridge)",
             rule=lambda state, player: condition_and([
                 state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player),
-                state.has_all(["Space Jump Boots", "Screw Attack"], player)
+                can_use_screw_attack(state, player)
             ])
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Shallows)",
-            rule=lambda state, player: state.has("Torvus Bog - Forgotten Bridge | Spinner Activated")
+            rule=lambda state, player: state.has("Torvus Bog - Forgotten Bridge | Spinner Activated", player)
         ),
         MetroidPrime2Exit(
             destination="Torvus Bog - Grove Access",
@@ -168,7 +170,7 @@ class ForgottenBridge_DarkPortalLedge(MetroidPrime2Region):
 
 
 class ForgottenBridge_PickupLedge(MetroidPrime2Region):
-    "Contains a pickup and a Super Missile Cover door. Connects to the bridge once the bridge has been rotated."
+    """Contains a pickup and a Super Missile Cover door. Connects to the bridge once the bridge has been rotated."""
     name="Forgotten Bridge"
     desc="Pickup Ledge"
     exits_ = [
@@ -204,13 +206,13 @@ class ForgottenBridge_Shallows(MetroidPrime2Region):
         MetroidPrime2Exit(
             destination="Torvus Bog - Forgotten Bridge (Cliffs)",
             rule=lambda state, player: condition_or([
-                state.has("Space Jump Boots"),
+                state.has("Space Jump Boots", player),
                 condition_and([
                     can_lay_bomb(state, player),
                     has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Bomb Jump Between Platforms")
                 ]),
                 condition_and([
-                    has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Air Underwater"),
+                    has_trick_enabled(state, player, "Torvus Bog - Forgotten Bridge | Reverse Air Underwater"),
                     state.has("Gravity Boost", player)
                 ])
             ])
