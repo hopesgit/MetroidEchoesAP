@@ -2,7 +2,13 @@
 destroyed during the boss cutscene."""
 
 from BaseClasses import MultiWorld, ItemClassification
-from ... import has_trick_enabled, can_lay_bomb, can_use_spider_ball, can_defeat_alpha_blogg, can_activate_dark_portal
+from ... import (
+    can_activate_dark_portal,
+    can_defeat_alpha_blogg,
+    can_lay_bomb,
+    can_use_spider_ball,
+    has_trick_enabled
+)
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
@@ -62,8 +68,11 @@ class MainHydrochamber_Main(MetroidPrime2Region):
                             state.has("Torvus Bog - Main HydroChamber | Alpha Blogg Dead", player)
                         ]),
                         condition_and([ # instant unmorph strats
-                            has_trick_enabled(state, player,
-                                              "Torvus Bog - Main Hydrochamber | Climb to Top Post-Alpha Blogg (NSJ)"),
+                            has_trick_enabled(
+                                state,
+                                player,
+                                "Torvus Bog - Main Hydrochamber | Climb to Top Post-Alpha Blogg (NSJ)"
+                            ),
                             state.has('Morph Ball', player),
                         ])
                     ])

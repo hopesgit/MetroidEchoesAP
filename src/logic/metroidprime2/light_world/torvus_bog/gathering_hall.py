@@ -22,10 +22,12 @@ from ... import (
     can_activate_dark_portal,
     can_lay_bomb,
     can_lay_pb,
+    can_use_boost_ball,
     can_use_dark_beam,
     can_use_grapple_beam,
     can_use_screw_attack,
-    has_trick_enabled, can_use_boost_ball, can_use_spider_ball
+    can_use_spider_ball,
+    has_trick_enabled
 )
 from .....Enums import DoorCover
 from .....Items import MetroidPrime2Item
@@ -249,8 +251,11 @@ class GatheringHall_SouthDoorLedge(MetroidPrime2Region):
                 code=None,
                 player=player
             ),
-            can_access=lambda state, player: can_activate_bomb_slot(state, player,
-                                                "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs")
+            can_access=lambda state, player: can_activate_bomb_slot(
+                state,
+                player,
+                "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"
+            )
         )
 
 
@@ -391,21 +396,30 @@ class GatheringHall_SpiderTracks(MetroidPrime2Region):
                 condition_and([
                     # trick routing
                     # can activate the slot
-                    can_activate_bomb_slot(state, player,
-                                           "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"),
+                    can_activate_bomb_slot(
+                        state,
+                        player,
+                        "Torvus Bog - Gathering Hall | Activate Bomb Slot without Bombs"
+                    ),
                     # can reach rotating track segment
                     condition_or([
                         # Roll Jump method
                         condition_and([
                             state.has_all(["Morph Ball", "Space Jump Boots"], player),
-                            has_trick_enabled(state, player,
-                                "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segment"),
+                            has_trick_enabled(
+                                state,
+                                player,
+                                "Torvus Bog - Gathering Hall | Roll Jump to Rotating Spider Track Segment"
+                            ),
                         ]),
                         # Screw Attack method
                         condition_and([
                             can_use_screw_attack(state, player),
-                            has_trick_enabled(state, player,
-                                        "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"),
+                            has_trick_enabled(
+                                state,
+                                player,
+                                "Torvus Bog - Gathering Hall | SA to Rotating Spider Track Segments"
+                            ),
                         ])
                     ]),
                     # can reach slot from rotating track segment
@@ -420,8 +434,11 @@ class GatheringHall_SpiderTracks(MetroidPrime2Region):
                             state.has("Morph Ball", player),
                             # does this need to be a trick? Could it be considered part of the trick for either method
                             #   of reaching the track segment?
-                            has_trick_enabled(state, player,
-                                    "Torvus Bog - Gathering Hall | Midair Morph to Reach Paired Bomb Slots")
+                            has_trick_enabled(
+                                state,
+                                player,
+                                "Torvus Bog - Gathering Hall | Midair Morph to Reach Paired Bomb Slots"
+                            )
                         ])
                     ])
                 ])

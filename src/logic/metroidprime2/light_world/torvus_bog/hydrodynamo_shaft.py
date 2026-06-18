@@ -1,10 +1,15 @@
 """"""
 
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
-from ... import has_trick_enabled, can_lay_bomb, can_activate_dark_portal, can_use_screw_attack
+from ... import (
+    can_activate_dark_portal,
+    can_lay_bomb,
+    can_use_screw_attack,
+    has_trick_enabled
+)
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_and, condition_or
 
 
 class HydrodynamoShaft_Top(MetroidPrime2Region):
@@ -41,8 +46,11 @@ class HydrodynamoShaft_Stairs(MetroidPrime2Region):
             destination="Torvus Bog - Hydrodynamo Shaft (Portal Alcove)",
             rule=lambda state, player: condition_and([
                 can_use_screw_attack(state, player),
-                has_trick_enabled(state, player,
-                                  "Torvus Bog - Hydrodynamo Shaft | Carry Air Underwater from Hydrodynamo Station")
+                has_trick_enabled(
+                    state,
+                    player,
+                    "Torvus Bog - Hydrodynamo Shaft | Carry Air Underwater from Hydrodynamo Station"
+                )
             ])
         )
     ]

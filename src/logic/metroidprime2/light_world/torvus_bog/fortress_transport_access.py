@@ -5,7 +5,7 @@
 from ... import can_lay_bomb, can_use_screw_attack, has_trick_enabled
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
-from .....Utils import condition_or, condition_and
+from .....Utils import condition_and, condition_or
 
 
 class FortressTransportAccess_UpperLedge(MetroidPrime2Region):
@@ -46,13 +46,17 @@ class FortressTransportAccess_LowerLedge(MetroidPrime2Region):
             destination="Torvus Bog - Fortress Transport Access (Upper Ledge)",
             rule=lambda state, player: condition_or([
                 state.has("Space Jump Boots", player),
-                has_trick_enabled(state, player,
-                                  "Torvus Bog - Fortress Transport Access | NSJ Jump Between Platforms"),
+                has_trick_enabled(
+                    state,
+                    player,
+                    "Torvus Bog - Fortress Transport Access | NSJ Jump Between Platforms"),
                 can_use_screw_attack(state, player),
                 condition_and([
                     can_use_screw_attack(state, player, is_nsj=True, z_axis=True),
-                    has_trick_enabled(state, player,
-                                      "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms")
+                    has_trick_enabled(
+                        state,
+                        player,
+                        "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms")
                 ])
             ])
         ),
@@ -74,8 +78,11 @@ class FortressTransportAccess_UnderWater(MetroidPrime2Region):
                 state.has('Gravity Boost', player),
                 can_use_screw_attack(state, player),
                 condition_and([
-                    has_trick_enabled(state, player,
-                                      "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms"),
+                    has_trick_enabled(
+                        state,
+                        player,
+                        "Torvus Bog - Fortress Transport Access | NSJ SA to Platforms"
+                    ),
                     can_use_screw_attack(state, player, is_nsj=True)
                 ])
             ])

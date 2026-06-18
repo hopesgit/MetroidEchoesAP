@@ -9,10 +9,10 @@ Has:
 """
 
 from BaseClasses import MultiWorld, ItemClassification
-from src.Utils import condition_or, condition_and
 from ... import can_lay_bomb, can_use_boost_ball, has_trick_enabled
 from .....Enums import DoorCover
 from .....Regions import MetroidPrime2Exit, MetroidPrime2Region
+from .....Utils import condition_and, condition_or
 
 
 class UndergroundTunnel_Tunnel(MetroidPrime2Region):
